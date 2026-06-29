@@ -1,0 +1,1244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AK Trading Academy — Tired of fake gurus? So were we.</title>
+  <meta name="description" content="An honest trading school in a dishonest industry. No tips, no signals, no '₹5,000 a day' fantasies, no upsell traps. Just structured education in discipline, risk and execution — from a NISM-Certified Research Analyst." />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          colors: {
+            ink: {
+              900: '#0A1628',
+              800: '#10213A',
+              700: '#1B2D4A',
+              500: '#3F5573',
+              300: '#94A3B8',
+            },
+            paper: '#FAFAF7',
+            bone:  '#F1EFE7',
+            amber: { signal: '#F59E0B', deep: '#B45309' },
+            ak:    { green: '#16A34A', dark: '#0E7A35' },
+            red:   { hype: '#DC2626' },
+          },
+          boxShadow: {
+            'cut': '6px 6px 0 0 #0A1628',
+            'cut-amber': '6px 6px 0 0 #F59E0B',
+            'cut-green': '6px 6px 0 0 #16A34A',
+            'soft': '0 1px 0 rgba(10,22,40,0.04), 0 12px 32px -16px rgba(10,22,40,0.18)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: #FAFAF7; color: #0A1628; -webkit-font-smoothing: antialiased; }
+    .font-display { font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em; }
+    .rule-thick { height: 4px; background:#0A1628; }
+    .strike { position: relative; }
+    .strike::after {
+      content: ""; position: absolute; left:-2px; right:-2px; top:55%;
+      height: 3px; background:#DC2626; transform: rotate(-3deg);
+    }
+    .marquee { animation: marquee 38s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+    details[open] summary .chev { transform: rotate(45deg); }
+    .chev { transition: transform .2s ease; }
+    /* underline glide for nav */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:#0A1628; transition:width .2s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ============== Announcement strip ============== -->
+  <div class="bg-ink-900 text-paper text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+      <p class="font-medium tracking-wide">
+        <span class="inline-block w-2 h-2 rounded-full bg-amber-signal mr-2 align-middle"></span>
+        Next free masterclass — <span class="font-display font-bold">Sat, 12 July 2026 · 7:00 PM IST</span> · online · 142 seats left
+      </p>
+      <a href="#register" class="hidden sm:inline font-semibold underline underline-offset-4 hover:text-amber-signal">Reserve seat →</a>
+    </div>
+  </div>
+
+  <!-- ============== Navbar ============== -->
+  <header class="sticky top-0 z-40 bg-paper/85 backdrop-blur border-b border-ink-900/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5">
+        <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-ink-900 text-paper font-display font-bold text-base">AK</span>
+        <span class="font-display font-bold text-ink-900 text-base sm:text-lg leading-none">
+          AK Trading Academy
+          <span class="block text-[10px] font-sans font-medium tracking-[0.18em] text-ink-500 mt-1 uppercase">An honest school</span>
+        </span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-ink-700">
+        <a class="nav-link" href="#manifesto">Manifesto</a>
+        <a class="nav-link" href="#vs">Them vs Us</a>
+        <a class="nav-link" href="#method">The Method</a>
+        <a class="nav-link" href="#founder">Founder</a>
+        <a class="nav-link" href="#curriculum">Curriculum</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#promises" class="hidden lg:inline text-sm font-semibold text-ink-700 hover:text-ink-900">Read our promises</a>
+        <a href="#register" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-md bg-ak-green text-paper text-sm font-semibold hover:bg-ak-dark transition shadow-cut-green hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+          Register Free
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== Hero ============== -->
+  <section id="manifesto" class="relative overflow-hidden bg-paper">
+    <!-- background paper grain dots -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-[0.05]"
+         style="background-image: radial-gradient(#0A1628 1px, transparent 1px); background-size: 22px 22px;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-16 lg:pb-24">
+
+      <!-- eyebrow -->
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-block w-10 h-px bg-ink-900"></span>
+        <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-700">An honest trading school in a dishonest industry</span>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+        <!-- left: manifesto headline -->
+        <div class="lg:col-span-7">
+          <h1 class="font-display font-bold text-ink-900 text-4xl sm:text-5xl lg:text-[68px] leading-[1.02] tracking-tight">
+            Tired of <span class="relative inline-block">
+              fake gurus<svg class="absolute -left-1 -right-1 -bottom-1 w-[110%]" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2 8 Q 50 2, 100 7 T 198 6" stroke="#F59E0B" stroke-width="5" fill="none" stroke-linecap="round"/></svg>
+            </span>, signal&#8209;sellers, and rented Lamborghinis?
+          </h1>
+          <p class="mt-6 font-display font-bold text-ink-900 text-2xl sm:text-3xl lg:text-4xl leading-tight">
+            So were we. <span class="text-ak-green">So we built the opposite.</span>
+          </p>
+
+          <p class="mt-7 text-base sm:text-lg text-ink-700 leading-relaxed max-w-2xl">
+            No tips. No signals. No "₹5,000 a day" fantasies. No endless upsells. Just an honest, structured education in how to trade with discipline — from someone who's tired of watching people get scammed. Come see the difference at our free masterclass.
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-9 flex flex-col sm:flex-row gap-4">
+            <a href="#register" class="group inline-flex items-center justify-center gap-2 px-6 py-4 rounded-md bg-ak-green text-paper font-semibold text-base hover:bg-ak-dark transition shadow-cut-green hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+              Register Free for the Masterclass
+              <svg class="w-5 h-5 group-hover:translate-x-0.5 transition" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#promises" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-md border-2 border-ink-900 text-ink-900 font-semibold text-base hover:bg-ink-900 hover:text-paper transition">
+              Read our 7 promises
+            </a>
+          </div>
+
+          <!-- trust line -->
+          <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <span class="inline-flex items-center gap-1.5 font-semibold text-ink-900">
+              <svg class="w-4 h-4 text-ak-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+              Abul Kalam · NISM-Certified Research Analyst (INH000012345)
+            </span>
+            <span class="text-ink-500">·</span>
+            <span class="text-ink-700">No tips, no guarantees, no upsell traps</span>
+            <span class="text-ink-500">·</span>
+            <span class="text-ink-700"><b class="text-ink-900">2,847+</b> learners</span>
+          </div>
+        </div>
+
+        <!-- right: the "them vs us" hero panel -->
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <!-- THEM card -->
+            <div class="rounded-xl border-2 border-ink-900/15 bg-bone p-5 sm:p-6 relative">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">The hype industry</span>
+                <span class="px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded bg-red-hype text-paper">Avoid</span>
+              </div>
+              <ul class="space-y-2.5 text-ink-500">
+                <li class="flex items-start gap-2 strike">
+                  <span class="font-display font-bold text-lg">"Guaranteed ₹5,000/day"</span>
+                </li>
+                <li class="flex items-start gap-2 strike">
+                  <span class="font-display font-bold text-lg">Buy/sell tips on Telegram</span>
+                </li>
+                <li class="flex items-start gap-2 strike">
+                  <span class="font-display font-bold text-lg">Profit screenshots & rented Lambo</span>
+                </li>
+                <li class="flex items-start gap-2 strike">
+                  <span class="font-display font-bold text-lg">"Advanced course" upsell №4</span>
+                </li>
+              </ul>
+              <!-- corner stamp -->
+              <div class="absolute -top-3 -right-3 rotate-6 px-2.5 py-1 bg-red-hype text-paper text-[10px] font-bold tracking-widest uppercase rounded shadow-sm font-mono">
+                Scam playbook
+              </div>
+            </div>
+
+            <!-- divider -->
+            <div class="my-3 flex items-center gap-3">
+              <div class="flex-1 h-px bg-ink-900/15"></div>
+              <span class="font-display font-bold text-ink-900 text-lg">vs</span>
+              <div class="flex-1 h-px bg-ink-900/15"></div>
+            </div>
+
+            <!-- US card -->
+            <div class="rounded-xl border-2 border-ink-900 bg-ink-900 p-5 sm:p-6 text-paper shadow-cut">
+              <div class="flex items-center justify-between mb-3">
+                <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-amber-signal">AK Trading Academy</span>
+                <span class="px-2 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded bg-ak-green text-paper">Honest</span>
+              </div>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 mt-0.5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span class="font-display font-bold text-lg">~9 in 10 lose — here's the truth and the discipline</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 mt-0.5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span class="font-display font-bold text-lg">Make your <em>own</em> decisions — never depend on anyone's calls</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 mt-0.5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span class="font-display font-bold text-lg">Real teaching, real risk discipline, real credentials</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 mt-0.5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                  <span class="font-display font-bold text-lg">One honest program. Zero manufactured FOMO.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Marquee strip ============== -->
+  <section aria-label="Manifesto strip" class="bg-ink-900 text-paper border-y-2 border-ink-900 overflow-hidden">
+    <div class="flex marquee whitespace-nowrap py-5">
+      <ul class="flex items-center gap-10 px-6 font-display font-bold text-xl sm:text-2xl tracking-tight">
+        <li>NO TIPS.</li><li class="text-amber-signal">★</li>
+        <li>NO SIGNALS.</li><li class="text-amber-signal">★</li>
+        <li>NO GUARANTEES.</li><li class="text-amber-signal">★</li>
+        <li>NO RENTED LAMBOS.</li><li class="text-amber-signal">★</li>
+        <li>NO UPSELL LADDER.</li><li class="text-amber-signal">★</li>
+        <li>NO PROFIT SCREENSHOTS.</li><li class="text-amber-signal">★</li>
+        <li>NO TELEGRAM "VIP" GROUPS.</li><li class="text-amber-signal">★</li>
+      </ul>
+      <ul aria-hidden="true" class="flex items-center gap-10 px-6 font-display font-bold text-xl sm:text-2xl tracking-tight">
+        <li>NO TIPS.</li><li class="text-amber-signal">★</li>
+        <li>NO SIGNALS.</li><li class="text-amber-signal">★</li>
+        <li>NO GUARANTEES.</li><li class="text-amber-signal">★</li>
+        <li>NO RENTED LAMBOS.</li><li class="text-amber-signal">★</li>
+        <li>NO UPSELL LADDER.</li><li class="text-amber-signal">★</li>
+        <li>NO PROFIT SCREENSHOTS.</li><li class="text-amber-signal">★</li>
+        <li>NO TELEGRAM "VIP" GROUPS.</li><li class="text-amber-signal">★</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============== Problem / Name the villain ============== -->
+  <section class="bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§01 · The villain</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+            You weren't gullible.<br>
+            <span class="text-amber-signal">You were targeted.</span>
+          </h2>
+          <p class="mt-5 text-ink-700 text-base leading-relaxed">
+            India's retail traders lost <b class="text-ink-900">₹1.81 lakh crore</b> in F&amp;O in FY24. SEBI itself confirms ~9 in 10 lose. The gurus selling the dream are a big part of why — and the regulators are finally cracking down. ₹546 crore has been impounded from rogue "academies" in just the last 18 months.
+          </p>
+        </div>
+
+        <div class="lg:col-span-8">
+          <p class="font-display font-bold text-ink-900 text-2xl sm:text-3xl leading-snug">
+            You know the playbook by now, because you've probably been on the receiving end of it:
+          </p>
+
+          <ul class="mt-8 space-y-5">
+            <li class="flex items-start gap-4">
+              <span class="font-mono text-amber-signal font-bold mt-1 w-8 flex-shrink-0">01—</span>
+              <p class="text-ink-800 text-lg leading-relaxed"><b>The "guru"</b> with a rented supercar and a screenshot of one winning trade out of fifty.</p>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="font-mono text-amber-signal font-bold mt-1 w-8 flex-shrink-0">02—</span>
+              <p class="text-ink-800 text-lg leading-relaxed"><b>The "educator"</b> who's really just selling a paid tips/signals group on the side.</p>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="font-mono text-amber-signal font-bold mt-1 w-8 flex-shrink-0">03—</span>
+              <p class="text-ink-800 text-lg leading-relaxed"><b>The course</b> that's 90% theory, 10% useful, and 100% followed by an "advanced" course you also "need".</p>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="font-mono text-amber-signal font-bold mt-1 w-8 flex-shrink-0">04—</span>
+              <p class="text-ink-800 text-lg leading-relaxed"><b>The promise</b> of "₹X a day, guaranteed", aimed straight at your hope.</p>
+            </li>
+          </ul>
+
+          <div class="mt-10 p-6 bg-ink-900 text-paper rounded-xl border-l-4 border-amber-signal">
+            <p class="font-display font-bold text-xl sm:text-2xl leading-snug">
+              It works because losing money is painful and hope is powerful. The hype industry isn't selling you trading — it's selling you the absence of that pain. That's why we call them what they are.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== THEM VS US comparison table ============== -->
+  <section id="vs" class="relative bg-ink-900 text-paper">
+    <div aria-hidden="true" class="absolute inset-0 grid-bg opacity-30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+
+      <div class="max-w-3xl">
+        <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-amber-signal">§02 · The contrast</span>
+        <h2 class="mt-4 font-display font-bold text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+          What the hype industry sells <span class="text-amber-signal">vs</span> what we actually do.
+        </h2>
+        <p class="mt-5 text-ink-300 text-lg leading-relaxed">
+          A literal side-by-side. Nothing buried in fine print, nothing dressed up in slick marketing. Read it once and you'll never confuse the two again.
+        </p>
+      </div>
+
+      <!-- Desktop table -->
+      <div class="hidden md:block mt-12 rounded-xl border border-paper/15 overflow-hidden">
+        <div class="grid grid-cols-12 bg-paper/5 text-paper border-b border-paper/15">
+          <div class="col-span-1 px-4 py-4 font-mono text-[11px] tracking-[0.22em] uppercase text-ink-300">#</div>
+          <div class="col-span-5 px-6 py-4 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-red-hype"></span>
+            <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-300">What the hype industry sells</span>
+          </div>
+          <div class="col-span-6 px-6 py-4 flex items-center gap-3 border-l border-paper/15 bg-ak-green/10">
+            <span class="w-2 h-2 rounded-full bg-ak-green"></span>
+            <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ak-green">What AK Trading Academy actually does</span>
+          </div>
+        </div>
+
+        <!-- rows -->
+        <div class="divide-y divide-paper/10">
+          <!-- row template repeated -->
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">01</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">Buy/sell signals & tips you depend on every single day</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">Teaches you to make your <span class="text-ak-green">own</span> decisions — and rely on no one's calls, ever.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">02</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">Profit screenshots & "₹X/day" promises aimed at your hope</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">Tells you the honest truth: <span class="text-ak-green">~9 in 10 lose</span>. No guarantees, ever — written on every page.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">03</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">Rented-Lambo, watch-flex, "lifestyle" bait</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">A <span class="text-ak-green">real mentor</span>, real credentials (NISM-Certified RA), real teaching. No props.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">04</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">Theory dumps with no execution and no rules</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">Built around <span class="text-ak-green">execution, risk and discipline</span> — the parts that actually matter.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">05</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">Endless "advanced course" upsells, manufactured FOMO</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">One honest program. <span class="text-ak-green">No upsell ladder.</span> Lifetime access to what you bought.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">06</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">Live "calls" (often illegal, often a trap)</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">Strictly <span class="text-ak-green">educational</span>: data ≥3 months old, fully SEBI-compliant, zero calls.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-12 items-stretch">
+            <div class="col-span-1 px-4 py-6 font-mono text-amber-signal text-sm">07</div>
+            <div class="col-span-5 px-6 py-6">
+              <p class="strike text-ink-300 font-display font-semibold text-lg leading-snug">"Private VIP" Telegram with 4,000 strangers chasing the same tip</p>
+            </div>
+            <div class="col-span-6 px-6 py-6 border-l border-paper/15 bg-ak-green/[0.04]">
+              <p class="font-display font-bold text-lg leading-snug">A <span class="text-ak-green">moderated Q&amp;A community</span> — accountability, not signals. Never a tips group.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile stacked pairs -->
+      <div class="md:hidden mt-10 space-y-6">
+        <!-- pair template -->
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 01</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">Buy/sell signals & tips you depend on</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 01</p>
+            <p class="font-display font-bold leading-snug">Make your <em>own</em> decisions — rely on no one's calls.</p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 02</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">"₹X/day, guaranteed" promises</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 02</p>
+            <p class="font-display font-bold leading-snug">~9 in 10 lose. No guarantees, ever. Written everywhere.</p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 03</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">Rented-Lambo lifestyle bait</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 03</p>
+            <p class="font-display font-bold leading-snug">Real mentor, real credentials, real teaching.</p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 04</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">Theory dumps with no execution</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 04</p>
+            <p class="font-display font-bold leading-snug">Built around execution, risk and discipline.</p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 05</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">Endless "advanced course" upsells</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 05</p>
+            <p class="font-display font-bold leading-snug">One honest program. No manufactured FOMO.</p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 06</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">Live calls (often illegal, often a trap)</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 06</p>
+            <p class="font-display font-bold leading-snug">Strictly educational. Data ≥3 months old. Compliant.</p>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="rounded-lg bg-paper/5 border border-paper/10 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-red-hype mb-1">Them · 07</p>
+            <p class="strike text-ink-300 font-display font-semibold leading-snug">"Private VIP" tips Telegram</p>
+          </div>
+          <div class="rounded-lg bg-ak-green/10 border border-ak-green/40 p-4">
+            <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ak-green mb-1">Us · 07</p>
+            <p class="font-display font-bold leading-snug">A no-hype community for Q&A and accountability.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- caption -->
+      <p class="mt-10 font-display italic text-xl sm:text-2xl text-amber-signal max-w-3xl">
+        "We're not anti-ambition. We're anti-lies. There's a difference, and your account knows it."
+      </p>
+    </div>
+  </section>
+
+  <!-- ============== Method ============== -->
+  <section id="method" class="bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-3xl">
+        <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§03 · The methodology</span>
+        <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+          The Honest Method.
+        </h2>
+        <p class="mt-5 text-ink-700 text-lg leading-relaxed">
+          Substance behind the stance. Four principles, deliberately the opposite of the hype playbook.
+        </p>
+      </div>
+
+      <div class="mt-14 grid sm:grid-cols-2 gap-5">
+        <!-- principle 1 -->
+        <article class="group p-7 rounded-xl border-2 border-ink-900 bg-paper hover:bg-ink-900 hover:text-paper transition shadow-cut hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+          <div class="flex items-center justify-between mb-6">
+            <span class="font-mono text-sm font-semibold text-amber-signal">PRINCIPLE 01</span>
+            <span class="font-display font-bold text-3xl text-ink-300 group-hover:text-paper/30">↗</span>
+          </div>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl leading-tight">Independence over dependence</h3>
+          <p class="mt-3 text-base leading-relaxed text-ink-700 group-hover:text-paper/85">
+            You leave able to trade on your own. No subscription you're trapped in, no daily call you can't function without. The goal of the course is that you don't need us.
+          </p>
+        </article>
+
+        <!-- principle 2 -->
+        <article class="group p-7 rounded-xl border-2 border-ink-900 bg-paper hover:bg-ink-900 hover:text-paper transition shadow-cut hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+          <div class="flex items-center justify-between mb-6">
+            <span class="font-mono text-sm font-semibold text-amber-signal">PRINCIPLE 02</span>
+            <span class="font-display font-bold text-3xl text-ink-300 group-hover:text-paper/30">↗</span>
+          </div>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl leading-tight">Risk before reward</h3>
+          <p class="mt-3 text-base leading-relaxed text-ink-700 group-hover:text-paper/85">
+            Capital preservation is taught first — position sizing, stop placement, drawdown control — because the people still trading next year are the people who didn't blow up this year.
+          </p>
+        </article>
+
+        <!-- principle 3 -->
+        <article class="group p-7 rounded-xl border-2 border-ink-900 bg-paper hover:bg-ink-900 hover:text-paper transition shadow-cut hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+          <div class="flex items-center justify-between mb-6">
+            <span class="font-mono text-sm font-semibold text-amber-signal">PRINCIPLE 03</span>
+            <span class="font-display font-bold text-3xl text-ink-300 group-hover:text-paper/30">↗</span>
+          </div>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl leading-tight">Process over predictions</h3>
+          <p class="mt-3 text-base leading-relaxed text-ink-700 group-hover:text-paper/85">
+            A written plan with rules — entries, exits, invalidation, max loss — replaces "feelings" and other people's tips. The market doesn't reward predictions; it rewards process.
+          </p>
+        </article>
+
+        <!-- principle 4 -->
+        <article class="group p-7 rounded-xl border-2 border-ink-900 bg-paper hover:bg-ink-900 hover:text-paper transition shadow-cut hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+          <div class="flex items-center justify-between mb-6">
+            <span class="font-mono text-sm font-semibold text-amber-signal">PRINCIPLE 04</span>
+            <span class="font-display font-bold text-3xl text-ink-300 group-hover:text-paper/30">↗</span>
+          </div>
+          <h3 class="font-display font-bold text-2xl sm:text-3xl leading-tight">Honesty over hype</h3>
+          <p class="mt-3 text-base leading-relaxed text-ink-700 group-hover:text-paper/85">
+            The odds, the losses and the disclaimers are front-and-centre, not buried in 6-point text on page 14. If you can't face the truth of the market, you can't trade it.
+          </p>
+        </article>
+      </div>
+
+      <p class="mt-10 font-display italic text-xl text-ink-700 max-w-2xl">
+        "A method you can take with you — not a subscription you're trapped in."
+      </p>
+    </div>
+  </section>
+
+  <!-- ============== Founder ============== -->
+  <section id="founder" class="bg-bone border-y-2 border-ink-900/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+        <!-- Photo + credentials -->
+        <div class="lg:col-span-5">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full bg-amber-signal rounded-xl"></div>
+            <img src="assets/abul-kalam.jpg" alt="Abul Kalam, founder of AK Trading Academy" class="relative w-full aspect-square object-cover rounded-xl border-2 border-ink-900 shadow-cut grayscale-[0.15]" />
+          </div>
+
+          <div class="mt-6 grid grid-cols-2 gap-3">
+            <div class="p-4 rounded-lg border border-ink-900/15 bg-paper">
+              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Credential</p>
+              <p class="mt-1 font-display font-bold text-ink-900 text-base leading-snug">NISM-Certified Research Analyst</p>
+              <p class="font-mono text-[11px] text-ink-500 mt-0.5">INH000012345</p>
+            </div>
+            <div class="p-4 rounded-lg border border-ink-900/15 bg-paper">
+              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Experience</p>
+              <p class="mt-1 font-display font-bold text-ink-900 text-base leading-snug">12+ years in markets</p>
+              <p class="font-mono text-[11px] text-ink-500 mt-0.5">Equities · F&O · Risk</p>
+            </div>
+            <div class="p-4 rounded-lg border border-ink-900/15 bg-paper">
+              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Taught</p>
+              <p class="mt-1 font-display font-bold text-ink-900 text-base leading-snug">2,847+ learners</p>
+              <p class="font-mono text-[11px] text-ink-500 mt-0.5">Since 2021</p>
+            </div>
+            <div class="p-4 rounded-lg border border-ink-900/15 bg-paper">
+              <p class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Refuses to</p>
+              <p class="mt-1 font-display font-bold text-ink-900 text-base leading-snug">Sell tips, ever</p>
+              <p class="font-mono text-[11px] text-ink-500 mt-0.5">Educator only</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Letter -->
+        <div class="lg:col-span-7">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§04 · Founder</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight">
+            "I got tired of watching beginners get scammed by people who should know better. So I built the school I wish they'd found first."
+          </h2>
+
+          <div class="mt-8 space-y-5 text-ink-800 text-lg leading-relaxed">
+            <p>
+              My name is <b>Abul Kalam</b>. I'm a NISM-Certified Research Analyst, and I've been in Indian markets for over a decade — long enough to watch the same con get re-packaged a hundred different ways, and long enough to know exactly who it preys on.
+            </p>
+            <p>
+              It preys on the schoolteacher in Pune who saved for ten years and lost ₹4 lakh to a "VIP signals" group in six weeks. The 22-year-old in Lucknow who watched a YouTube guru and put his college money on a single option. The retired uncle in Coimbatore who was sold a "₹50,000 lifetime mentorship" and got a 40-hour PDF and a WhatsApp link.
+            </p>
+            <p>
+              I've seen too much of it. So I built the opposite. No tips group. No "₹X a day" promises. No upsell ladder. No rented supercar in the thumbnail. Just an honest, structured education in how the market actually works — and the discipline you need to survive it.
+            </p>
+            <p>
+              I will tell you, on day one, that ~9 in 10 traders lose. I will tell you that this is hard, slow work. I will tell you that I will not give you a single buy or sell call — not now, not ever. If that's not what you want, this isn't your school. <span class="font-semibold text-ink-900">If it is, welcome.</span>
+            </p>
+          </div>
+
+          <!-- signature -->
+          <div class="mt-8 flex items-center gap-4">
+            <svg viewBox="0 0 220 60" class="h-14 text-ink-900" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 40 C 20 5, 35 55, 55 25 S 90 50, 110 20 S 150 55, 175 25 S 210 45, 215 30"/>
+              <path d="M55 48 C 80 42, 130 50, 175 44"/>
+            </svg>
+            <div>
+              <p class="font-display font-bold text-ink-900 text-lg leading-tight">Abul Kalam</p>
+              <p class="font-mono text-xs text-ink-500 tracking-wide">Founder · NISM-Certified RA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Promises ============== -->
+  <section id="promises" class="bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§05 · The promises</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+            7 things we will <span class="text-amber-signal">never</span> do.
+          </h2>
+          <p class="mt-5 text-ink-700 text-lg leading-relaxed">
+            Print these out. Tape them to your wall. The day we break any of them, you have grounds to walk away and tell the whole internet about it.
+          </p>
+          <div class="mt-8 hidden lg:block">
+            <a href="#register" class="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-ak-green text-paper font-semibold hover:bg-ak-dark transition shadow-cut-green hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+              Reserve a free seat
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <ul class="divide-y divide-ink-900/10 border-y border-ink-900/15">
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">01—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never give you a buy or sell call.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">Not in class, not in DM, not in our community. It's illegal for an educator, and it's the opposite of what we're here for.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">02—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never guarantee profits.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">Nobody can. Anyone who does is either lying or is about to be in trouble. ~9 in 10 traders lose, by SEBI's own data.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">03—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never show profit screenshots.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">They're trivially fakeable, meaningless as proof, and the calling card of the people we're the opposite of.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">04—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never run an upsell ladder.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">One honest program. No "advanced" course you also "need". No "mastermind" tier locked behind a second payment.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">05—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never use false urgency.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">No fake countdown timers. No "only 3 seats left" lies. When a cohort fills, we say so and you wait for the next one.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">06—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never run a paid tips group.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">Our community is for Q&amp;A and accountability — moderated, signal-free, and policed actively. You will be removed for posting tips.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-5 py-5">
+              <span class="font-mono font-bold text-amber-signal text-sm pt-1 w-10">07—</span>
+              <div>
+                <p class="font-display font-bold text-ink-900 text-xl">We will never hide the disclaimer.</p>
+                <p class="mt-1 text-ink-700 text-base leading-relaxed">It sits at the top of every page in plain English. It's not legal cover — it's the truth, and we're proud of it.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Testimonials ============== -->
+  <section class="bg-ink-900 text-paper relative overflow-hidden">
+    <div aria-hidden="true" class="absolute inset-0 grid-bg opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div>
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-amber-signal">§06 · Trust restored</span>
+          <h2 class="mt-4 font-display font-bold text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight max-w-3xl">
+            From burned <span class="text-amber-signal">→</span> back in the seat.
+          </h2>
+        </div>
+        <p class="text-ink-300 text-base max-w-md">
+          Notice what's missing: profit numbers. We don't celebrate them. What we celebrate is people getting their judgement, and their trust, back.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-5">
+        <!-- t1 -->
+        <figure class="p-6 rounded-xl bg-paper/[0.04] border border-paper/15 hover:border-amber-signal/60 transition">
+          <svg class="w-8 h-8 text-amber-signal mb-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7h-3a3 3 0 0 0-3 3v6h6V10H6c0-1.7 1.3-3 3-3V7zm10 0h-3a3 3 0 0 0-3 3v6h6V10h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+          <blockquote class="font-display font-semibold text-xl leading-snug">
+            "I'd been burned by a tips group before — lost ₹2.4L and a lot of trust. This was the first place that didn't try to sell me a dream. They told me the hard truth, taught me a real process, and never once pushed an upsell."
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-signal/20 border border-amber-signal/40 font-display font-bold text-amber-signal">VT</span>
+            <div>
+              <p class="font-semibold text-paper">Vikram T.</p>
+              <p class="text-xs text-ink-300 font-mono tracking-wide">Mumbai · 3rd batch</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- t2 -->
+        <figure class="p-6 rounded-xl bg-paper/[0.04] border border-paper/15 hover:border-amber-signal/60 transition">
+          <svg class="w-8 h-8 text-amber-signal mb-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7h-3a3 3 0 0 0-3 3v6h6V10H6c0-1.7 1.3-3 3-3V7zm10 0h-3a3 3 0 0 0-3 3v6h6V10h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+          <blockquote class="font-display font-semibold text-xl leading-snug">
+            "What sold me was what they <em>didn't</em> promise. No guarantees. No screenshots. Just honesty and actual teaching. That's rare in this country right now. I would recommend it to my own sister — and I have."
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-signal/20 border border-amber-signal/40 font-display font-bold text-amber-signal">SP</span>
+            <div>
+              <p class="font-semibold text-paper">Sneha P.</p>
+              <p class="text-xs text-ink-300 font-mono tracking-wide">Bengaluru · 5th batch</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <!-- t3 -->
+        <figure class="p-6 rounded-xl bg-paper/[0.04] border border-paper/15 hover:border-amber-signal/60 transition">
+          <svg class="w-8 h-8 text-amber-signal mb-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9 7h-3a3 3 0 0 0-3 3v6h6V10H6c0-1.7 1.3-3 3-3V7zm10 0h-3a3 3 0 0 0-3 3v6h6V10h-3c0-1.7 1.3-3 3-3V7z"/></svg>
+          <blockquote class="font-display font-semibold text-xl leading-snug">
+            "I came in cynical. I'd already been ripped off twice before — once for ₹35,000 on a 'lifetime mentorship', once on a Telegram VIP. AK never tried to sell me anything I didn't need. The risk module alone was worth it."
+          </blockquote>
+          <figcaption class="mt-6 flex items-center gap-3">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-amber-signal/20 border border-amber-signal/40 font-display font-bold text-amber-signal">RK</span>
+            <div>
+              <p class="font-semibold text-paper">Rohan K.</p>
+              <p class="text-xs text-ink-300 font-mono tracking-wide">Hyderabad · 4th batch</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="mt-10 text-xs text-ink-300 font-mono tracking-wide max-w-3xl leading-relaxed">
+        DISCLAIMER · These testimonials describe educational experience and trust, not financial results. AK Trading Academy does not promise or imply profits. Trading in securities markets involves risk; ~9 in 10 retail F&amp;O traders lose money (SEBI, FY24).
+      </p>
+    </div>
+  </section>
+
+  <!-- ============== Curriculum ============== -->
+  <section id="curriculum" class="bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+        <div class="max-w-2xl">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§07 · Curriculum</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+            What the gurus <span class="text-amber-signal">skip</span>.
+          </h2>
+          <p class="mt-5 text-ink-700 text-lg leading-relaxed">
+            Seven modules. Roughly eleven weeks. Designed to leave you independent — not subscribed.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono uppercase tracking-wider">
+          <span class="px-3 py-1.5 rounded-full bg-ink-900 text-paper">11 weeks</span>
+          <span class="px-3 py-1.5 rounded-full bg-bone text-ink-900 border border-ink-900/15">Live + recorded</span>
+          <span class="px-3 py-1.5 rounded-full bg-bone text-ink-900 border border-ink-900/15">SEBI-compliant</span>
+        </div>
+      </div>
+
+      <ol class="space-y-3">
+        <!-- 1 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">01</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 1</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">How the hype industry actually works</h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">A guided tour of the playbook — guru funnels, signal scams, Telegram pump-and-dumps — so you can spot it the moment you see it, and never get scammed again.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Psychology</span>
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Awareness</span>
+          </div>
+        </li>
+
+        <!-- 2 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">02</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 2–3</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Risk management — taught <em>first</em></h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">Position sizing, stop placement, max-loss-per-day, drawdown control, the 1% rule. The part tip-sellers never teach, because survival doesn't sell dreams.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Core</span>
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Capital preservation</span>
+          </div>
+        </li>
+
+        <!-- 3 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">03</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 4–5</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Reading price yourself</h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">Structure, levels, momentum, context. Enough to read any chart without anyone whispering in your ear. Independence from anyone's calls is the whole point.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Technical</span>
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Independence</span>
+          </div>
+        </li>
+
+        <!-- 4 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">04</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 6–7</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Building your own plan</h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">Written entries, exits, invalidation rules, position sizing. By the end of week 7, you have a one-page trading plan with your name on it — not someone else's.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Plan</span>
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Rules</span>
+          </div>
+        </li>
+
+        <!-- 5 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">05</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 8</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Trading psychology</h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">Why hope and FOMO cost you money. Tilt, revenge trades, oversizing, and the slow leak of overconfidence. The mind game beats the chart game.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Discipline</span>
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Mindset</span>
+          </div>
+        </li>
+
+        <!-- 6 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">06</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 9</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Spotting a trading scam</h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">A literal module on red flags — fake P&amp;L screenshots, guaranteed-return language, unregistered tip-sellers, look-alike SEBI badges. By the end you can audit any "academy" in 90 seconds.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-amber-signal/15 border border-amber-signal/40 text-xs font-mono text-amber-deep">Signature module</span>
+          </div>
+        </li>
+
+        <!-- 7 -->
+        <li class="grid lg:grid-cols-12 gap-4 lg:gap-6 p-6 rounded-xl border-2 border-ink-900/10 hover:border-ink-900 hover:bg-bone transition group">
+          <div class="lg:col-span-1 flex lg:flex-col items-center gap-2 lg:items-start">
+            <span class="font-display font-bold text-ink-300 group-hover:text-amber-signal text-4xl leading-none">07</span>
+            <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Week 10–11</span>
+          </div>
+          <div class="lg:col-span-7">
+            <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Standing on your own</h3>
+            <p class="mt-2 text-ink-700 leading-relaxed">Observed, educational practice on historical data (≥3 months old, per regulatory norms). Review sessions, journal critique, and a structured graduation checklist. No live calls. No signals. Ever.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-wrap gap-2 items-start">
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Practice</span>
+            <span class="px-2.5 py-1 rounded bg-paper border border-ink-900/15 text-xs font-mono text-ink-700">Compliant</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============== Bonus Stack ============== -->
+  <section class="bg-bone border-y-2 border-ink-900/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-5">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§08 · What you also get</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+            Useful things.<br>Not <span class="strike text-ink-500">"bonuses"</span>.
+          </h2>
+          <p class="mt-5 text-ink-700 text-lg leading-relaxed">
+            Everyone says "₹49,000 in bonuses". We just say: here are the tools we'd want you to have. They come included. No upgrades, no add-ons, no tier you didn't pay for that locks the actually-useful stuff.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+          <!-- Scam guide -->
+          <div class="p-6 rounded-xl bg-paper border-2 border-ink-900 shadow-cut">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-amber-signal">Featured</span>
+              <svg class="w-6 h-6 text-ink-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4-8-12V5l8-3 8 3v5c0 8-8 12-8 12z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-ink-900 text-xl">"How to Spot a Trading Scam" Field Guide</h3>
+            <p class="mt-2 text-sm text-ink-700 leading-relaxed">28-page PDF. Real screenshots. The exact red flags we use. Share it with your parents.</p>
+          </div>
+          <!-- Risk calc -->
+          <div class="p-6 rounded-xl bg-paper border border-ink-900/15">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Tool</span>
+              <svg class="w-6 h-6 text-ink-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="12" y1="10" x2="14" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-ink-900 text-xl">Risk &amp; Position-Size Calculator</h3>
+            <p class="mt-2 text-sm text-ink-700 leading-relaxed">A spreadsheet that does the boring maths for you. Lots size, stop, max loss per trade, per day, per week.</p>
+          </div>
+          <!-- Plan template -->
+          <div class="p-6 rounded-xl bg-paper border border-ink-900/15">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Template</span>
+              <svg class="w-6 h-6 text-ink-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-ink-900 text-xl">The 1-Page Trading Plan</h3>
+            <p class="mt-2 text-sm text-ink-700 leading-relaxed">A fill-in-the-blanks template. Print it. Stick it on the wall above your monitor. Read it before every session.</p>
+          </div>
+          <!-- Recordings -->
+          <div class="p-6 rounded-xl bg-paper border border-ink-900/15">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Access</span>
+              <svg class="w-6 h-6 text-ink-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-ink-900 text-xl">Lifetime Recordings</h3>
+            <p class="mt-2 text-sm text-ink-700 leading-relaxed">Every session, recorded, indexed, searchable. Re-watch a module five years from now if you want. No renewal fee.</p>
+          </div>
+          <!-- Community -->
+          <div class="p-6 rounded-xl bg-paper border border-ink-900/15 sm:col-span-2">
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-mono text-[10px] tracking-[0.22em] uppercase text-ink-500">Community</span>
+              <svg class="w-6 h-6 text-ink-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="font-display font-bold text-ink-900 text-xl">A no-hype learning community</h3>
+            <p class="mt-2 text-sm text-ink-700 leading-relaxed">
+              Moderated by us, used for Q&amp;A and accountability. Members are removed for posting tips, calls, or "guaranteed" anything.
+              <span class="block mt-1 font-semibold text-ink-900">Never a tips group. Ever.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FAQ ============== -->
+  <section id="faq" class="bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-4">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§09 · FAQ</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+            The questions we'd ask if we were you.
+          </h2>
+          <p class="mt-5 text-ink-700 text-lg leading-relaxed">
+            We don't expect you to trust us yet. Read these straight. If something still bothers you, write to us — we answer everything personally within 24 hours.
+          </p>
+          <a href="mailto:hello@aktradingacademy.in" class="mt-6 inline-flex items-center gap-2 font-semibold text-ink-900 underline underline-offset-4 hover:text-amber-deep">
+            hello@aktradingacademy.in →
+          </a>
+        </div>
+
+        <div class="lg:col-span-8 divide-y divide-ink-900/10 border-y border-ink-900/15">
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900 text-xl sm:text-2xl">How do I know <em>you're</em> not just another guru?</span>
+              <span class="chev font-display font-bold text-3xl text-amber-signal leading-none flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-ink-700 text-base leading-relaxed">
+              Fair question — start with what we <em>refuse</em> to do: no tips, no guarantees, no profit screenshots, no upsell ladder, no Telegram VIP group. Then check the credentials: NISM-Certified RA, real registration number on every page. Then come to the free masterclass and judge for yourself before you pay a single rupee. If we're a guru, you'll smell it within ten minutes.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Do you have a private tips or signals group?</span>
+              <span class="chev font-display font-bold text-3xl text-amber-signal leading-none flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-ink-700 text-base leading-relaxed">
+              No. That is exactly what we are against — and it is illegal for an educator under SEBI's Research Analyst regulations. Our community is for Q&amp;A and accountability only. We will remove you from it for posting buy/sell calls. The whole point of this school is that you don't need anyone's calls.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Why no profit screenshots on the website?</span>
+              <span class="chev font-display font-bold text-3xl text-amber-signal leading-none flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-ink-700 text-base leading-relaxed">
+              Because they're meaningless as proof — trivially fakeable in ten seconds with any broker's mobile app — and they're the calling card of the people we're the opposite of. We prove value through teaching, not flexing. If you want screenshots, the rest of the internet has plenty. We'd rather you didn't come to us for that reason.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900 text-xl sm:text-2xl">Do you guarantee I'll make money?</span>
+              <span class="chev font-display font-bold text-3xl text-amber-signal leading-none flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-ink-700 text-base leading-relaxed">
+              <b>Never.</b> ~9 in 10 traders lose money in F&amp;O, by SEBI's own data. Nobody can guarantee market outcomes — and anyone who claims otherwise is either lying or about to be in trouble. We teach the discipline of the few — honestly, with the odds stated up front. What happens to your account is between you, your discipline and the market.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900 text-xl sm:text-2xl">I'm a complete beginner. Is this for me?</span>
+              <span class="chev font-display font-bold text-3xl text-amber-signal leading-none flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-ink-700 text-base leading-relaxed">
+              Yes — and possibly more so than for the half-burned mid-stage trader. Beginners are the people the hype industry targets hardest, and the ones it damages most. We start from the absolute fundamentals: how an exchange works, what a lot is, why options decay. If a term confuses you, you raise your hand. No question is "too basic" in this school.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <span class="font-display font-bold text-ink-900 text-xl sm:text-2xl">What does it cost, and is there a refund?</span>
+              <span class="chev font-display font-bold text-3xl text-amber-signal leading-none flex-shrink-0">+</span>
+            </summary>
+            <p class="mt-4 text-ink-700 text-base leading-relaxed">
+              The masterclass is free. The full program is ₹24,999 (one-time, no recurring fee, no upsells). If you decide within 7 days of the program start that it isn't what we promised, you get a 100% refund — no questions, no "processing fee", no guilt-tripping email. The whole point is that we're not like them; the refund policy is too.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Guarantee ============== -->
+  <section class="bg-ink-900 text-paper">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-center">
+      <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-amber-signal">§10 · Risk reversal</span>
+      <h2 class="mt-5 font-display font-bold text-3xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+        7-day, no-questions-asked refund.
+      </h2>
+      <p class="mt-6 text-ink-300 text-lg leading-relaxed max-w-3xl mx-auto">
+        No traps. No "processing fee". No guilt email. No "are you sure?" forms designed to wear you down. One reply with "please refund me" inside 7 days and the money is back in your account within 5 business days.
+      </p>
+
+      <div class="mt-10 grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="p-5 rounded-xl border border-paper/15 bg-paper/[0.04]">
+          <p class="font-display font-bold text-3xl text-amber-signal">7</p>
+          <p class="mt-1 text-sm text-ink-300">days, full refund window</p>
+        </div>
+        <div class="p-5 rounded-xl border border-paper/15 bg-paper/[0.04]">
+          <p class="font-display font-bold text-3xl text-amber-signal">0</p>
+          <p class="mt-1 text-sm text-ink-300">questions, traps, fees</p>
+        </div>
+        <div class="p-5 rounded-xl border border-paper/15 bg-paper/[0.04]">
+          <p class="font-display font-bold text-3xl text-amber-signal">5</p>
+          <p class="mt-1 text-sm text-ink-300">business days to your account</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Final CTA ============== -->
+  <section id="register" class="relative bg-paper overflow-hidden">
+    <div aria-hidden="true" class="pointer-events-none absolute -top-24 -right-24 w-[420px] h-[420px] bg-amber-signal/15 rounded-full blur-3xl"></div>
+    <div aria-hidden="true" class="pointer-events-none absolute -bottom-24 -left-24 w-[420px] h-[420px] bg-ak-green/15 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-7">
+          <span class="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-500">§11 · Stop funding gurus</span>
+          <h2 class="mt-4 font-display font-bold text-ink-900 text-4xl sm:text-5xl lg:text-6xl leading-[1.02] tracking-tight">
+            Start learning from <span class="text-ak-green">someone honest.</span>
+          </h2>
+          <p class="mt-5 text-ink-700 text-lg leading-relaxed max-w-xl">
+            The next free masterclass is <b>Saturday, 12 July 2026, 7:00 PM IST</b>. Two hours, online, live. Bring your scepticism. Bring your questions. Leave with a clearer head than you came in with — or close the tab; we won't follow you with retargeting ads either.
+          </p>
+
+          <ul class="mt-8 space-y-2 text-ink-800">
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 2 hours, online, live with Q&amp;A</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> No card needed, no upsell pitch at the end</li>
+            <li class="flex items-center gap-3"><svg class="w-5 h-5 text-ak-green flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Recording sent to your email within 24 hours</li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-5">
+          <form class="p-6 sm:p-8 rounded-2xl border-2 border-ink-900 bg-paper shadow-cut" onsubmit="event.preventDefault(); this.querySelector('button').innerText='Seat reserved · check your email';">
+            <p class="font-mono text-[11px] tracking-[0.22em] uppercase text-amber-signal">Reserve a free seat</p>
+            <h3 class="mt-2 font-display font-bold text-ink-900 text-2xl leading-tight">Sat, 12 July · 7:00 PM IST</h3>
+            <p class="mt-1 text-sm text-ink-500">142 of 500 seats remaining</p>
+
+            <div class="mt-5 space-y-3">
+              <label class="block">
+                <span class="text-xs font-semibold text-ink-700 uppercase tracking-wider">Your name</span>
+                <input required type="text" placeholder="e.g. Rohan Sharma" class="mt-1.5 w-full px-4 py-3 rounded-md border border-ink-900/20 focus:border-ink-900 focus:ring-0 outline-none bg-paper text-ink-900 placeholder:text-ink-300"/>
+              </label>
+              <label class="block">
+                <span class="text-xs font-semibold text-ink-700 uppercase tracking-wider">Email</span>
+                <input required type="email" placeholder="you@example.com" class="mt-1.5 w-full px-4 py-3 rounded-md border border-ink-900/20 focus:border-ink-900 focus:ring-0 outline-none bg-paper text-ink-900 placeholder:text-ink-300"/>
+              </label>
+              <label class="block">
+                <span class="text-xs font-semibold text-ink-700 uppercase tracking-wider">WhatsApp (for joining link)</span>
+                <input required type="tel" placeholder="+91 98xxxxxxxx" class="mt-1.5 w-full px-4 py-3 rounded-md border border-ink-900/20 focus:border-ink-900 focus:ring-0 outline-none bg-paper text-ink-900 placeholder:text-ink-300"/>
+              </label>
+            </div>
+
+            <button type="submit" class="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-md bg-ak-green text-paper font-semibold text-base hover:bg-ak-dark transition shadow-cut-green hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+              Register Free
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+
+            <p class="mt-4 text-xs text-ink-500 text-center leading-relaxed">
+              We will not spam you, sell your data, or pretend you "won" a discount. One email with the joining link. That's it.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Footer ============== -->
+  <footer class="bg-ink-900 text-ink-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-2.5">
+            <span class="inline-flex items-center justify-center w-9 h-9 rounded-md bg-amber-signal text-ink-900 font-display font-bold text-base">AK</span>
+            <span class="font-display font-bold text-paper text-lg">AK Trading Academy</span>
+          </div>
+          <p class="mt-5 text-sm leading-relaxed max-w-md">
+            An honest trading school in a dishonest industry. Education only. No tips, no signals, no guarantees. SEBI-compliant; data used in teaching is at least 3 months old in line with regulatory norms.
+          </p>
+          <p class="mt-5 text-xs font-mono tracking-wide leading-relaxed">
+            NISM-Certified Research Analyst<br>
+            INH000012345 · GST 27AAACU9603R1Z2
+          </p>
+        </div>
+
+        <div class="lg:col-span-2">
+          <p class="font-display font-bold text-paper text-sm uppercase tracking-wider">School</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-amber-signal" href="#manifesto">Manifesto</a></li>
+            <li><a class="hover:text-amber-signal" href="#vs">Them vs Us</a></li>
+            <li><a class="hover:text-amber-signal" href="#method">The Method</a></li>
+            <li><a class="hover:text-amber-signal" href="#curriculum">Curriculum</a></li>
+            <li><a class="hover:text-amber-signal" href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-2">
+          <p class="font-display font-bold text-paper text-sm uppercase tracking-wider">Legal</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-amber-signal" href="#">Privacy Policy</a></li>
+            <li><a class="hover:text-amber-signal" href="#">Terms of Service</a></li>
+            <li><a class="hover:text-amber-signal" href="#">Refund Policy</a></li>
+            <li><a class="hover:text-amber-signal" href="#">Compliance &amp; Disclosure</a></li>
+            <li><a class="hover:text-amber-signal" href="#">Investor Grievance</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3">
+          <p class="font-display font-bold text-paper text-sm uppercase tracking-wider">Contact</p>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><a class="hover:text-amber-signal" href="mailto:hello@aktradingacademy.in">hello@aktradingacademy.in</a></li>
+            <li><span class="text-ink-300">Mon–Fri · 11 AM–7 PM IST</span></li>
+            <li class="pt-2 text-xs leading-relaxed">
+              Registered office:<br>
+              AK Trading Academy Pvt. Ltd.<br>
+              2nd Floor, Jubilee Towers,<br>
+              Madhapur, Hyderabad — 500081
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Disclaimer — proud, not buried -->
+      <div class="mt-12 p-6 rounded-xl border border-amber-signal/40 bg-amber-signal/[0.06]">
+        <div class="flex items-start gap-4">
+          <svg class="w-6 h-6 text-amber-signal flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div>
+            <p class="font-display font-bold text-paper text-sm uppercase tracking-wider">Mandatory disclaimer · read me</p>
+            <p class="mt-2 text-sm text-paper/85 leading-relaxed">
+              Investments in securities markets are subject to market risks. Read all the related documents carefully before investing. AK Trading Academy is an <b>educational platform only</b>; we do not provide stock recommendations, buy/sell calls, tips, signals, or any investment advisory service. ~9 in 10 retail F&amp;O traders lose money (SEBI study, FY24). Past performance does not guarantee future results. Any opinions expressed in our material are for educational purposes and based on historical data at least three months old, in line with SEBI Research Analyst regulations. Registration granted by SEBI and certification from NISM in no way guarantee performance or assure any returns to the investor.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-paper/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-ink-300">
+        <p>© 2026 AK Trading Academy Pvt. Ltd. All rights reserved.</p>
+        <p class="font-mono tracking-wide">Built honest. Last updated 28 June 2026.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

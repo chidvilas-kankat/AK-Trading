@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Calm Trader — Master the trader, not just the trade | Free Masterclass</title>
+  <meta name="description" content="It's not your strategy that's losing money — it's your mind. A free, compliant masterclass on the inner game of trading: FOMO, fear, greed and revenge, and the systems that beat them. No tips. No signals. Taught by an NISM-certified educator." />
+  <meta name="theme-color" content="#F4F2EC" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Calm Trader — It's not your strategy. It's your mind." />
+  <meta property="og:description" content="A free masterclass on the one variable that decides everything in trading: you. No tips. No signals. Just the inner game." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts: Fraunces (soft humanist serif, display) + Inter (humanist body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sand:   '#F4F2EC', // warm sand — page background
+            paper:  '#FCFBF7', // lighter paper — cards
+            shell:  '#EAE6DB', // deeper sand — alternating sections
+            ink:    '#232B31', // near-black slate — primary text
+            graphite:'#4B555C',// secondary text
+            mist:   '#8A8F8A', // muted text
+            slate:  '#3B5B7A', // deep slate-blue — primary accent / CTA
+            'slate-deep':'#2F4A65',
+            sage:   '#5E7C6B', // sage — secondary accent
+            'sage-soft':'#E7ECE6',
+            line:   '#DED9CC', // hairline borders
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { content: '1180px' },
+          boxShadow: {
+            calm: '0 1px 2px rgba(35,43,49,0.04), 0 12px 32px -12px rgba(35,43,49,0.12)',
+            'calm-lg': '0 2px 4px rgba(35,43,49,0.05), 0 28px 60px -24px rgba(35,43,49,0.20)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root { color-scheme: light; }
+    html { scroll-padding-top: 88px; }
+    body { font-feature-settings: "ss01","cv01"; }
+    .font-display { font-optical-sizing: auto; letter-spacing: -0.01em; }
+
+    /* Calm "settle" reveal — slow, soft */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Breathing hero motif */
+    @keyframes breathe { 0%,100% { transform: scale(1); opacity:.55 } 50% { transform: scale(1.06); opacity:.8 } }
+    @keyframes drift  { 0%,100% { transform: translate(0,0) } 50% { transform: translate(8px,-10px) } }
+    .breathe { animation: breathe 9s ease-in-out infinite; transform-origin: center; }
+    .drift   { animation: drift 12s ease-in-out infinite; }
+
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    .chev { transition: transform .3s ease; }
+
+    .quiz-opt input:checked + label { border-color:#3B5B7A; background:#fff; box-shadow:0 10px 30px -18px rgba(59,91,122,.6); }
+    .quiz-opt input:checked + label .dot { background:#3B5B7A; border-color:#3B5B7A; }
+    .quiz-opt input:checked + label .dot::after { opacity:1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity:1 !important; transform:none !important; transition:none !important; }
+      .breathe, .drift { animation: none !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body class="bg-sand text-ink font-sans antialiased selection:bg-sage/25">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:z-[100] focus:top-3 focus:left-3 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+  <!-- ============ ANNOUNCEMENT BAR ============ -->
+  <div class="bg-ink text-sand/90 text-[13px] sm:text-sm">
+    <div class="max-w-content mx-auto px-5 py-2.5 flex items-center justify-center gap-2 text-center">
+      <span class="inline-block h-1.5 w-1.5 rounded-full bg-sage breathe"></span>
+      <span>Next free live masterclass — <strong class="text-sand font-semibold">Saturday, 12 July 2026 · 11:00 AM IST</strong>. Seats are limited so the Q&amp;A stays personal.</span>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header id="top" class="sticky top-0 z-50 bg-sand/85 backdrop-blur-md border-b border-line">
+    <nav class="max-w-content mx-auto px-5 h-[72px] flex items-center justify-between gap-4" aria-label="Primary">
+      <a href="#top" class="flex items-center gap-2.5 shrink-0">
+        <span class="grid place-items-center h-9 w-9 rounded-full border border-slate/30 text-slate">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="3.2"/></svg>
+        </span>
+        <span class="font-display text-[19px] font-semibold tracking-tight">AK Trading Academy</span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-8 text-[15px] text-graphite">
+        <a href="#traps" class="hover:text-ink transition-colors">The 4 traps</a>
+        <a href="#quiz" class="hover:text-ink transition-colors">Find your trap</a>
+        <a href="#curriculum" class="hover:text-ink transition-colors">Curriculum</a>
+        <a href="#instructor" class="hover:text-ink transition-colors">Instructor</a>
+        <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#register" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-slate hover:bg-slate-deep text-paper text-[15px] font-semibold px-5 py-2.5 shadow-calm transition-colors">
+          Register Free
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center h-10 w-10 rounded-lg border border-line text-ink" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="lg:hidden hidden border-t border-line bg-sand">
+      <div class="px-5 py-4 flex flex-col gap-1 text-[16px]">
+        <a href="#traps" class="py-2.5 text-graphite">The 4 traps</a>
+        <a href="#quiz" class="py-2.5 text-graphite">Find your trap</a>
+        <a href="#curriculum" class="py-2.5 text-graphite">Curriculum</a>
+        <a href="#instructor" class="py-2.5 text-graphite">Instructor</a>
+        <a href="#faq" class="py-2.5 text-graphite">FAQ</a>
+        <a href="#register" class="mt-2 inline-flex justify-center items-center rounded-full bg-slate text-paper font-semibold px-5 py-3">Register Free →</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="relative overflow-hidden">
+      <!-- soft background wash -->
+      <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+        <div class="absolute -top-40 -right-32 h-[28rem] w-[28rem] rounded-full bg-sage-soft blur-3xl opacity-70 drift"></div>
+        <div class="absolute -bottom-48 -left-32 h-[26rem] w-[26rem] rounded-full bg-[#E4EAF0] blur-3xl opacity-70"></div>
+      </div>
+
+      <div class="max-w-content mx-auto px-5 pt-16 sm:pt-24 pb-16 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-14 items-center">
+        <!-- Copy -->
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 text-sm font-medium text-sage tracking-wide">
+            <span class="h-px w-8 bg-sage/60"></span>
+            The hardest market is between your ears
+          </p>
+          <h1 class="font-display mt-5 text-[2.6rem] leading-[1.05] sm:text-6xl sm:leading-[1.04] font-semibold tracking-tight text-ink">
+            It's not your strategy that's losing money.
+            <span class="block text-slate italic">It's your mind.</span>
+          </h1>
+          <p class="mt-6 text-[18px] leading-[1.75] text-graphite max-w-xl">
+            Fear, greed, FOMO, revenge-trading — the moment real money is on the line, emotion overrides logic and your plan goes out the window. This free masterclass is about mastering the one variable that decides everything: <em class="text-ink not-italic font-medium">you</em>. No tips. No signals. Just the inner game.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3.5">
+            <a href="#register" class="inline-flex justify-center items-center gap-2 rounded-full bg-slate hover:bg-slate-deep text-paper text-[16px] font-semibold px-7 py-3.5 shadow-calm transition-colors">
+              Register Free
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#traps" class="inline-flex justify-center items-center gap-2 rounded-full border border-line hover:border-slate/40 text-ink text-[16px] font-medium px-7 py-3.5 bg-paper/60 transition-colors">
+              See the 4 mental traps
+            </a>
+          </div>
+
+          <!-- Trust line -->
+          <div class="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px] text-mist">
+            <span class="inline-flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> NISM-Certified Research Analyst</span>
+            <span class="hidden sm:inline text-line">·</span>
+            <span class="inline-flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V6z"/></svg> Discipline-first, tips-never</span>
+            <span class="hidden sm:inline text-line">·</span>
+            <span class="inline-flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 text-sage" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3.1a4 4 0 0 1 0 7.8M22 21v-2a4 4 0 0 0-3-3.9M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8m6 10v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/></svg> 12,000+ learners</span>
+          </div>
+        </div>
+
+        <!-- Calm mind vs noisy mind motif -->
+        <div class="reveal">
+          <div class="relative rounded-3xl bg-paper border border-line shadow-calm-lg p-7 sm:p-9">
+            <p class="text-xs uppercase tracking-[0.18em] text-mist mb-6">The noisy mind &nbsp;→&nbsp; the calm mind</p>
+            <svg viewBox="0 0 420 280" class="w-full h-auto" role="img" aria-label="A scribbled, chaotic mind on the left settling into a single calm orbit on the right.">
+              <defs>
+                <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#5E7C6B" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#5E7C6B" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <!-- noisy side -->
+              <g stroke="#B9A88E" fill="none" stroke-width="1.3" opacity="0.85">
+                <path d="M40 60 C70 30 60 90 95 70 S120 30 150 60 100 110 130 130 60 120 70 160 120 150 95 190 50 170 80 210"/>
+                <path d="M55 95 C90 80 70 130 110 120 S130 90 150 110"/>
+                <circle cx="60" cy="80" r="3" fill="#C9462C"/>
+                <circle cx="120" cy="150" r="2.5" fill="#C9462C"/>
+                <circle cx="95" cy="200" r="2.5" fill="#C9462C"/>
+              </g>
+              <text x="100" y="245" text-anchor="middle" font-family="Inter" font-size="12" fill="#8A8F8A">fear · greed · FOMO · revenge</text>
+
+              <!-- divider arrow -->
+              <line x1="195" y1="140" x2="235" y2="140" stroke="#DED9CC" stroke-width="1.5"/>
+              <path d="M232 134 238 140 232 146" fill="none" stroke="#DED9CC" stroke-width="1.5"/>
+
+              <!-- calm side -->
+              <circle cx="320" cy="135" r="78" fill="url(#g1)"/>
+              <circle cx="320" cy="135" r="54" fill="none" stroke="#3B5B7A" stroke-width="1.4" opacity="0.5" class="breathe"/>
+              <circle cx="320" cy="135" r="34" fill="none" stroke="#3B5B7A" stroke-width="1.4" opacity="0.7"/>
+              <circle cx="320" cy="135" r="6.5" fill="#3B5B7A"/>
+              <text x="320" y="245" text-anchor="middle" font-family="Inter" font-size="12" fill="#8A8F8A">one decision · made in advance</text>
+            </svg>
+
+            <div class="mt-6 rounded-2xl bg-sand border border-line p-4 flex items-start gap-3">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-slate shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg>
+              <p class="text-[14.5px] leading-relaxed text-graphite">You can't delete emotion. You <em class="text-ink not-italic font-semibold">can</em> build systems so emotion never gets to make the decision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="border-y border-line bg-shell/60">
+      <div class="max-w-content mx-auto px-5 py-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="reveal">
+          <p class="font-display text-3xl font-semibold text-ink">90%</p>
+          <p class="text-[13px] text-graphite mt-1 leading-snug">of trading losses are behavioural, not analytical</p>
+        </div>
+        <div class="reveal">
+          <p class="font-display text-3xl font-semibold text-ink">12,000<span class="text-slate">+</span></p>
+          <p class="text-[13px] text-graphite mt-1 leading-snug">learners taught the discipline-first way</p>
+        </div>
+        <div class="reveal">
+          <p class="font-display text-3xl font-semibold text-ink">4.7<span class="text-slate">★</span></p>
+          <p class="text-[13px] text-graphite mt-1 leading-snug">average learner rating across reviews</p>
+        </div>
+        <div class="reveal">
+          <p class="font-display text-3xl font-semibold text-ink">0</p>
+          <p class="text-[13px] text-graphite mt-1 leading-snug">buy/sell tips — ever. This is education</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM / AGITATION ============ -->
+    <section class="py-20 sm:py-28">
+      <div class="max-w-3xl mx-auto px-5">
+        <p class="reveal text-sm font-medium text-sage tracking-wide uppercase">Be honest with yourself</p>
+        <h2 class="reveal font-display mt-3 text-3xl sm:text-[2.6rem] leading-[1.12] font-semibold text-ink">
+          You've had the moment where you <em class="italic text-slate">knew</em> the right move — and did the opposite anyway.
+        </h2>
+
+        <div class="reveal mt-9 space-y-5 text-[18px] leading-[1.8] text-graphite">
+          <p>You held a loser hoping it'd come back. You jumped into a trade because everyone on your timeline was making money and you couldn't stand missing out. After a red day, you "made it back" with a revenge trade that turned a small loss into a disaster. You moved your stop because watching it hit <em class="not-italic text-ink font-medium">hurt</em>.</p>
+          <p>None of those were strategy failures. They were <strong class="text-ink font-semibold">emotional failures</strong>. And until you fix that, no new indicator, no better setup, no fancier course will save your account — because the leak isn't in your charts. It's in your reactions.</p>
+        </div>
+
+        <div class="reveal mt-10 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-paper border border-line p-5 flex gap-3.5">
+            <span class="text-slate/70 font-display text-2xl leading-none">“</span>
+            <p class="text-[15px] leading-relaxed text-graphite">I'll just move the stop down a little — it'll come back.</p>
+          </div>
+          <div class="rounded-2xl bg-paper border border-line p-5 flex gap-3.5">
+            <span class="text-slate/70 font-display text-2xl leading-none">“</span>
+            <p class="text-[15px] leading-relaxed text-graphite">Everyone's in this trade. I can't be the one who misses it.</p>
+          </div>
+          <div class="rounded-2xl bg-paper border border-line p-5 flex gap-3.5">
+            <span class="text-slate/70 font-display text-2xl leading-none">“</span>
+            <p class="text-[15px] leading-relaxed text-graphite">One more trade and I make today's loss back. One more.</p>
+          </div>
+          <div class="rounded-2xl bg-paper border border-line p-5 flex gap-3.5">
+            <span class="text-slate/70 font-display text-2xl leading-none">“</span>
+            <p class="text-[15px] leading-relaxed text-graphite">It's running — let me size up before it gets away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REFRAME / OPPORTUNITY ============ -->
+    <section class="bg-slate text-paper">
+      <div class="max-w-content mx-auto px-5 py-20 sm:py-28 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+        <div class="reveal">
+          <p class="text-sm font-medium text-sage-soft/90 tracking-wide uppercase">The uncomfortable, liberating truth</p>
+          <h2 class="font-display mt-4 text-3xl sm:text-[2.7rem] leading-[1.12] font-semibold">
+            The biggest edge in trading isn't a strategy. It's the discipline to follow one.
+          </h2>
+        </div>
+        <div class="reveal space-y-5 text-[18px] leading-[1.8] text-paper/85">
+          <p>A mediocre method executed with iron discipline beats a brilliant method sabotaged by emotion, every single time. That's why professionals obsess over psychology and risk, while beginners obsess over entries.</p>
+          <p>The good news? Emotional discipline is a <strong class="text-paper font-semibold">trainable skill</strong>. There are specific systems — checklists, rules, journaling, routines — that take the decision out of the heat of the moment and put it where it belongs: in cold, pre-committed logic.</p>
+          <p class="text-paper font-display text-2xl italic leading-snug pt-2">That's what we teach.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE CALM TRADER FRAMEWORK (4 traps → 4 systems) ============ -->
+    <section id="traps" class="py-20 sm:py-28">
+      <div class="max-w-content mx-auto px-5">
+        <div class="max-w-2xl reveal">
+          <p class="text-sm font-medium text-sage tracking-wide uppercase">The Calm Trader Framework</p>
+          <h2 class="font-display mt-3 text-3xl sm:text-[2.7rem] leading-[1.1] font-semibold text-ink">
+            Four mental traps. Four systems that disarm them.
+          </h2>
+          <p class="mt-5 text-[18px] leading-[1.75] text-graphite">
+            We name the enemy, then hand you the cure for each. You can't delete emotion — but you can build a system so emotion never gets to make the decision.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-5">
+
+          <!-- FOMO -->
+          <article class="reveal group rounded-3xl bg-paper border border-line shadow-calm p-7 sm:p-8 hover:shadow-calm-lg transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-2 text-slate">
+                <span class="grid place-items-center h-11 w-11 rounded-2xl bg-sage-soft">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+                </span>
+                <span class="font-display text-2xl font-semibold text-ink">FOMO</span>
+              </span>
+              <span class="text-xs uppercase tracking-wider text-mist">Trap 01</span>
+            </div>
+            <p class="mt-5 text-[13px] uppercase tracking-wider text-mist">What it costs you</p>
+            <p class="mt-1.5 text-[16px] text-graphite leading-relaxed">Chasing the move means late entries at bad prices — buying exactly where the disciplined trader is selling.</p>
+            <div class="mt-5 rounded-2xl bg-sand border border-line p-4">
+              <p class="text-[13px] uppercase tracking-wider text-sage font-semibold">The system that fixes it</p>
+              <p class="mt-1.5 text-[16px] text-ink leading-relaxed">A pre-trade checklist that only green-lights <em class="not-italic font-semibold">your</em> setup — so "everyone's in it" stops being a reason.</p>
+            </div>
+          </article>
+
+          <!-- FEAR -->
+          <article class="reveal group rounded-3xl bg-paper border border-line shadow-calm p-7 sm:p-8 hover:shadow-calm-lg transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-2 text-slate">
+                <span class="grid place-items-center h-11 w-11 rounded-2xl bg-sage-soft">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 4 2 7h10c0-3 2-4 2-7a7 7 0 0 0-7-7Z"/><path d="M9 22h6"/></svg>
+                </span>
+                <span class="font-display text-2xl font-semibold text-ink">Fear</span>
+              </span>
+              <span class="text-xs uppercase tracking-wider text-mist">Trap 02</span>
+            </div>
+            <p class="mt-5 text-[13px] uppercase tracking-wider text-mist">What it costs you</p>
+            <p class="mt-1.5 text-[16px] text-graphite leading-relaxed">Hesitation on valid trades, and moving stops when watching them hit hurts — turning small, planned losses into ballooning ones.</p>
+            <div class="mt-5 rounded-2xl bg-sand border border-line p-4">
+              <p class="text-[13px] uppercase tracking-wider text-sage font-semibold">The system that fixes it</p>
+              <p class="mt-1.5 text-[16px] text-ink leading-relaxed">Pre-committed, rules-based exits decided <em class="not-italic font-semibold">before</em> you enter — the choice is already made.</p>
+            </div>
+          </article>
+
+          <!-- GREED -->
+          <article class="reveal group rounded-3xl bg-paper border border-line shadow-calm p-7 sm:p-8 hover:shadow-calm-lg transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-2 text-slate">
+                <span class="grid place-items-center h-11 w-11 rounded-2xl bg-sage-soft">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M9.5 9.5h3.2a1.8 1.8 0 0 1 0 3.6H9.8M9.5 12.7h3.4"/></svg>
+                </span>
+                <span class="font-display text-2xl font-semibold text-ink">Greed</span>
+              </span>
+              <span class="text-xs uppercase tracking-wider text-mist">Trap 03</span>
+            </div>
+            <p class="mt-5 text-[13px] uppercase tracking-wider text-mist">What it costs you</p>
+            <p class="mt-1.5 text-[16px] text-graphite leading-relaxed">Over-sizing and no exit plan means a single trade can wreck a whole month of careful work.</p>
+            <div class="mt-5 rounded-2xl bg-sand border border-line p-4">
+              <p class="text-[13px] uppercase tracking-wider text-sage font-semibold">The system that fixes it</p>
+              <p class="mt-1.5 text-[16px] text-ink leading-relaxed">Fixed position sizing plus a written profit/exit rule — your account can't be bet on one feeling.</p>
+            </div>
+          </article>
+
+          <!-- REVENGE -->
+          <article class="reveal group rounded-3xl bg-paper border border-line shadow-calm p-7 sm:p-8 hover:shadow-calm-lg transition-shadow">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-2 text-slate">
+                <span class="grid place-items-center h-11 w-11 rounded-2xl bg-sage-soft">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+                </span>
+                <span class="font-display text-2xl font-semibold text-ink">Revenge</span>
+              </span>
+              <span class="text-xs uppercase tracking-wider text-mist">Trap 04</span>
+            </div>
+            <p class="mt-5 text-[13px] uppercase tracking-wider text-mist">What it costs you</p>
+            <p class="mt-1.5 text-[16px] text-graphite leading-relaxed">Tilt after a loss is how one bad trade becomes ten — a small loss spirals into a disaster.</p>
+            <div class="mt-5 rounded-2xl bg-sand border border-line p-4">
+              <p class="text-[13px] uppercase tracking-wider text-sage font-semibold">The system that fixes it</p>
+              <p class="mt-1.5 text-[16px] text-ink leading-relaxed">A "circuit-breaker" routine: stop, log, step away — the loop is broken before it compounds.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERACTIVE QUIZ ============ -->
+    <section id="quiz" class="bg-shell/60 border-y border-line py-20 sm:py-28">
+      <div class="max-w-3xl mx-auto px-5">
+        <div class="text-center reveal">
+          <p class="text-sm font-medium text-sage tracking-wide uppercase">2-minute self-check</p>
+          <h2 class="font-display mt-3 text-3xl sm:text-[2.6rem] leading-[1.1] font-semibold text-ink">Which trap is costing you most?</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-graphite max-w-xl mx-auto">Answer four honest questions. You'll get your dominant trap and the exact one-pager that disarms it — yours free at the masterclass.</p>
+        </div>
+
+        <div class="reveal mt-10 rounded-3xl bg-paper border border-line shadow-calm p-6 sm:p-9">
+          <!-- progress -->
+          <div id="quizProgress" class="flex items-center gap-2 mb-7">
+            <span class="h-1.5 flex-1 rounded-full bg-slate transition-all" data-step="0"></span>
+            <span class="h-1.5 flex-1 rounded-full bg-line transition-all" data-step="1"></span>
+            <span class="h-1.5 flex-1 rounded-full bg-line transition-all" data-step="2"></span>
+            <span class="h-1.5 flex-1 rounded-full bg-line transition-all" data-step="3"></span>
+          </div>
+
+          <form id="quizForm">
+            <!-- Questions injected by JS -->
+            <div id="quizStage" aria-live="polite"></div>
+
+            <div class="mt-8 flex items-center justify-between">
+              <button type="button" id="quizBack" class="text-[15px] text-graphite hover:text-ink disabled:opacity-0 transition" disabled>← Back</button>
+              <button type="button" id="quizNext" class="inline-flex items-center gap-2 rounded-full bg-slate hover:bg-slate-deep text-paper text-[15px] font-semibold px-6 py-3 transition-colors disabled:opacity-40 disabled:cursor-not-allowed" disabled>
+                <span id="quizNextLabel">Next</span>
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Result -->
+          <div id="quizResult" class="hidden">
+            <div class="text-center">
+              <p class="text-[13px] uppercase tracking-wider text-sage font-semibold">Your dominant trap</p>
+              <h3 id="resTrap" class="font-display text-4xl font-semibold text-ink mt-2"></h3>
+              <p id="resDesc" class="mt-3 text-[16.5px] leading-relaxed text-graphite max-w-xl mx-auto"></p>
+            </div>
+            <div class="mt-7 rounded-2xl bg-sand border border-line p-6">
+              <p class="text-[13px] uppercase tracking-wider text-mist">The one-pager that disarms it</p>
+              <p id="resFix" class="mt-2 text-[17px] text-ink leading-relaxed font-medium"></p>
+            </div>
+            <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="#register" class="inline-flex justify-center items-center gap-2 rounded-full bg-slate hover:bg-slate-deep text-paper font-semibold px-7 py-3.5 transition-colors">Get this one-pager free → Register</a>
+              <button type="button" id="quizRestart" class="inline-flex justify-center items-center rounded-full border border-line hover:border-slate/40 text-ink font-medium px-7 py-3.5 transition-colors">Retake</button>
+            </div>
+          </div>
+        </div>
+        <p class="text-center text-[13px] text-mist mt-4">For self-reflection and education only — not a diagnosis or investment advice.</p>
+      </div>
+    </section>
+
+    <!-- ============ FOUNDER ============ -->
+    <section id="instructor" class="py-20 sm:py-28">
+      <div class="max-w-content mx-auto px-5 grid lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center">
+        <!-- Photo -->
+        <div class="reveal">
+          <div class="relative max-w-sm mx-auto lg:mx-0">
+            <div class="absolute -inset-3 rounded-[2rem] bg-sage-soft -z-10 rotate-2"></div>
+            <img src="assets/abul-kalam.jpg" alt="Abul Kalam, NISM-certified Research Analyst and founder of The Calm Trader" width="560" height="560" loading="lazy" class="rounded-[1.6rem] w-full h-auto object-cover shadow-calm-lg border border-line" />
+            <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 lg:left-6 lg:translate-x-0 bg-paper border border-line rounded-2xl shadow-calm px-5 py-3 flex items-center gap-3 whitespace-nowrap">
+              <svg viewBox="0 0 24 24" class="h-5 w-5 text-sage" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+              <span class="text-[14px] font-medium text-ink">NISM-Certified Research Analyst</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copy -->
+        <div class="reveal">
+          <p class="text-sm font-medium text-sage tracking-wide uppercase">Your instructor</p>
+          <h2 class="font-display mt-4 text-3xl sm:text-[2.5rem] leading-[1.14] font-semibold text-ink">
+            "My strategy didn't change the year I turned the corner. My discipline did. That's the whole lesson."
+          </h2>
+          <div class="mt-6 space-y-4 text-[17px] leading-[1.8] text-graphite max-w-xl">
+            <p>I'm <strong class="text-ink font-semibold">Abul Kalam</strong>, an NISM-Certified Research Analyst who has spent over a decade in the equity and derivatives markets. I blew up my first account exactly the way most beginners do — not because I lacked a strategy, but because I couldn't follow the one I had.</p>
+            <p>What changed wasn't a secret indicator. It was building a process and respecting risk: checklists, pre-committed exits, position sizing, and a journal that finally showed me my own patterns. I've spent the years since teaching that process to <strong class="text-ink font-semibold">12,000+ learners</strong>.</p>
+            <p>I don't sell tips. I don't give signals. I teach the inner game — because that's the part that actually decides whether you keep your account.</p>
+          </div>
+          <div class="mt-7 flex flex-wrap gap-x-8 gap-y-4">
+            <div><p class="font-display text-2xl font-semibold text-ink">10+ yrs</p><p class="text-[13px] text-mist">in equities &amp; derivatives</p></div>
+            <div><p class="font-display text-2xl font-semibold text-ink">12,000+</p><p class="text-[13px] text-mist">learners taught</p></div>
+            <div><p class="font-display text-2xl font-semibold text-ink">Tips-never</p><p class="text-[13px] text-mist">education-only, by design</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STUDENT RESULTS ============ -->
+    <section class="bg-shell/60 border-y border-line py-20 sm:py-28">
+      <div class="max-w-content mx-auto px-5">
+        <div class="max-w-2xl reveal">
+          <p class="text-sm font-medium text-sage tracking-wide uppercase">Learner outcomes</p>
+          <h2 class="font-display mt-3 text-3xl sm:text-[2.5rem] leading-[1.12] font-semibold text-ink">When the behaviour changes, everything changes.</h2>
+          <p class="mt-4 text-[17px] text-graphite leading-relaxed">These reflect changes in discipline and process — the things we actually teach.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-5">
+          <figure class="reveal rounded-3xl bg-paper border border-line shadow-calm p-7 flex flex-col">
+            <div class="flex gap-1 text-sage mb-4" aria-label="5 out of 5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+            </div>
+            <blockquote class="text-[16.5px] leading-[1.7] text-ink flex-1">"I always blamed my strategy. It was never my strategy — it was that I couldn't sit still. Learning to wait for my setup and not revenge-trade changed more than any indicator ever did."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid place-items-center h-10 w-10 rounded-full bg-sage-soft text-sage font-semibold">AM</span>
+              <span><span class="block font-medium text-ink">Arjun M.</span><span class="block text-[13px] text-mist">Bengaluru</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal rounded-3xl bg-paper border border-line shadow-calm p-7 flex flex-col">
+            <div class="flex gap-1 text-sage mb-4" aria-label="5 out of 5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+            </div>
+            <blockquote class="text-[16.5px] leading-[1.7] text-ink flex-1">"The circuit-breaker routine sounds simple. It stopped me turning one bad trade into ten. That's the difference for me — I close the laptop instead of doubling down."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid place-items-center h-10 w-10 rounded-full bg-sage-soft text-sage font-semibold">DR</span>
+              <span><span class="block font-medium text-ink">Divya R.</span><span class="block text-[13px] text-mist">Pune</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal rounded-3xl bg-paper border border-line shadow-calm p-7 flex flex-col">
+            <div class="flex gap-1 text-sage mb-4" aria-label="5 out of 5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9z"/></svg>
+            </div>
+            <blockquote class="text-[16.5px] leading-[1.7] text-ink flex-1">"The pre-trade checklist took the FOMO out of my mornings. If a trade isn't on the list, I don't take it. My account finally stopped leaking on impulse entries."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid place-items-center h-10 w-10 rounded-full bg-sage-soft text-sage font-semibold">SK</span>
+              <span><span class="block font-medium text-ink">Sneha K.</span><span class="block text-[13px] text-mist">Hyderabad</span></span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="reveal mt-8 text-[13.5px] text-mist max-w-3xl leading-relaxed">
+          <strong class="text-graphite">Disclaimer:</strong> Individual results vary. These reflect learning outcomes and changes in discipline, not guaranteed financial returns. Trading is risky and roughly 9 in 10 traders lose money. This is educational content only and not investment advice.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CURRICULUM ============ -->
+    <section id="curriculum" class="py-20 sm:py-28">
+      <div class="max-w-3xl mx-auto px-5">
+        <div class="reveal">
+          <p class="text-sm font-medium text-sage tracking-wide uppercase">What we cover</p>
+          <h2 class="font-display mt-3 text-3xl sm:text-[2.6rem] leading-[1.1] font-semibold text-ink">A psychology-led curriculum</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-graphite">Seven modules, built around the inner game. We lead with the mind and risk — not "how to get rich."</p>
+        </div>
+
+        <div class="reveal mt-10 divide-y divide-line rounded-3xl bg-paper border border-line overflow-hidden shadow-calm">
+          <!-- module -->
+          <details class="group" open>
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">01</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">Why your brain is wired to lose money</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">Loss aversion, FOMO, and the dopamine of a bet. Understand the hardwiring before you try to outsmart it.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">02</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">The four traps, diagnosed</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">FOMO, fear, greed and revenge — what each one feels like in the moment, and the exact behaviour it triggers.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">03</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">Pre-commitment systems</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">Checklists and rules that beat in-the-moment emotion by making the decision before money is on the line.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">04</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">Risk as emotional armour</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">How proper position sizing removes fear — when a loss can't hurt you, you stop trading scared.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">05</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">The trading journal</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">Seeing your own patterns — and breaking them. The single habit the disciplined minority actually keep.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">06</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">Routines of disciplined traders</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">Pre-market, in-trade and post-market rituals that keep you calm and consistent through the session.</p>
+          </details>
+          <details class="group">
+            <summary class="flex items-center gap-4 p-5 sm:p-6">
+              <span class="font-display text-lg font-semibold text-slate w-8 shrink-0">07</span>
+              <span class="flex-1 text-[17px] font-medium text-ink">Building your personal discipline system</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 sm:px-6 pb-6 pl-[4.25rem] text-[15.5px] leading-relaxed text-graphite">Assemble the checklists, rules and routines into one system that's yours to keep — entirely educational.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BONUS STACK ============ -->
+    <section class="bg-slate text-paper py-20 sm:py-28">
+      <div class="max-w-content mx-auto px-5">
+        <div class="max-w-2xl reveal">
+          <p class="text-sm font-medium text-sage-soft/90 tracking-wide uppercase">Yours when you attend</p>
+          <h2 class="font-display mt-3 text-3xl sm:text-[2.5rem] leading-[1.12] font-semibold">The discipline toolkit</h2>
+          <p class="mt-4 text-[17px] leading-relaxed text-paper/85">Practical, printable tools — not pep talks. Built to take the decision out of the heat of the moment.</p>
+        </div>
+
+        <div class="reveal mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-sage-soft mb-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+            <h3 class="font-display text-xl font-semibold">The Pre-Trade Checklist</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/80">Printable. Only green-lights your setup — kills impulse entries at the source.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-sage-soft mb-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <h3 class="font-display text-xl font-semibold">The Trading Journal Template</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/80">With a built-in emotion log, so you can finally see — and break — your own patterns.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-sage-soft mb-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+            <h3 class="font-display text-xl font-semibold">The 'Tilt Circuit-Breaker'</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/80">A one-pager: stop, log, step away. The routine that ends a revenge spiral before it starts.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-sage-soft mb-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m23 7-7 5 7 5V7zM1 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H1z"/></svg>
+            <h3 class="font-display text-xl font-semibold">Lifetime Recordings</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/80">Can't make it live? Revisit the full masterclass whenever you need to reset.</p>
+          </div>
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-6">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-sage-soft mb-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.1a4 4 0 0 1 0 7.8M22 21v-2a4 4 0 0 0-3-3.9M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8m6 10v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/></svg>
+            <h3 class="font-display text-xl font-semibold">Accountability Community</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/80">A supportive learning group — for Q&amp;A and discipline. Emphatically <em class="not-italic font-semibold">not</em> a tips group.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 border border-sage/40 p-6 ring-1 ring-sage/30">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-sage-soft mb-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <h3 class="font-display text-xl font-semibold">All free</h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-paper/80">Every tool above is included with the free masterclass. Bring a notebook and your honesty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GUARANTEE ============ -->
+    <section class="py-20 sm:py-24">
+      <div class="max-w-3xl mx-auto px-5">
+        <div class="reveal rounded-3xl bg-paper border border-line shadow-calm p-8 sm:p-12 text-center">
+          <span class="inline-grid place-items-center h-16 w-16 rounded-full bg-sage-soft text-sage mx-auto">
+            <svg viewBox="0 0 24 24" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h2 class="font-display mt-6 text-3xl sm:text-4xl font-semibold text-ink">7-day, no-questions-asked refund</h2>
+          <p class="mt-4 text-[18px] leading-[1.75] text-graphite max-w-xl mx-auto">
+            If this isn't the most useful work you've ever done on the <em class="not-italic font-semibold text-ink">mental</em> side of trading, get every rupee back. We guarantee the quality of the teaching — never the outcomes of your trades.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="bg-shell/60 border-y border-line py-20 sm:py-28">
+      <div class="max-w-3xl mx-auto px-5">
+        <div class="reveal text-center">
+          <p class="text-sm font-medium text-sage tracking-wide uppercase">Honest answers</p>
+          <h2 class="font-display mt-3 text-3xl sm:text-[2.6rem] leading-[1.1] font-semibold text-ink">Questions, answered straight</h2>
+        </div>
+
+        <div class="reveal mt-10 space-y-3">
+          <details class="group rounded-2xl bg-paper border border-line p-1">
+            <summary class="flex items-center gap-4 p-5">
+              <span class="flex-1 text-[17px] font-medium text-ink">I think my problem really is my strategy, not psychology.</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-[16px] leading-relaxed text-graphite">Maybe — but if you've changed strategies more than once and still lose, the common factor is you. We'll help you find the real leak.</p>
+          </details>
+          <details class="group rounded-2xl bg-paper border border-line p-1">
+            <summary class="flex items-center gap-4 p-5">
+              <span class="flex-1 text-[17px] font-medium text-ink">Is this just motivation / "mindset" fluff?</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-[16px] leading-relaxed text-graphite">No. These are concrete, mechanical systems — checklists, sizing rules, journaling protocols — not pep talks. You leave with tools, not slogans.</p>
+          </details>
+          <details class="group rounded-2xl bg-paper border border-line p-1">
+            <summary class="flex items-center gap-4 p-5">
+              <span class="flex-1 text-[17px] font-medium text-ink">Will you give signals or buy/sell calls?</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-[16px] leading-relaxed text-graphite">No. Dependence on signals is itself an emotional crutch — and giving them would be neither educational nor compliant. We build your self-reliance instead.</p>
+          </details>
+          <details class="group rounded-2xl bg-paper border border-line p-1">
+            <summary class="flex items-center gap-4 p-5">
+              <span class="flex-1 text-[17px] font-medium text-ink">Do you guarantee profits?</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-[16px] leading-relaxed text-graphite">No — and run from anyone who does. We train discipline; outcomes depend on you, and roughly 9 in 10 traders lose. Discipline is what puts you with the few.</p>
+          </details>
+          <details class="group rounded-2xl bg-paper border border-line p-1">
+            <summary class="flex items-center gap-4 p-5">
+              <span class="flex-1 text-[17px] font-medium text-ink">What if I can't attend live?</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-[16px] leading-relaxed text-graphite">Register anyway. Everyone who signs up gets lifetime access to the recording and the full discipline toolkit.</p>
+          </details>
+          <details class="group rounded-2xl bg-paper border border-line p-1">
+            <summary class="flex items-center gap-4 p-5">
+              <span class="flex-1 text-[17px] font-medium text-ink">Are you SEBI-registered?</span>
+              <svg class="chev h-5 w-5 text-mist shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="px-5 pb-5 text-[16px] leading-relaxed text-graphite">Our instructor is an NISM-Certified Research Analyst. This masterclass is purely educational — we teach concepts, psychology and risk frameworks, and we do not provide investment advice or stock-specific recommendations.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA + REGISTRATION ============ -->
+    <section id="register" class="py-20 sm:py-28">
+      <div class="max-w-content mx-auto px-5">
+        <div class="reveal rounded-[2rem] bg-ink text-paper overflow-hidden shadow-calm-lg">
+          <div class="grid lg:grid-cols-2">
+            <!-- pitch -->
+            <div class="p-8 sm:p-12 lg:p-14">
+              <p class="text-sm font-medium text-sage-soft/90 tracking-wide uppercase">The next free masterclass</p>
+              <h2 class="font-display mt-4 text-3xl sm:text-[2.7rem] leading-[1.1] font-semibold">Master the trader, not just the trade.</h2>
+              <p class="mt-5 text-[18px] leading-[1.75] text-paper/85">No tips. No signals. Just the inner game — and the systems that finally let you follow your own plan.</p>
+
+              <div class="mt-8 space-y-4">
+                <div class="flex items-center gap-3">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 text-sage-soft shrink-0" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  <span class="text-[16px]"><strong>Saturday, 12 July 2026</strong> · 11:00 AM IST · Live online</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 text-sage-soft shrink-0" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  <span class="text-[16px]">90 minutes · seats limited so the Q&amp;A stays personal</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 text-sage-soft shrink-0" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+                  <span class="text-[16px]">Free · includes the full discipline toolkit</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- form -->
+            <div class="bg-paper text-ink p-8 sm:p-12 lg:p-14">
+              <h3 class="font-display text-2xl font-semibold">Register free</h3>
+              <p class="text-[15px] text-graphite mt-1">Takes 20 seconds. We'll send the joining link to your WhatsApp and email.</p>
+
+              <form id="regForm" class="mt-6 space-y-4" novalidate>
+                <div>
+                  <label for="name" class="block text-[14px] font-medium text-ink mb-1.5">Full name <span class="text-slate">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required placeholder="e.g. Priya Sharma"
+                    class="w-full rounded-xl border border-line bg-sand/60 px-4 py-3 text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-slate focus:ring-2 focus:ring-slate/20 transition" />
+                  <p class="err hidden mt-1.5 text-[13px] text-[#C9462C]">Please enter your name.</p>
+                </div>
+                <div>
+                  <label for="phone" class="block text-[14px] font-medium text-ink mb-1.5">WhatsApp number <span class="text-slate">*</span></label>
+                  <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="10-digit mobile number"
+                    class="w-full rounded-xl border border-line bg-sand/60 px-4 py-3 text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-slate focus:ring-2 focus:ring-slate/20 transition" />
+                  <p class="err hidden mt-1.5 text-[13px] text-[#C9462C]">Enter a valid 10-digit number.</p>
+                </div>
+                <div>
+                  <label for="email" class="block text-[14px] font-medium text-ink mb-1.5">Email <span class="text-slate">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@email.com"
+                    class="w-full rounded-xl border border-line bg-sand/60 px-4 py-3 text-[16px] text-ink placeholder:text-mist focus:outline-none focus:border-slate focus:ring-2 focus:ring-slate/20 transition" />
+                  <p class="err hidden mt-1.5 text-[13px] text-[#C9462C]">Enter a valid email address.</p>
+                </div>
+                <div>
+                  <label for="struggle" class="block text-[14px] font-medium text-ink mb-1.5">Your biggest struggle <span class="text-mist font-normal">(optional)</span></label>
+                  <select id="struggle" name="struggle" class="w-full rounded-xl border border-line bg-sand/60 px-4 py-3 text-[16px] text-ink focus:outline-none focus:border-slate focus:ring-2 focus:ring-slate/20 transition">
+                    <option value="">Select one…</option>
+                    <option>FOMO — chasing trades</option>
+                    <option>Fear — hesitation &amp; moving stops</option>
+                    <option>Greed — over-sizing</option>
+                    <option>Revenge — tilt after a loss</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="w-full inline-flex justify-center items-center gap-2 rounded-full bg-slate hover:bg-slate-deep text-paper text-[16px] font-semibold px-7 py-4 shadow-calm transition-colors">
+                  Reserve my free seat
+                  <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+
+                <!-- success -->
+                <div id="regSuccess" class="hidden rounded-xl bg-sage-soft border border-sage/30 p-4 flex items-start gap-3">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 text-sage shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+                  <p class="text-[14.5px] text-ink leading-relaxed"><strong>You're in!</strong> Check your WhatsApp and email for the joining link and your discipline toolkit. See you on 12 July.</p>
+                </div>
+
+                <p class="text-[12.5px] text-mist leading-relaxed text-center">By registering you agree to receive masterclass reminders. No spam, no tips. Unsubscribe anytime.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink text-paper/70">
+    <div class="max-w-content mx-auto px-5 py-14">
+      <div class="grid md:grid-cols-[1.4fr_1fr_1fr] gap-10">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="grid place-items-center h-9 w-9 rounded-full border border-paper/25 text-sage-soft">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="3.2"/></svg>
+            </span>
+            <span class="font-display text-xl font-semibold text-paper">AK Trading Academy</span>
+          </div>
+          <p class="mt-4 text-[15px] leading-relaxed max-w-sm">Discipline-first trading education. We teach the inner game — psychology, risk and routine — never tips or signals.</p>
+          <p class="mt-4 text-[14px] text-paper/55">Taught by Abul Kalam · NISM-Certified Research Analyst</p>
+        </div>
+        <div>
+          <p class="text-[13px] uppercase tracking-wider text-paper/45 mb-4">Explore</p>
+          <ul class="space-y-2.5 text-[15px]">
+            <li><a href="#traps" class="hover:text-paper transition-colors">The 4 traps</a></li>
+            <li><a href="#quiz" class="hover:text-paper transition-colors">Find your trap</a></li>
+            <li><a href="#curriculum" class="hover:text-paper transition-colors">Curriculum</a></li>
+            <li><a href="#instructor" class="hover:text-paper transition-colors">Instructor</a></li>
+            <li><a href="#faq" class="hover:text-paper transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[13px] uppercase tracking-wider text-paper/45 mb-4">Legal</p>
+          <ul class="space-y-2.5 text-[15px]">
+            <li><a href="#" class="hover:text-paper transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-paper transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-paper transition-colors">Refund Policy</a></li>
+            <li><a href="#" class="hover:text-paper transition-colors">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Wellbeing note -->
+      <div class="mt-12 rounded-2xl bg-white/5 border border-white/10 p-5 flex items-start gap-3.5">
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-sage-soft shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg>
+        <p class="text-[14px] leading-relaxed text-paper/75">If trading losses are affecting your wellbeing, please consider stepping back and seeking support from people you trust or a qualified professional. Your health matters more than any trade.</p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-8 border-t border-white/10 pt-8 text-[13px] leading-relaxed text-paper/55 space-y-3">
+        <p><strong class="text-paper/75">Disclaimer:</strong> AK Trading Academy provides educational content only. Nothing here is investment advice, a recommendation, or a solicitation to buy or sell any security. We do not provide buy/sell/hold calls, targets, stop-losses, signals, or tips. Any charts or examples used are for educational illustration and are at least three months old. Trading and investing in securities carries substantial risk of loss; SEBI's own studies indicate roughly 9 in 10 individual traders lose money. We make no performance or return guarantees. Past learning outcomes do not guarantee future results. Please consult a SEBI-registered investment adviser before making any financial decision.</p>
+        <p>© 2026 AK Trading Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY MOBILE CTA ============ -->
+  <div id="stickyCta" class="sm:hidden fixed bottom-0 inset-x-0 z-50 translate-y-full transition-transform duration-300">
+    <div class="bg-paper/95 backdrop-blur border-t border-line px-4 py-3 flex items-center gap-3" style="padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));">
+      <div class="flex-1 leading-tight">
+        <p class="text-[13px] font-semibold text-ink">Free masterclass · 12 Jul</p>
+        <p class="text-[12px] text-mist">No tips. Just the inner game.</p>
+      </div>
+      <a href="#register" class="inline-flex items-center gap-1.5 rounded-full bg-slate text-paper text-[15px] font-semibold px-5 py-2.5">Register Free</a>
+    </div>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---- Mobile menu ---- */
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    menuBtn && menuBtn.addEventListener('click', function () {
+      var open = mobileMenu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu && mobileMenu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ---- Reveal on scroll ---- */
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach(function (el) { io.observe(el); });
+    }
+
+    /* ---- Sticky mobile CTA: show after hero ---- */
+    var sticky = document.getElementById('stickyCta');
+    var register = document.getElementById('register');
+    if (sticky) {
+      window.addEventListener('scroll', function () {
+        var show = window.scrollY > 600;
+        // hide when register section is in view
+        if (register) {
+          var r = register.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) show = false;
+        }
+        sticky.style.transform = show ? 'translateY(0)' : 'translateY(100%)';
+      }, { passive: true });
+    }
+
+    /* ---- Quiz ---- */
+    var QUESTIONS = [
+      {
+        q: 'A stock is ripping higher and your timeline is full of people making money on it. You…',
+        opts: [
+          { t: 'fomo',    label: 'Jump in fast — I can\'t stand watching everyone else profit without me.' },
+          { t: 'fear',    label: 'Freeze and watch — by the time I\'m sure, the move is usually gone.' },
+          { t: 'greed',   label: 'Pile in big — if it\'s moving, I want maximum size on it.' },
+          { t: 'revenge', label: 'Force a trade to make up for the one I missed earlier.' }
+        ]
+      },
+      {
+        q: 'Your trade is going against you and approaching your stop. Your instinct is to…',
+        opts: [
+          { t: 'fear',    label: 'Move the stop lower — watching it hit hurts too much.' },
+          { t: 'fomo',    label: 'Add another position elsewhere to feel busy and in control.' },
+          { t: 'greed',   label: 'Hold and hope — it\'ll come back, it always does.' },
+          { t: 'revenge', label: 'Immediately open a bigger trade to win it straight back.' }
+        ]
+      },
+      {
+        q: 'You just had a red day. What happens next?',
+        opts: [
+          { t: 'revenge', label: 'I trade more aggressively to "make it back" before the close.' },
+          { t: 'greed',   label: 'I increase my size on the next setup to recover faster.' },
+          { t: 'fomo',    label: 'I scan for any moving stock so I don\'t miss the bounce.' },
+          { t: 'fear',    label: 'I get scared and skip valid setups for days afterward.' }
+        ]
+      },
+      {
+        q: 'Which sentence sounds most like you, honestly?',
+        opts: [
+          { t: 'greed',   label: '"I let winners turn into losers because I never plan an exit."' },
+          { t: 'fomo',    label: '"My worst trades are the ones I entered late, chasing."' },
+          { t: 'fear',    label: '"I know the right move and still hesitate or move my stop."' },
+          { t: 'revenge', label: '"One bad trade often becomes five within an hour."' }
+        ]
+      }
+    ];
+
+    var RESULTS = {
+      fomo:    { name: 'FOMO', desc: 'You chase. The fear of missing out pulls you into late entries at bad prices — buying right where disciplined traders are selling.', fix: 'A pre-trade checklist that only green-lights your setup, so "everyone\'s in it" stops being a reason to enter.' },
+      fear:    { name: 'Fear', desc: 'You hesitate and move stops. The pain of watching a loss makes you abandon the plan exactly when it matters most.', fix: 'Pre-committed, rules-based exits decided before you enter — the hard choice is already made for you.' },
+      greed:   { name: 'Greed', desc: 'You over-size and over-stay. No written exit means one trade can quietly wreck a whole month of careful work.', fix: 'Fixed position sizing plus a written profit/exit rule, so your account can never ride on a single feeling.' },
+      revenge: { name: 'Revenge', desc: 'You tilt after a loss. The urge to win it back turns one small, planned loss into a cascade of bad decisions.', fix: 'A "circuit-breaker" routine — stop, log, step away — that breaks the spiral before it compounds.' }
+    };
+
+    var answers = [];
+    var step = 0;
+    var stage = document.getElementById('quizStage');
+    var nextBtn = document.getElementById('quizNext');
+    var backBtn = document.getElementById('quizBack');
+    var nextLabel = document.getElementById('quizNextLabel');
+    var progress = document.getElementById('quizProgress');
+    var resultBox = document.getElementById('quizResult');
+    var formBox = document.getElementById('quizForm');
+
+    function renderStep() {
+      var Q = QUESTIONS[step];
+      var html = '<p class="text-[13px] uppercase tracking-wider text-mist">Question ' + (step + 1) + ' of ' + QUESTIONS.length + '</p>';
+      html += '<h3 class="font-display text-xl sm:text-2xl font-semibold text-ink mt-2 mb-5 leading-snug">' + Q.q + '</h3>';
+      html += '<div class="space-y-3">';
+      Q.opts.forEach(function (o, i) {
+        var checked = answers[step] === o.t ? 'checked' : '';
+        var id = 'q' + step + 'o' + i;
+        html += '<div class="quiz-opt">' +
+          '<input class="sr-only" type="radio" name="q' + step + '" id="' + id + '" value="' + o.t + '" ' + checked + '>' +
+          '<label for="' + id + '" class="flex items-start gap-3 rounded-2xl border border-line bg-sand/50 p-4 cursor-pointer hover:border-slate/40 transition">' +
+            '<span class="dot relative mt-0.5 grid place-items-center h-5 w-5 rounded-full border-2 border-line shrink-0 after:content-[\'\'] after:absolute after:h-2 after:w-2 after:rounded-full after:bg-white after:opacity-0"></span>' +
+            '<span class="text-[15.5px] leading-snug text-ink">' + o.label + '</span>' +
+          '</label></div>';
+      });
+      html += '</div>';
+      stage.innerHTML = html;
+
+      stage.querySelectorAll('input[type=radio]').forEach(function (inp) {
+        inp.addEventListener('change', function () {
+          answers[step] = inp.value;
+          nextBtn.disabled = false;
+        });
+      });
+
+      // progress bars
+      progress.querySelectorAll('span').forEach(function (b, i) {
+        b.className = 'h-1.5 flex-1 rounded-full transition-all ' + (i <= step ? 'bg-slate' : 'bg-line');
+      });
+
+      backBtn.disabled = step === 0;
+      nextBtn.disabled = !answers[step];
+      nextLabel.textContent = step === QUESTIONS.length - 1 ? 'See my result' : 'Next';
+    }
+
+    function showResult() {
+      // tally
+      var tally = { fomo: 0, fear: 0, greed: 0, revenge: 0 };
+      answers.forEach(function (a) { if (a) tally[a]++; });
+      var winner = 'fomo', max = -1;
+      // preserve question order priority on ties (first answered wins)
+      ['fomo', 'fear', 'greed', 'revenge'].forEach(function (k) { if (tally[k] > max) { max = tally[k]; winner = k; } });
+      // tie-break: use first answer if all equal
+      var allEqual = Object.keys(tally).every(function (k) { return tally[k] === tally.fomo; });
+      if (allEqual && answers[0]) winner = answers[0];
+
+      var R = RESULTS[winner];
+      document.getElementById('resTrap').textContent = R.name;
+      document.getElementById('resDesc').textContent = R.desc;
+      document.getElementById('resFix').textContent = R.fix;
+      formBox.classList.add('hidden');
+      resultBox.classList.remove('hidden');
+      progress.querySelectorAll('span').forEach(function (b) { b.className = 'h-1.5 flex-1 rounded-full bg-slate'; });
+    }
+
+    nextBtn && nextBtn.addEventListener('click', function () {
+      if (!answers[step]) return;
+      if (step < QUESTIONS.length - 1) { step++; renderStep(); }
+      else showResult();
+    });
+    backBtn && backBtn.addEventListener('click', function () {
+      if (step > 0) { step--; renderStep(); }
+    });
+    document.getElementById('quizRestart') && document.getElementById('quizRestart').addEventListener('click', function () {
+      answers = []; step = 0;
+      resultBox.classList.add('hidden');
+      formBox.classList.remove('hidden');
+      renderStep();
+    });
+
+    if (stage) renderStep();
+
+    /* ---- Registration form validation ---- */
+    var regForm = document.getElementById('regForm');
+    if (regForm) {
+      var fields = {
+        name:  { el: document.getElementById('name'),  valid: function (v) { return v.trim().length >= 2; } },
+        phone: { el: document.getElementById('phone'), valid: function (v) { return /^\d{10}$/.test(v.replace(/\D/g, '')); } },
+        email: { el: document.getElementById('email'), valid: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); } }
+      };
+      function showErr(key, show) {
+        var f = fields[key];
+        var p = f.el.parentElement.querySelector('.err');
+        if (p) p.classList.toggle('hidden', !show);
+        f.el.classList.toggle('border-[#C9462C]', show);
+      }
+      Object.keys(fields).forEach(function (key) {
+        fields[key].el.addEventListener('blur', function () {
+          showErr(key, !fields[key].valid(fields[key].el.value));
+        });
+      });
+      regForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var ok = true, firstBad = null;
+        Object.keys(fields).forEach(function (key) {
+          var good = fields[key].valid(fields[key].el.value);
+          showErr(key, !good);
+          if (!good) { ok = false; if (!firstBad) firstBad = fields[key].el; }
+        });
+        if (!ok) { firstBad && firstBad.focus(); return; }
+        document.getElementById('regSuccess').classList.remove('hidden');
+        regForm.querySelector('button[type=submit]').textContent = 'Seat reserved ✓';
+        regForm.querySelector('button[type=submit]').disabled = true;
+        // In production, POST to your CRM / WhatsApp API here.
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

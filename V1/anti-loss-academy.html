@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Anti-Loss Academy — 9 out of 10 traders lose money. Learn the discipline of the 1 who doesn't.</title>
+<meta name="description" content="A genuinely educational live masterclass on how markets actually work — risk first, process always. No tips. No signals. No income promises." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          paper:   '#FAF8F3',
+          surface: '#FFFFFF',
+          ink:     '#111111',
+          'ink-2': '#1F1F1F',
+          'ink-3': '#4B5563',
+          'ink-4': '#6B7280',
+          rule:    '#1F1F1F',
+          line:    '#E7E2D6',
+          danger:  '#E74C3C',
+          'danger-soft': '#FBE9E6',
+          go:      '#15803D',
+          'go-hover': '#166534',
+          'go-soft': '#E8F3EC',
+          highlight: '#F1ECDD',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"','ui-sans-serif','system-ui'],
+          sans:    ['"IBM Plex Sans"','ui-sans-serif','system-ui'],
+          mono:    ['"IBM Plex Mono"','ui-monospace','monospace'],
+        },
+        letterSpacing: {
+          tightish: '-0.015em',
+          tighter2: '-0.035em',
+        },
+      }
+    }
+  }
+</script>
+<style>
+  :root {
+    --paper:#FAF8F3; --surface:#fff; --ink:#111; --ink-3:#4B5563; --line:#E7E2D6; --rule:#1F1F1F;
+    --danger:#E74C3C; --go:#15803D; --go-hover:#166534;
+  }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family:'IBM Plex Sans',ui-sans-serif,system-ui;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    font-feature-settings:"ss01","cv11";
+  }
+  .display { font-family:'Space Grotesk',ui-sans-serif,system-ui; font-weight:800; letter-spacing:-0.035em; line-height:0.95; }
+  .mono    { font-family:'IBM Plex Mono',ui-monospace,monospace; font-variant-numeric: tabular-nums; }
+  .tabnum  { font-variant-numeric: tabular-nums; }
+
+  /* Editorial section rule */
+  .rule-top { border-top:1px solid var(--rule); }
+  .rule-line { border-color: var(--rule); }
+  .hair { border-color:#1F1F1F; }
+
+  /* Decorative number */
+  .marginalia {
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:11px; letter-spacing:0.12em; text-transform:uppercase;
+    color:#6B7280;
+  }
+
+  /* CTA */
+  .cta-primary {
+    background:var(--go); color:#fff;
+    transition: background-color .15s ease, transform .12s ease;
+  }
+  .cta-primary:hover { background:var(--go-hover); }
+  .cta-primary:active { transform: translateY(1px); }
+  .cta-primary:focus-visible { outline:3px solid #16a34a44; outline-offset:3px; }
+
+  .cta-ghost {
+    background:transparent; color:var(--ink);
+    border:1.5px solid var(--ink);
+    transition: background-color .15s ease;
+  }
+  .cta-ghost:hover { background:#11111108; }
+  .cta-ghost:focus-visible { outline:3px solid #11111133; outline-offset:3px; }
+
+  /* Underline link */
+  .ulink { text-underline-offset:3px; text-decoration-thickness:1px; }
+  .ulink:hover { text-decoration-thickness:2px; }
+
+  /* Accordion */
+  details { border-bottom:1px solid var(--line); }
+  details summary { list-style:none; cursor:pointer; }
+  details summary::-webkit-details-marker { display:none; }
+  details summary .chev { transition: transform .2s ease; }
+  details[open] summary .chev { transform: rotate(45deg); }
+  details[open] summary .qnum { color: var(--danger); }
+
+  /* Testimonial carousel (mobile scroll-snap) */
+  .snap-x-rail { scroll-snap-type: x mandatory; -webkit-overflow-scrolling:touch; }
+  .snap-x-rail > * { scroll-snap-align: start; }
+
+  /* Initials avatar */
+  .avatar {
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk'; font-weight:700; letter-spacing:0;
+    color:#111; background:#F1ECDD;
+    border:1px solid #1F1F1F;
+  }
+  /* Small portrait avatar (SVG) */
+  .portrait-sm {
+    width:44px; height:44px; flex:none;
+    border-radius:999px; overflow:hidden;
+    border:1px solid #1F1F1F; background:#F1ECDD;
+  }
+  .portrait-sm svg { display:block; width:100%; height:100%; }
+
+  /* Hairline editorial card */
+  .ed-card { border:1px solid var(--rule); background:var(--surface); }
+
+  /* Number tile (stat band) */
+  .stat-tile { border-right:1px solid #1F1F1F; }
+  .stat-tile:last-child { border-right:0; }
+  @media (max-width: 768px) {
+    .stat-tile { border-right:0; border-bottom:1px solid #1F1F1F; }
+    .stat-tile:last-child { border-bottom:0; }
+  }
+
+  /* Pull-quote */
+  .pull {
+    border-left:3px solid var(--danger);
+    padding-left:1.25rem;
+  }
+
+  /* Sticky mobile CTA */
+  .sticky-cta {
+    position:fixed; left:0; right:0; bottom:0;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));
+    background:rgba(250,248,243,0.95);
+    backdrop-filter: blur(8px);
+    border-top:1px solid #1F1F1F;
+    z-index:50;
+  }
+  @media (min-width: 768px) { .sticky-cta { display:none; } }
+
+  /* Calculator */
+  .calc-input {
+    background:#fff; border:1px solid var(--rule);
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:18px; padding:14px 14px; width:100%;
+    transition: box-shadow .15s ease;
+  }
+  .calc-input:focus { outline:none; box-shadow: 0 0 0 3px #11111122; }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    html { scroll-behavior:auto; }
+  }
+
+  /* Skip link */
+  .skip-link {
+    position:absolute; left:-9999px; top:0;
+    background:#111; color:#fff; padding:10px 14px; z-index:200;
+  }
+  .skip-link:focus { left:8px; top:8px; }
+
+  /* Section number marker */
+  .sec-num {
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    color:#6B7280;
+  }
+
+  /* Step card numbering */
+  .step-num {
+    font-family:'Space Grotesk'; font-weight:800; font-size:64px;
+    line-height:1; color:#111; letter-spacing:-0.04em;
+  }
+
+  /* Bullet check */
+  .check {
+    width:22px; height:22px; flex:none; border-radius:999px;
+    background:var(--go-soft);
+    display:inline-flex; align-items:center; justify-content:center;
+    color:var(--go);
+  }
+
+  /* Footer disclaimer text */
+  .legal { font-size:12.5px; line-height:1.65; color:#4B5563; }
+</style>
+</head>
+<body class="bg-paper text-ink">
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===================== NAV ===================== -->
+<header class="sticky top-0 z-40 bg-paper/90 backdrop-blur border-b border-line" role="banner">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2.5" aria-label="The Anti-Loss Academy home">
+      <!-- Logo mark: a single-bar drawdown that recovers -->
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+        <rect x="0.5" y="0.5" width="27" height="27" fill="#111"/>
+        <path d="M3 18 L9 9 L14 14 L19 6 L25 11" fill="none" stroke="#FAF8F3" stroke-width="1.6" stroke-linecap="square"/>
+        <circle cx="9" cy="9" r="1.6" fill="#E74C3C"/>
+      </svg>
+      <span class="display text-[18px] tracking-tightish">Anti<span class="text-danger">‑</span>Loss Academy</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-[14px]" aria-label="Primary">
+      <a href="#problem" class="ulink underline decoration-transparent hover:decoration-ink">About</a>
+      <a href="#curriculum" class="ulink underline decoration-transparent hover:decoration-ink">Curriculum</a>
+      <a href="#founder" class="ulink underline decoration-transparent hover:decoration-ink">Founder</a>
+      <a href="#faq" class="ulink underline decoration-transparent hover:decoration-ink">FAQ</a>
+    </nav>
+    <a href="#register" class="cta-primary inline-flex items-center gap-2 px-4 py-2 text-[14px] font-medium">
+      Register Free
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="square"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section aria-labelledby="hero-h1" class="border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 pt-12 md:pt-20 pb-16 md:pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+    <div class="lg:col-span-7">
+      <p class="mono text-[12px] uppercase tracking-[0.18em] text-ink-3 mb-6 flex items-center gap-3">
+        <span class="inline-block w-6 h-px bg-rule"></span>
+        SEBI study, FY25 · ~<span class="text-danger font-semibold">91%</span> of F&amp;O traders lost money
+      </p>
+      <h1 id="hero-h1" class="display text-[44px] sm:text-[60px] lg:text-[76px] mb-8">
+        <span class="text-danger">9 out of 10</span> traders<br/>
+        lose money.<br/>
+        <span class="text-ink-3 font-medium tracking-tightish text-[34px] sm:text-[44px] lg:text-[52px] block mt-3">We teach you the discipline of the 1 who doesn’t.</span>
+      </h1>
+      <p class="text-[17px] md:text-[18px] leading-relaxed text-ink-2 max-w-[58ch] mb-9">
+        A genuinely educational live masterclass on how the market actually works — risk first, process always. No tips. No signals. No income promises. Just the honest skills the small minority of consistent traders rely on.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:items-center mb-6">
+        <a href="#register" class="cta-primary inline-flex items-center justify-center gap-2 px-6 py-4 text-[16px] font-semibold">
+          Register Free for the Masterclass
+          <svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="square"/></svg>
+        </a>
+        <a href="#sample" class="cta-ghost inline-flex items-center justify-center gap-2 px-6 py-4 text-[15px] font-medium">
+          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>
+          Watch a 2‑min sample lesson
+        </a>
+      </div>
+      <p class="mono text-[12px] text-ink-3 tracking-wide leading-relaxed">
+        Taught by Abul Kalam, NISM‑Certified Research Analyst · 4,200+ learners · Rated 4.8★ · No buy/sell tips, ever.
+      </p>
+    </div>
+
+    <!-- 1-in-10 motif -->
+    <aside class="lg:col-span-5" aria-label="One in ten trader illustration">
+      <figure class="ed-card p-6 md:p-8">
+        <figcaption class="flex items-center justify-between mb-6">
+          <span class="marginalia">Fig. 01 — Survivorship</span>
+          <span class="mono text-[12px] text-ink-3">n = 10 traders</span>
+        </figcaption>
+        <svg viewBox="0 0 360 200" class="w-full h-auto" role="img" aria-label="Nine faded human figures and one solid figure, showing the proportion of profitable traders.">
+          <!-- 9 muted + 1 solid (ink) -->
+          <g id="figs">
+            <!-- generated 5 across × 2 rows -->
+            <!-- figure template: head circle + body rounded rect -->
+            <!-- row 1 -->
+            <g transform="translate(20,20)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(80,20)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(140,20)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(200,20)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(260,20)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+
+            <!-- row 2 -->
+            <g transform="translate(20,110)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(80,110)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(140,110)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+            <g transform="translate(200,110)">
+              <circle cx="14" cy="14" r="9" fill="#D6D1C4"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#D6D1C4"/>
+            </g>
+
+            <!-- The 1: solid ink, with red marker -->
+            <g transform="translate(260,110)">
+              <circle cx="14" cy="14" r="9" fill="#111"/>
+              <path d="M2 60 Q2 32 14 32 Q26 32 26 60 Z" fill="#111"/>
+              <!-- red dot marker -->
+              <circle cx="34" cy="6" r="4" fill="#E74C3C"/>
+              <line x1="34" y1="10" x2="34" y2="30" stroke="#E74C3C" stroke-width="1.2"/>
+            </g>
+          </g>
+
+          <!-- bracket + label for the 9 -->
+          <path d="M14 92 L14 96 L294 96 L294 92" stroke="#1F1F1F" stroke-width="1" fill="none"/>
+          <text x="154" y="106" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#4B5563" letter-spacing="1.5">
+            9 LOSE
+          </text>
+          <!-- label for the 1 -->
+          <text x="305" y="120" font-family="IBM Plex Mono" font-size="10" fill="#E74C3C" letter-spacing="1.5">
+            1 DISCIPLINED
+          </text>
+        </svg>
+        <hr class="hair my-5 border-t border-rule"/>
+        <p class="text-[13px] leading-relaxed text-ink-3">
+          Source: Securities and Exchange Board of India (SEBI), study on individual trader P&amp;L in the equity F&amp;O segment, FY 2024–25. Roughly ₹1.05 lakh crore in aggregate losses; ~₹1.1 lakh average loss per loss‑making trader.
+        </p>
+      </figure>
+    </aside>
+  </div>
+</section>
+
+<!-- ===================== HONESTY STAT BAND ===================== -->
+<section aria-label="Honesty metrics" class="border-b border-rule">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4">
+    <div class="stat-tile px-6 md:px-8 py-8 md:py-10">
+      <p class="marginalia mb-2">Learners</p>
+      <p class="display text-[40px] md:text-[52px] text-ink">4,200+</p>
+      <p class="text-[13px] text-ink-3 mt-1">Indian traders trained since 2021</p>
+    </div>
+    <div class="stat-tile px-6 md:px-8 py-8 md:py-10">
+      <p class="marginalia mb-2">Rating</p>
+      <p class="display text-[40px] md:text-[52px] text-ink">4.8<span class="text-danger">★</span></p>
+      <p class="text-[13px] text-ink-3 mt-1">Verified, unedited reviews</p>
+    </div>
+    <div class="stat-tile px-6 md:px-8 py-8 md:py-10">
+      <p class="marginalia mb-2">Tips given</p>
+      <p class="display text-[40px] md:text-[52px] text-ink">0</p>
+      <p class="text-[13px] text-ink-3 mt-1">No buy/sell calls — ever.</p>
+    </div>
+    <div class="stat-tile px-6 md:px-8 py-8 md:py-10">
+      <p class="marginalia mb-2">Refund window</p>
+      <p class="display text-[40px] md:text-[52px] text-ink">7‑day</p>
+      <p class="text-[13px] text-ink-3 mt-1">No‑questions, full refund.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLEM / AGITATION ===================== -->
+<section id="problem" aria-labelledby="problem-h" class="py-20 md:py-28 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3">
+      <p class="sec-num mb-3">§ 01 — The Problem</p>
+      <h2 id="problem-h" class="display text-[34px] md:text-[44px] leading-[1] mb-3">The account is bleeding. You weren’t taught a system.</h2>
+    </div>
+    <div class="lg:col-span-9 max-w-[68ch]">
+      <p class="text-[19px] md:text-[21px] leading-relaxed text-ink-2 mb-7">
+        You opened a demat account. You watched the reels. You took a few trades on a “gut feeling” or a tip from a Telegram group — and the account is bleeding.
+      </p>
+      <p class="text-[19px] md:text-[21px] leading-relaxed text-ink-2 mb-9">
+        You’re not stupid. You were never taught a <em class="not-italic underline decoration-danger decoration-2 underline-offset-4">system</em>.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-rule mb-9">
+        <div class="p-6 border-b sm:border-b-0 sm:border-r border-rule">
+          <p class="marginalia mb-2">F&amp;O loss‑makers, FY25</p>
+          <p class="display text-[42px] text-danger leading-none mb-1">91%</p>
+          <p class="text-[13px] text-ink-3">of individual F&amp;O traders ended the year in the red.</p>
+        </div>
+        <div class="p-6 border-b sm:border-b-0 sm:border-r border-rule">
+          <p class="marginalia mb-2">Aggregate losses</p>
+          <p class="display text-[42px] text-danger leading-none mb-1">₹1.05<span class="text-[22px] align-top">L Cr</span></p>
+          <p class="text-[13px] text-ink-3">net P&amp;L deficit across retail F&amp;O participants.</p>
+        </div>
+        <div class="p-6">
+          <p class="marginalia mb-2">Average per person</p>
+          <p class="display text-[42px] text-danger leading-none mb-1">₹1.1<span class="text-[22px] align-top">L</span></p>
+          <p class="text-[13px] text-ink-3">average annual loss per loss‑making trader.</p>
+        </div>
+      </div>
+
+      <p class="text-[18px] md:text-[19px] leading-relaxed text-ink-2">
+        The difference between the nine who lose and the one who doesn’t is almost never “a better tip.” It’s a <strong class="font-semibold">repeatable process</strong> and <strong class="font-semibold">ruthless risk management</strong> — which nobody ever sat you down and taught. Until now.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFRAME / OPPORTUNITY ===================== -->
+<section aria-labelledby="reframe-h" class="py-20 md:py-28 bg-highlight/40 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3">
+      <p class="sec-num mb-3">§ 02 — The Reframe</p>
+      <h2 id="reframe-h" class="display text-[34px] md:text-[44px] leading-[1] mb-3">Trading is a learnable skill, not a jackpot.</h2>
+    </div>
+    <div class="lg:col-span-9 max-w-[68ch]">
+      <blockquote class="pull mb-9">
+        <p class="text-[20px] md:text-[22px] leading-relaxed text-ink-2 mb-5">
+          Here’s the part the gurus won’t tell you, because it doesn’t sell dreams: <strong class="font-semibold">trading is a learnable skill, not a jackpot.</strong>
+        </p>
+        <p class="text-[18px] md:text-[19px] leading-relaxed text-ink-2 mb-5">
+          It’s closer to flying a plane than to buying a lottery ticket. Pilots don’t “feel” their way through a flight — they follow checklists and manage risk relentlessly. We teach trading the same way: a defined process, a written plan, position sizing, and the psychology to actually follow your own rules.
+        </p>
+        <p class="text-[18px] md:text-[19px] leading-relaxed text-ink-2">
+          We can’t promise you profits. Anyone who does is lying or breaking the law. What we <em>can</em> do is teach you to think and act like a disciplined trader — and tell you the honest truth about the odds while we do it.
+        </p>
+      </blockquote>
+
+      <!-- Pilot vs Lottery comparison strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 border border-rule">
+        <div class="p-6 sm:border-r border-rule border-b sm:border-b-0">
+          <p class="marginalia mb-2 text-danger">The 9 — Lottery thinking</p>
+          <ul class="space-y-2.5 text-[15px] text-ink-2">
+            <li class="flex gap-2"><span class="text-danger mono">×</span> Tips from Telegram groups</li>
+            <li class="flex gap-2"><span class="text-danger mono">×</span> Position sizing by feel</li>
+            <li class="flex gap-2"><span class="text-danger mono">×</span> Stop‑losses moved “just this once”</li>
+            <li class="flex gap-2"><span class="text-danger mono">×</span> Revenge trades after a red day</li>
+            <li class="flex gap-2"><span class="text-danger mono">×</span> No written plan, no journal</li>
+          </ul>
+        </div>
+        <div class="p-6">
+          <p class="marginalia mb-2 text-go">The 1 — Pilot’s checklist</p>
+          <ul class="space-y-2.5 text-[15px] text-ink-2">
+            <li class="flex gap-2"><span class="text-go mono">✓</span> Pre‑defined max‑drawdown rules</li>
+            <li class="flex gap-2"><span class="text-go mono">✓</span> Position size from R‑multiples</li>
+            <li class="flex gap-2"><span class="text-go mono">✓</span> Stop‑loss written before entry</li>
+            <li class="flex gap-2"><span class="text-go mono">✓</span> A documented “do‑not‑trade” list</li>
+            <li class="flex gap-2"><span class="text-go mono">✓</span> Daily journal &amp; weekly review</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FRAMEWORK ===================== -->
+<section id="framework" aria-labelledby="framework-h" class="py-20 md:py-28 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-12">
+      <div class="lg:col-span-4">
+        <p class="sec-num mb-3">§ 03 — Methodology</p>
+        <h2 id="framework-h" class="display text-[34px] md:text-[48px] leading-[1.02] mb-4">The Survive‑First Framework</h2>
+        <p class="text-[16px] text-ink-3 leading-relaxed max-w-[40ch]">
+          Most courses teach this backwards — strategy first, risk as an afterthought. That’s exactly why most students still lose. We flip it.
+        </p>
+      </div>
+
+      <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-0 border border-rule">
+        <!-- 1. Survive -->
+        <article class="p-7 md:border-r md:border-b border-rule border-b">
+          <div class="flex items-start justify-between mb-3">
+            <span class="step-num">01</span>
+            <span class="marginalia">Risk first</span>
+          </div>
+          <h3 class="display text-[26px] mb-2">Survive</h3>
+          <p class="text-[15.5px] leading-relaxed text-ink-2">
+            Risk rules, position sizing, max‑drawdown limits — taught <em>first</em>, on purpose. Before you learn a single chart pattern, you’ll know exactly how much you’re allowed to lose on a trade, in a day, and in a month, and what stops you when you hit it.
+          </p>
+        </article>
+        <!-- 2. See -->
+        <article class="p-7 border-b md:border-b border-rule">
+          <div class="flex items-start justify-between mb-3">
+            <span class="step-num">02</span>
+            <span class="marginalia">Read the chart</span>
+          </div>
+          <h3 class="display text-[26px] mb-2">See</h3>
+          <p class="text-[15.5px] leading-relaxed text-ink-2">
+            Read price honestly: trend, support and resistance, market structure. Worked through on historical charts only — no live calls, no “this stock now” — so the lesson is the <em>method</em>, not a tip in disguise.
+          </p>
+        </article>
+        <!-- 3. Plan -->
+        <article class="p-7 md:border-r border-rule border-b md:border-b-0">
+          <div class="flex items-start justify-between mb-3">
+            <span class="step-num">03</span>
+            <span class="marginalia">Write it down</span>
+          </div>
+          <h3 class="display text-[26px] mb-2">Plan</h3>
+          <p class="text-[15.5px] leading-relaxed text-ink-2">
+            A written, rules‑based trading plan — entries, exits, and, most importantly, <em>when not to trade</em>. If a setup isn’t in your plan, you don’t take it. That single discipline removes most of the trades that bleed accounts.
+          </p>
+        </article>
+        <!-- 4. Sustain -->
+        <article class="p-7">
+          <div class="flex items-start justify-between mb-3">
+            <span class="step-num">04</span>
+            <span class="marginalia">The compounding habit</span>
+          </div>
+          <h3 class="display text-[26px] mb-2">Sustain</h3>
+          <p class="text-[15.5px] leading-relaxed text-ink-2">
+            Psychology, journaling, review — the habits the 1‑in‑10 actually keep. Weekly self‑review of every trade, an honest read on FOMO and revenge‑trading, and the systems that let you follow your own rules even on a bad day.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <p class="mono text-[12.5px] text-ink-3 text-center max-w-[60ch] mx-auto leading-relaxed">
+      <span class="text-danger">→</span> Notice the order. Survive comes before Strategy. That ordering <em>is</em> the curriculum.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FOUNDER ===================== -->
+<section id="founder" aria-labelledby="founder-h" class="py-20 md:py-28 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <!-- Photo -->
+    <div class="lg:col-span-4">
+      <figure class="ed-card p-6">
+        <div class="aspect-[4/5] w-full overflow-hidden relative" style="background:#F1ECDD; border:1px solid #1F1F1F;">
+          <img
+            src="assets/abul-kalam.jpg"
+            alt="Abul Kalam, founder and lead instructor of the Anti-Loss Academy"
+            loading="lazy"
+            class="absolute inset-0 w-full h-full object-cover"
+            style="object-position: 50% 30%;"
+            width="800" height="800"
+          />
+          <!-- Editorial overlay marks -->
+          <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+              <span class="mono text-[10px] uppercase tracking-[0.18em] text-white/85 bg-black/35 backdrop-blur-sm px-1.5 py-0.5">PORTRAIT · 2024</span>
+              <span class="mono text-[10px] uppercase tracking-[0.18em] text-white/85 bg-black/35 backdrop-blur-sm px-1.5 py-0.5">EDU</span>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+              <span class="mono text-[10px] uppercase tracking-[0.18em] text-white/90 bg-black/45 backdrop-blur-sm px-1.5 py-0.5">A. Kalam</span>
+              <span class="mono text-[10px] uppercase tracking-[0.18em] text-white/90 bg-black/45 backdrop-blur-sm px-1.5 py-0.5">NISM · RA</span>
+            </div>
+            <!-- Brand accent dot, bottom-right corner -->
+            <span class="absolute bottom-3 right-3 -translate-y-7 inline-block w-2 h-2 rounded-full bg-danger ring-1 ring-danger/40"></span>
+          </div>
+        </div>
+        <figcaption class="mt-4">
+          <p class="display text-[20px] leading-tight">Abul Kalam</p>
+          <p class="mono text-[12px] text-ink-3 mt-1">NISM‑Certified Research Analyst · 12+ yrs in markets</p>
+        </figcaption>
+      </figure>
+
+      <!-- Credentials -->
+      <div class="mt-6 border-t border-rule pt-5">
+        <p class="marginalia mb-3">Credentials</p>
+        <ul class="space-y-2 text-[14px] text-ink-2">
+          <li class="flex items-start gap-2"><span class="check"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span> NISM Series XV — Research Analyst</li>
+          <li class="flex items-start gap-2"><span class="check"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span> NISM Series VIII — Equity Derivatives</li>
+          <li class="flex items-start gap-2"><span class="check"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span> Former proprietary trader, Indian equity markets</li>
+          <li class="flex items-start gap-2"><span class="check"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span> Trained 4,200+ retail learners since 2021</li>
+          <li class="flex items-start gap-2"><span class="check"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span> Educator only — does not offer buy/sell tips or PMS</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div class="lg:col-span-8">
+      <p class="sec-num mb-3">§ 04 — The Founder</p>
+      <h2 id="founder-h" class="display text-[32px] md:text-[44px] leading-[1.04] mb-7 max-w-[22ch]">
+        “I lost money the same way you did. Then I stopped trading like the 9, and started learning like the 1.”
+      </h2>
+
+      <div class="space-y-5 text-[17px] md:text-[18px] leading-relaxed text-ink-2 max-w-[68ch]">
+        <p>
+          I came into the markets the way most retail traders do — convinced I could “figure it out,” chasing whatever was moving on the screen, and quietly burning through capital while telling myself the next trade would fix the last one. In my first eighteen months I wiped out more than half of what I had put in. There was no tip, no setup, and no broker to blame; the problem was that I had never been taught a single thing about <em>risk</em>, <em>process</em>, or <em>plan</em>.
+        </p>
+        <p>
+          What changed wasn’t a magic strategy. It was the order of operations. I sat down, wrote actual rules, capped how much I was allowed to lose in a day, and forced myself to journal every trade — winners and losers — for a year. The strategy I ended up using was almost embarrassingly simple. The difference between the trader I was at month 18 and the trader I was at month 30 was not skill at finding trades; it was discipline at refusing them.
+        </p>
+        <p>
+          I built the Anti‑Loss Academy because I’m angry at the version of this industry that sold me dreams and at the version that still sells them to people I know. I teach a defined, written, risk‑first process — the same one I use myself — and I refuse to pretend trading is easy or that anyone can guarantee what your account will do. We can only guarantee the quality of the education and the honesty of the conversation. That is, on purpose, the entire promise.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULTS / TESTIMONIALS ===================== -->
+<section id="results" aria-labelledby="results-h" class="py-20 md:py-28 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
+      <div class="max-w-[42ch]">
+        <p class="sec-num mb-3">§ 05 — Student Results</p>
+        <h2 id="results-h" class="display text-[32px] md:text-[44px] leading-[1.02]">Behaviour changed. Not P&amp;L promised.</h2>
+      </div>
+      <p class="text-[15px] text-ink-3 max-w-[40ch]">
+        We measure success by how our students <em>think</em> and <em>act</em> — checklists, position sizing, stop‑loss discipline — not by claims about their account balance.
+      </p>
+    </div>
+
+    <!-- Cards: scroll-snap on mobile, grid on desktop -->
+    <div class="md:grid md:grid-cols-3 md:gap-6 flex overflow-x-auto snap-x-rail gap-4 pb-2 -mx-5 px-5 md:mx-0 md:px-0 md:overflow-visible">
+
+      <!-- Rohit -->
+      <figure class="ed-card p-7 min-w-[88%] md:min-w-0">
+        <svg width="22" height="18" viewBox="0 0 22 18" aria-hidden="true" class="text-danger mb-4"><path d="M0 18V10C0 4.5 3 1 8 0v3c-2.6.7-4 2.6-4 5h4v10H0zm12 0V10c0-5.5 3-9 8-10v3c-2.6.7-4 2.6-4 5h4v10h-8z" fill="currentColor"/></svg>
+        <blockquote class="text-[16px] leading-relaxed text-ink-2 mb-6">
+          Before this I was randomly buying options on tips and losing every month. Now I have a checklist, I size my positions, and I actually follow my stop‑loss. I treat it like a skill now, not a gamble.
+        </blockquote>
+        <figcaption class="flex items-center gap-3 pt-5 border-t border-line">
+          <span class="portrait-sm" aria-hidden="true">
+            <svg viewBox="0 0 44 44">
+              <rect width="44" height="44" fill="#F1ECDD"/>
+              <!-- shoulders -->
+              <path d="M4 44 L4 38 Q4 30 14 28 L30 28 Q40 30 40 38 L40 44 Z" fill="#111"/>
+              <!-- shirt collar v -->
+              <path d="M19 28 L22 32 L25 28 Z" fill="#FAF8F3"/>
+              <!-- neck -->
+              <path d="M19 25 Q19 30 22 30 Q25 30 25 25 Z" fill="#E5C9A0"/>
+              <!-- face -->
+              <circle cx="22" cy="18" r="9" fill="#E5C9A0"/>
+              <!-- hair: short crop -->
+              <path d="M13 18 Q13 9 22 9 Q31 9 31 18 L29 14 Q26 11 22 11 Q18 11 15 14 Z" fill="#1F1F1F"/>
+              <!-- eyebrows -->
+              <path d="M16 18 Q18 17 20 18" stroke="#1F1F1F" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+              <path d="M24 18 Q26 17 28 18" stroke="#1F1F1F" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+              <!-- eyes -->
+              <circle cx="18" cy="20" r="0.8" fill="#111"/>
+              <circle cx="26" cy="20" r="0.8" fill="#111"/>
+              <!-- mouth -->
+              <path d="M19.5 24 Q22 25.5 24.5 24" stroke="#1F1F1F" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <p class="display text-[16px]">Rohit S.</p>
+            <p class="mono text-[12px] text-ink-3">Bengaluru · learner, 2024 cohort</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Priya -->
+      <figure class="ed-card p-7 min-w-[88%] md:min-w-0">
+        <svg width="22" height="18" viewBox="0 0 22 18" aria-hidden="true" class="text-danger mb-4"><path d="M0 18V10C0 4.5 3 1 8 0v3c-2.6.7-4 2.6-4 5h4v10H0zm12 0V10c0-5.5 3-9 8-10v3c-2.6.7-4 2.6-4 5h4v10h-8z" fill="currentColor"/></svg>
+        <blockquote class="text-[16px] leading-relaxed text-ink-2 mb-6">
+          The biggest change wasn’t a strategy — it was that I finally understood <em>why</em> I’d been losing. I stopped revenge‑trading. That alone changed everything for me.
+        </blockquote>
+        <figcaption class="flex items-center gap-3 pt-5 border-t border-line">
+          <span class="portrait-sm" aria-hidden="true">
+            <svg viewBox="0 0 44 44">
+              <rect width="44" height="44" fill="#F1ECDD"/>
+              <!-- shoulders -->
+              <path d="M4 44 L4 38 Q4 30 14 28 L30 28 Q40 30 40 38 L40 44 Z" fill="#5B2C2C"/>
+              <!-- collar / scarf hint -->
+              <path d="M16 28 Q22 32 28 28 L26 30 Q22 32 18 30 Z" fill="#E74C3C" opacity="0.85"/>
+              <!-- neck -->
+              <path d="M19 25 Q19 30 22 30 Q25 30 25 25 Z" fill="#E5C9A0"/>
+              <!-- face -->
+              <circle cx="22" cy="18" r="9" fill="#E5C9A0"/>
+              <!-- hair: long, parted, falls past shoulders -->
+              <path d="M12 18 Q11 8 22 8 Q33 8 32 18 L34 30 L30 28 Q30 16 26 13 Q22 11 18 13 Q14 16 14 28 L10 30 Z" fill="#2A1A0F"/>
+              <!-- hair part -->
+              <path d="M22 10 Q22 13 22 16" stroke="#000" stroke-width="0.4" opacity="0.5"/>
+              <!-- forehead curve -->
+              <path d="M15 17 Q22 14 29 17" stroke="#2A1A0F" stroke-width="0.6" fill="none" opacity="0.4"/>
+              <!-- eyebrows -->
+              <path d="M16 17.5 Q18 16.6 20 17.5" stroke="#1F1F1F" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+              <path d="M24 17.5 Q26 16.6 28 17.5" stroke="#1F1F1F" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+              <!-- eyes -->
+              <circle cx="18" cy="19.5" r="0.8" fill="#111"/>
+              <circle cx="26" cy="19.5" r="0.8" fill="#111"/>
+              <!-- bindi -->
+              <circle cx="22" cy="14.5" r="0.8" fill="#E74C3C"/>
+              <!-- mouth -->
+              <path d="M19.5 24 Q22 25.5 24.5 24" stroke="#1F1F1F" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <p class="display text-[16px]">Priya M.</p>
+            <p class="mono text-[12px] text-ink-3">Pune · learner, 2024 cohort</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Vikram -->
+      <figure class="ed-card p-7 min-w-[88%] md:min-w-0">
+        <svg width="22" height="18" viewBox="0 0 22 18" aria-hidden="true" class="text-danger mb-4"><path d="M0 18V10C0 4.5 3 1 8 0v3c-2.6.7-4 2.6-4 5h4v10H0zm12 0V10c0-5.5 3-9 8-10v3c-2.6.7-4 2.6-4 5h4v10h-8z" fill="currentColor"/></svg>
+        <blockquote class="text-[16px] leading-relaxed text-ink-2 mb-6">
+          I have a full‑time job and was trying to trade between meetings — badly. The course made me admit I shouldn’t be in a trade at all on most days. My “do‑not‑trade list” is the most valuable thing I’ve written all year.
+        </blockquote>
+        <figcaption class="flex items-center gap-3 pt-5 border-t border-line">
+          <span class="portrait-sm" aria-hidden="true">
+            <svg viewBox="0 0 44 44">
+              <rect width="44" height="44" fill="#F1ECDD"/>
+              <!-- shoulders -->
+              <path d="M4 44 L4 38 Q4 30 14 28 L30 28 Q40 30 40 38 L40 44 Z" fill="#1E3A8A"/>
+              <!-- shirt collar v -->
+              <path d="M19 28 L22 32 L25 28 Z" fill="#FAF8F3"/>
+              <!-- neck -->
+              <path d="M19 25 Q19 30 22 30 Q25 30 25 25 Z" fill="#D9B084"/>
+              <!-- face -->
+              <circle cx="22" cy="18" r="9" fill="#D9B084"/>
+              <!-- hair: receding side-part -->
+              <path d="M14 17 Q14 10 20 9 Q26 8.5 30 11 Q31 14 31 18 L29 14 Q26 12 23 13 Q19 14 16 17 Z" fill="#1F1F1F"/>
+              <!-- glasses -->
+              <g stroke="#1F1F1F" stroke-width="0.9" fill="none">
+                <rect x="15" y="18" width="7" height="5" rx="1"/>
+                <rect x="24" y="18" width="7" height="5" rx="1"/>
+                <line x1="22" y1="20.5" x2="24" y2="20.5"/>
+              </g>
+              <!-- eyes -->
+              <circle cx="18.5" cy="20.5" r="0.7" fill="#111"/>
+              <circle cx="27.5" cy="20.5" r="0.7" fill="#111"/>
+              <!-- mustache hint -->
+              <path d="M19 23.5 Q22 24.5 25 23.5" stroke="#1F1F1F" stroke-width="0.5" fill="none" opacity="0.5"/>
+              <!-- mouth -->
+              <path d="M20 25.2 Q22 26 24 25.2" stroke="#1F1F1F" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+              <!-- beard shadow -->
+              <path d="M16 24 Q22 28 28 24 Q28 27 22 28 Q16 27 16 24 Z" fill="#1F1F1F" opacity="0.12"/>
+            </svg>
+          </span>
+          <div>
+            <p class="display text-[16px]">Vikram T.</p>
+            <p class="mono text-[12px] text-ink-3">Hyderabad · learner, 2023 cohort</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="text-[12.5px] text-ink-3 leading-relaxed mt-8 max-w-[80ch]">
+      <strong>Disclaimer:</strong> Individual results vary. The testimonials above describe <em>learning outcomes and discipline</em>, not guaranteed financial returns. Trading and investing in securities carries the risk of substantial loss, including loss of capital. Past behaviour of a learner does not predict the future behaviour of any individual or of the markets.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== CURRICULUM ===================== -->
+<section id="curriculum" aria-labelledby="curr-h" class="py-20 md:py-28 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="sec-num mb-3">§ 06 — Curriculum</p>
+      <h2 id="curr-h" class="display text-[32px] md:text-[44px] leading-[1.02] mb-4">Risk leads. Strategy follows.</h2>
+      <p class="text-[16px] text-ink-3 leading-relaxed max-w-[42ch]">
+        Seven modules across the live masterclass and the on‑demand library. Notice that the first half is risk and process — that’s not an accident.
+      </p>
+    </div>
+
+    <div class="lg:col-span-8">
+      <div class="border-t border-rule">
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.01</span>
+              <span class="display text-[20px] md:text-[24px]">Why 9 in 10 lose</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              A clear‑eyed look at the real, structural reasons most retail traders lose — overtrading, asymmetric costs, the psychology of small wins and big losses, and the data behind every claim. You leave knowing exactly which of the “nine” mistakes you’ve been making, by name.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.02</span>
+              <span class="display text-[20px] md:text-[24px]">Risk management first</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              Position sizing from first principles, R‑multiples, expectancy, max‑drawdown rules and the math of ruin. You will leave this module with a written, account‑specific risk plan — a maximum loss per trade, per day and per month — that you can apply tomorrow.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.03</span>
+              <span class="display text-[20px] md:text-[24px]">Reading price honestly</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              Trend, support and resistance, and market structure — taught entirely on historical charts. You learn to identify what the chart is telling you without the noise of indicators stacked on indicators, and without anyone telling you what to do with the next candle.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.04</span>
+              <span class="display text-[20px] md:text-[24px]">Building your trading plan</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              A page‑by‑page workshop where you draft, edit and finalise your own written trading plan — entries, exits, instruments, timeframes, and an explicit “do‑not‑trade” list. By the end you have a one‑page document that decides for you when your emotions can’t.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.05</span>
+              <span class="display text-[20px] md:text-[24px]">Trading psychology</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              FOMO, revenge‑trading, the dopamine loop of green candles, the way a single big loss rewires you for the next week — and the discipline systems that put a process between your impulse and your order ticket. Less inspiration, more checklists.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.06</span>
+              <span class="display text-[20px] md:text-[24px]">Journaling &amp; review</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              The compounding habit most traders skip. A simple daily journal template, a weekly self‑review ritual, and a monthly “what is my edge actually doing?” audit. This is how the 1‑in‑10 learn from their own mistakes faster than the market can punish them.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">M.07</span>
+              <span class="display text-[20px] md:text-[24px]">Putting it together</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-2">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              A paper‑trading framework: observed, educational practice — never live calls — where you execute your written plan against historical and live‑observed data, log it, and review it with the cohort. You leave with evidence of your own behaviour, not a promise about your returns.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BONUS STACK ===================== -->
+<section id="bonus" aria-labelledby="bonus-h" class="py-20 md:py-24 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="sec-num mb-3">§ 07 — Bonus Stack</p>
+      <h2 id="bonus-h" class="display text-[32px] md:text-[40px] leading-[1.02] mb-4">Tools the disciplined 1 actually uses.</h2>
+      <p class="text-[16px] text-ink-3 leading-relaxed max-w-[40ch]">
+        Five practical assets included with the masterclass. Nothing is a “tips group.”
+      </p>
+    </div>
+    <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-px bg-rule border border-rule">
+      <div class="bg-paper p-6 flex gap-4">
+        <span class="check mt-1"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span>
+        <div>
+          <p class="display text-[18px] mb-1">Risk &amp; Position‑Size Calculator</p>
+          <p class="text-[14px] text-ink-3 leading-relaxed">A working Excel sheet (and the live widget below) so position size is never a guess again.</p>
+        </div>
+      </div>
+      <div class="bg-paper p-6 flex gap-4">
+        <span class="check mt-1"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span>
+        <div>
+          <p class="display text-[18px] mb-1">1‑Page Trading Plan template</p>
+          <p class="text-[14px] text-ink-3 leading-relaxed">The exact one‑page document we workshop in Module 04 — fillable, printable, no fluff.</p>
+        </div>
+      </div>
+      <div class="bg-paper p-6 flex gap-4">
+        <span class="check mt-1"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span>
+        <div>
+          <p class="display text-[18px] mb-1">“How to Spot a Trading Scam” guide</p>
+          <p class="text-[14px] text-ink-3 leading-relaxed">A field guide to “HNI calls,” fake screenshots, and the most common India‑specific scams.</p>
+        </div>
+      </div>
+      <div class="bg-paper p-6 flex gap-4">
+        <span class="check mt-1"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span>
+        <div>
+          <p class="display text-[18px] mb-1">Lifetime access to recordings</p>
+          <p class="text-[14px] text-ink-3 leading-relaxed">Re‑watch any module, any time. Future updates to the curriculum are included.</p>
+        </div>
+      </div>
+      <div class="bg-paper p-6 sm:col-span-2 flex gap-4">
+        <span class="check mt-1"><svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><path d="M1 5.5 L4 8.5 L10 2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="square"/></svg></span>
+        <div>
+          <p class="display text-[18px] mb-1">Private <em>learning</em> community</p>
+          <p class="text-[14px] text-ink-3 leading-relaxed">Q&amp;A, journaling accountability, and weekly office hours with Abul. <strong>It is not a tips group.</strong> Anyone posting buy/sell calls is removed without warning.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RISK CALCULATOR ===================== -->
+<section id="calculator" aria-labelledby="calc-h" class="py-20 md:py-28 border-b border-line bg-highlight/40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-5">
+      <p class="sec-num mb-3">§ 08 — Try it now</p>
+      <h2 id="calc-h" class="display text-[32px] md:text-[44px] leading-[1.02] mb-4">The Position‑Size Calculator.</h2>
+      <p class="text-[16px] md:text-[17px] text-ink-2 leading-relaxed mb-5 max-w-[44ch]">
+        This is the first thing every disciplined trader does <em>before</em> entering a trade. Type your capital, your risk per trade (the textbook is 1–2%), and the stop‑loss distance — and never size a position by feel again.
+      </p>
+      <p class="text-[13px] text-ink-3 leading-relaxed max-w-[44ch]">
+        <strong>Formula:</strong> Position Size&nbsp;=&nbsp;(Capital × Risk %) ÷ Stop‑loss %. Educational. Not a recommendation.
+      </p>
+    </div>
+
+    <div class="lg:col-span-7">
+      <div class="ed-card p-6 md:p-8">
+        <form id="calc-form" class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6" novalidate>
+          <div>
+            <label for="capital" class="marginalia block mb-2">Capital (₹)</label>
+            <input id="capital" name="capital" type="number" min="0" step="1000" class="calc-input" value="500000" inputmode="decimal" aria-describedby="capital-help"/>
+            <p id="capital-help" class="text-[11.5px] text-ink-3 mt-1.5">Total trading capital.</p>
+          </div>
+          <div>
+            <label for="risk" class="marginalia block mb-2">Risk per trade (%)</label>
+            <input id="risk" name="risk" type="number" min="0" step="0.1" class="calc-input" value="1" inputmode="decimal" aria-describedby="risk-help"/>
+            <p id="risk-help" class="text-[11.5px] text-ink-3 mt-1.5">We recommend 1–2%.</p>
+          </div>
+          <div>
+            <label for="stop" class="marginalia block mb-2">Stop‑loss (%)</label>
+            <input id="stop" name="stop" type="number" min="0" step="0.1" class="calc-input" value="2" inputmode="decimal" aria-describedby="stop-help"/>
+            <p id="stop-help" class="text-[11.5px] text-ink-3 mt-1.5">Distance from entry to stop.</p>
+          </div>
+        </form>
+
+        <div class="border-t border-rule pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="sm:col-span-2">
+            <p class="marginalia mb-2">Position Size</p>
+            <p class="display text-[42px] md:text-[56px] leading-none mono text-ink" aria-live="polite">
+              <span id="position-size">₹2,50,000</span>
+            </p>
+            <p class="text-[13px] text-ink-3 mt-2 max-w-[44ch]">Maximum capital you can deploy on this single trade so that hitting your stop‑loss costs exactly your defined risk.</p>
+          </div>
+          <div class="border-t sm:border-t-0 sm:border-l border-line sm:pl-6 pt-5 sm:pt-0">
+            <p class="marginalia mb-2">You risk</p>
+            <p class="display text-[26px] mono text-danger leading-none mb-1"><span id="risk-amount">₹5,000</span></p>
+            <p class="text-[12.5px] text-ink-3">on this trade if the stop is hit.</p>
+            <div id="calc-warn" class="hidden mt-4 p-3 border border-danger text-[12.5px] text-danger leading-relaxed">
+              Heads up — risking more than 2% per trade is statistically aggressive for retail accounts.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" aria-labelledby="faq-h" class="py-20 md:py-28 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <p class="sec-num mb-3">§ 09 — FAQ</p>
+      <h2 id="faq-h" class="display text-[32px] md:text-[44px] leading-[1.02] mb-4">Honesty‑forward answers.</h2>
+      <p class="text-[16px] text-ink-3 leading-relaxed max-w-[42ch]">
+        If a question below makes you trust us <em>less</em>, it’s probably the most important one to read.
+      </p>
+    </div>
+
+    <div class="lg:col-span-8">
+      <div class="border-t border-rule">
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">Q.01</span>
+              <span class="display text-[18px] md:text-[22px]">Will you give me buy/sell tips?</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-1">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              No. That would be illegal for an educator who is not a registered investment adviser, and frankly it’s not how you build skill. We teach you to make your own decisions and rely on no one’s calls — including ours.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">Q.02</span>
+              <span class="display text-[18px] md:text-[22px]">Do you guarantee profits?</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-1">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              No — and run from anyone who does. About 9 in 10 traders lose money; we teach the discipline that is shared by the skilled minority, but the result still depends on you, your capital, your discipline, and conditions in the market.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">Q.03</span>
+              <span class="display text-[18px] md:text-[22px]">Isn’t it dishonest to teach something most people fail at?</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-1">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              The opposite. People are going to trade whether we exist or not. We’d rather they go in with eyes open, with the right skills, and with a working understanding of the odds — instead of being sold a fantasy by someone who is happy to take their money.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">Q.04</span>
+              <span class="display text-[18px] md:text-[22px]">I’ve already lost money. I’m a beginner. I have a full‑time job. Is this still for me?</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-1">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              Yes — that audience is exactly who this is built for. The masterclass is taught live, and every session is recorded so you can re‑watch on your own schedule. The journaling and review systems we teach are deliberately built around people with a day job, not full‑time screen‑staring.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary class="flex items-start justify-between gap-6 py-6">
+            <div class="flex items-start gap-5">
+              <span class="qnum mono text-[14px] text-ink-3 mt-1">Q.05</span>
+              <span class="display text-[18px] md:text-[22px]">Are you SEBI‑registered?</span>
+            </div>
+            <span class="chev mono text-[22px] text-ink mt-1" aria-hidden="true">+</span>
+          </summary>
+          <div class="pb-6 pl-0 md:pl-[68px] -mt-1">
+            <p class="text-[16px] leading-relaxed text-ink-2 max-w-[68ch]">
+              The instructor is NISM‑certified (Series XV — Research Analyst; Series VIII — Equity Derivatives). The Anti‑Loss Academy operates strictly as an <strong>educator</strong>: we do not offer investment advisory, portfolio management, or buy/sell recommendations of any kind. If, in the future, we register with SEBI in any capacity, that will be disclosed explicitly on this page and in the footer — never implied.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUARANTEE ===================== -->
+<section id="guarantee" aria-labelledby="g-h" class="py-20 md:py-24 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+    <div class="lg:col-span-4">
+      <p class="sec-num mb-3">§ 10 — Guarantee</p>
+      <h2 id="g-h" class="display text-[32px] md:text-[44px] leading-[1.02]">The one thing we can guarantee.</h2>
+    </div>
+    <div class="lg:col-span-8">
+      <div class="ed-card p-8 md:p-10">
+        <div class="flex items-start gap-5">
+          <!-- Seal -->
+          <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" class="flex-none">
+            <circle cx="32" cy="32" r="30" fill="none" stroke="#111" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="24" fill="none" stroke="#E74C3C" stroke-width="1"/>
+            <text x="32" y="29" text-anchor="middle" font-family="Space Grotesk" font-weight="800" font-size="14" fill="#111">7</text>
+            <text x="32" y="44" text-anchor="middle" font-family="IBM Plex Mono" font-size="7" fill="#111" letter-spacing="1.4">DAY · REFUND</text>
+          </svg>
+          <div>
+            <p class="display text-[24px] md:text-[28px] leading-tight mb-3">7‑day, no‑questions‑asked refund.</p>
+            <p class="text-[16px] md:text-[17px] leading-relaxed text-ink-2 mb-3 max-w-[60ch]">
+              If, within seven days of starting the course, the teaching isn’t clearly more rigorous and more honest than anything else you’ve tried, write to us once — and you get every rupee back. No forms, no objections, no friction.
+            </p>
+            <p class="text-[15px] leading-relaxed text-ink-3 max-w-[60ch]">
+              We can’t guarantee trading outcomes — nobody can — so we guarantee the one thing we control: the quality and honesty of the education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="register" aria-labelledby="final-h" class="py-20 md:py-28 bg-ink text-paper">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 text-center">
+    <p class="mono text-[12px] text-paper/70 uppercase tracking-[0.2em] mb-6 flex items-center justify-center gap-3">
+      <span class="w-6 h-px bg-paper/50"></span>
+      Live cohort — limited seats
+      <span class="w-6 h-px bg-paper/50"></span>
+    </p>
+    <h2 id="final-h" class="display text-[40px] sm:text-[56px] md:text-[72px] leading-[0.98] mb-6">
+      Learn the <span class="text-danger">process</span>,<br/>
+      not the hype.
+    </h2>
+    <p class="text-[17px] md:text-[19px] leading-relaxed text-paper/80 max-w-[58ch] mx-auto mb-8">
+      The next live cohort starts <strong class="text-paper">Monday, 12 August 2026</strong>. Seats are capped at 80 so the Q&amp;A stays personal — and so we can read every journal entry that comes in.
+    </p>
+    <a href="#" class="cta-primary inline-flex items-center justify-center gap-2 px-8 py-5 text-[17px] font-semibold">
+      Register Free for the Masterclass
+      <svg width="16" height="16" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="square"/></svg>
+    </a>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left max-w-3xl mx-auto">
+      <div>
+        <p class="mono text-[11px] uppercase tracking-[0.18em] text-paper/60 mb-1">Learners</p>
+        <p class="display text-[22px] text-paper">4,200+ trained</p>
+      </div>
+      <div>
+        <p class="mono text-[11px] uppercase tracking-[0.18em] text-paper/60 mb-1">Rating</p>
+        <p class="display text-[22px] text-paper">4.8<span class="text-danger">★</span> reviews</p>
+      </div>
+      <div>
+        <p class="mono text-[11px] uppercase tracking-[0.18em] text-paper/60 mb-1">Tips given</p>
+        <p class="display text-[22px] text-paper">0 — ever</p>
+      </div>
+      <div>
+        <p class="mono text-[11px] uppercase tracking-[0.18em] text-paper/60 mb-1">Refund</p>
+        <p class="display text-[22px] text-paper">7‑day</p>
+      </div>
+    </div>
+
+    <p class="text-[12.5px] leading-relaxed text-paper/60 max-w-[68ch] mx-auto mt-10">
+      Investments / trading in securities markets are subject to market risks. Read all the related documents carefully before investing. Past performance is not indicative of future results. The Anti‑Loss Academy is an <strong>educator</strong>; it does not provide buy/sell recommendations.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-paper border-t border-rule pt-16 pb-28 md:pb-16" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-1 md:grid-cols-12 gap-10">
+
+    <div class="md:col-span-4">
+      <a href="#" class="flex items-center gap-2.5 mb-4">
+        <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
+          <rect x="0.5" y="0.5" width="27" height="27" fill="#111"/>
+          <path d="M3 18 L9 9 L14 14 L19 6 L25 11" fill="none" stroke="#FAF8F3" stroke-width="1.6" stroke-linecap="square"/>
+          <circle cx="9" cy="9" r="1.6" fill="#E74C3C"/>
+        </svg>
+        <span class="display text-[18px]">Anti‑Loss Academy</span>
+      </a>
+      <p class="text-[14px] text-ink-3 leading-relaxed max-w-[40ch]">
+        A live masterclass on how the market actually works — risk first, process always. Educator, not adviser. No tips, no signals, no income promises.
+      </p>
+      <div class="mt-6 space-y-1.5 text-[14px] text-ink-2">
+        <p class="mono text-[12px] text-ink-3 uppercase tracking-wider mb-1">Contact</p>
+        <p>Anti‑Loss Academy LLP</p>
+        <p>Unit 408, Brigade Tech Gardens,<br/>Whitefield Main Road, Bengaluru — 560066, Karnataka, India</p>
+        <p>Phone: <a href="tel:+918045678910" class="ulink underline decoration-line hover:decoration-ink">+91 80 4567 8910</a></p>
+        <p>WhatsApp: <a href="tel:+919900123456" class="ulink underline decoration-line hover:decoration-ink">+91 99001 23456</a></p>
+        <p>Email: <a href="mailto:hello@antiloss.academy" class="ulink underline decoration-line hover:decoration-ink">hello@antiloss.academy</a></p>
+        <p>Hours: Mon–Sat, 10:00–18:00 IST</p>
+      </div>
+    </div>
+
+    <div class="md:col-span-2">
+      <p class="mono text-[12px] text-ink-3 uppercase tracking-wider mb-4">Site</p>
+      <ul class="space-y-2.5 text-[14.5px]">
+        <li><a href="#" class="ulink underline decoration-line hover:decoration-ink">Home</a></li>
+        <li><a href="#problem" class="ulink underline decoration-line hover:decoration-ink">About</a></li>
+        <li><a href="#curriculum" class="ulink underline decoration-line hover:decoration-ink">Programs</a></li>
+        <li><a href="#register" class="ulink underline decoration-line hover:decoration-ink">Webinars</a></li>
+        <li><a href="mailto:hello@antiloss.academy" class="ulink underline decoration-line hover:decoration-ink">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-2">
+      <p class="mono text-[12px] text-ink-3 uppercase tracking-wider mb-4">Legal</p>
+      <ul class="space-y-2.5 text-[14.5px]">
+        <li><a href="#" class="ulink underline decoration-line hover:decoration-ink">Terms of Service</a></li>
+        <li><a href="#" class="ulink underline decoration-line hover:decoration-ink">Privacy Policy</a></li>
+        <li><a href="#" class="ulink underline decoration-line hover:decoration-ink">Refund Policy</a></li>
+        <li><a href="#" class="ulink underline decoration-line hover:decoration-ink">Disclaimer</a></li>
+        <li><a href="#" class="ulink underline decoration-line hover:decoration-ink">Grievance Redressal</a></li>
+      </ul>
+    </div>
+
+    <div class="md:col-span-4">
+      <p class="mono text-[12px] text-ink-3 uppercase tracking-wider mb-4">Disclaimer</p>
+      <p class="legal mb-3">
+        <strong>The Anti‑Loss Academy is an educational platform only.</strong> It is not a SEBI‑registered investment adviser, research analyst, or portfolio manager. No content on this website, in our masterclass, or in our community constitutes investment advice or a buy/sell recommendation in any security, derivative, or asset.
+      </p>
+      <p class="legal mb-3">
+        Trading and investing in securities — including equities, futures and options — are subject to market risks and may result in the substantial loss of capital. As referenced on this page, a SEBI study (FY 2024–25) found that approximately 91% of individual traders in the equity F&amp;O segment recorded net losses. Past performance, of any individual trader or of the markets, is not indicative of future results.
+      </p>
+      <p class="legal mb-3">
+        Any examples, charts, frameworks, or hypothetical scenarios presented are for educational purposes only and must not be construed as a recommendation to enter or exit any position. Testimonials describe learning outcomes and behavioural changes reported by past learners; they do not represent typical or guaranteed financial results.
+      </p>
+      <p class="legal">
+        © <span id="year">2026</span> Anti‑Loss Academy LLP. All rights reserved. LLPIN: AAB‑1234 · GSTIN: 29AABLA1234C1Z5.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STICKY MOBILE CTA ===================== -->
+<div class="sticky-cta md:hidden" role="region" aria-label="Register">
+  <a href="#register" class="cta-primary w-full flex items-center justify-center gap-2 px-5 py-3.5 text-[15px] font-semibold">
+    Register Free for the Masterclass
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="square"/></svg>
+  </a>
+</div>
+
+<script>
+  // ===== Risk Calculator =====
+  (function () {
+    const fmt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 0 });
+    const fmtRupee = (n) => '₹' + fmt.format(Math.max(0, Math.round(n)));
+
+    const $cap  = document.getElementById('capital');
+    const $risk = document.getElementById('risk');
+    const $stop = document.getElementById('stop');
+    const $pos  = document.getElementById('position-size');
+    const $ramt = document.getElementById('risk-amount');
+    const $warn = document.getElementById('calc-warn');
+
+    function recalc() {
+      const cap  = parseFloat($cap.value)  || 0;
+      const risk = parseFloat($risk.value) || 0;
+      const stop = parseFloat($stop.value) || 0;
+
+      const riskRupees = cap * (risk / 100);
+      const position   = stop > 0 ? (riskRupees / (stop / 100)) : 0;
+
+      $pos.textContent  = fmtRupee(position);
+      $ramt.textContent = fmtRupee(riskRupees);
+
+      if (risk > 2) {
+        $warn.classList.remove('hidden');
+      } else {
+        $warn.classList.add('hidden');
+      }
+    }
+    [$cap, $risk, $stop].forEach((el) => el && el.addEventListener('input', recalc));
+    recalc();
+  })();
+
+  // ===== Year =====
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ===== Close other accordions when one opens (FAQ + Curriculum scoped to their containers) =====
+  ['curriculum', 'faq'].forEach((id) => {
+    const root = document.getElementById(id);
+    if (!root) return;
+    const items = root.querySelectorAll('details');
+    items.forEach((d) => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          items.forEach((o) => { if (o !== d) o.open = false; });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

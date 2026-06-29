@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evening Trader — Learn Swing Trading That Fits Around a 9-to-6 | Free Evening Masterclass</title>
+  <meta name="description" content="Keep your job. Learn swing trading you plan in the evening and manage in minutes. A free evening masterclass for working professionals. No tips, no signals, no income promises." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Evening Trader — Trading that fits around a 9-to-6" />
+  <meta property="og:description" content="Plan in the evening, manage in minutes. A free evening masterclass for busy working professionals. Educational only — not investment advice." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts: Plus Jakarta Sans (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:       { DEFAULT: '#0F172A', 700: '#1E3A8A', 800: '#0B1426', 900: '#070D1A' },
+            terracotta: { DEFAULT: '#C2410C', 600: '#C2410C', 700: '#9A3412' },
+            amber:      { DEFAULT: '#E8A87C', soft: '#FBE9DC', tint: '#FFF6EF' },
+            paper:  '#FBF8F3',
+            cream:  '#FEFCF8',
+            ink:    '#0F172A',
+            muted:  '#5B6678',
+            line:   '#ECE3D7',
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            body:    ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+          maxWidth: { '7xl': '80rem' },
+          boxShadow: {
+            soft: '0 1px 2px rgba(15,23,42,.04), 0 8px 24px -12px rgba(15,23,42,.12)',
+            lift: '0 2px 4px rgba(15,23,42,.05), 0 18px 40px -16px rgba(15,23,42,.22)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1,h2,h3,h4,.font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* Scroll-reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Timeline connector dash draw */
+    .tl-line { background-image: linear-gradient(90deg, #E8A87C 0 60%, transparent 60% 100%); background-size: 14px 2px; }
+
+    /* Accordion (details) chevron */
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform .25s ease; }
+
+    /* Range input (calculator) */
+    input[type="range"] { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 9999px; background: #FBE9DC; outline: none; }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 26px; height: 26px; border-radius: 9999px; background: #C2410C; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(15,23,42,.25); cursor: pointer; }
+    input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 9999px; background: #C2410C; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(15,23,42,.25); cursor: pointer; }
+
+    /* Focus visibility */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+      outline: 3px solid #1E3A8A; outline-offset: 2px; border-radius: 6px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      * { animation: none !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-paper text-ink antialiased selection:bg-amber-soft selection:text-navy">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[1000] focus:bg-navy focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+  <!-- ============================ TOP COMPLIANCE STRIP ============================ -->
+  <div class="bg-navy-900 text-white/80 text-[12px] leading-snug">
+    <div class="mx-auto max-w-7xl px-4 py-2 text-center">
+      Educational only · Not investment advice · No tips or signals · Trading carries risk — roughly 9 in 10 traders lose money.
+    </div>
+  </div>
+
+  <!-- ============================ HEADER / NAV ============================ -->
+  <header id="siteHeader" class="sticky top-0 z-50 bg-paper/90 backdrop-blur border-b border-line/80 transition-shadow duration-300">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Primary">
+      <div class="flex h-16 items-center justify-between gap-4">
+        <!-- Logo -->
+        <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="Evening Trader home">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-navy text-amber">
+            <!-- moon + clock mark -->
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/>
+              <circle cx="12" cy="12" r="0" />
+            </svg>
+          </span>
+          <span class="font-display font-extrabold text-navy tracking-tight text-lg">Evening<span class="text-terracotta">Trader</span></span>
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-muted">
+          <a href="#how-it-fits" class="hover:text-navy transition-colors">How it fits a workday</a>
+          <a href="#system" class="hover:text-navy transition-colors">The system</a>
+          <a href="#curriculum" class="hover:text-navy transition-colors">Curriculum</a>
+          <a href="#founder" class="hover:text-navy transition-colors">Your instructor</a>
+          <a href="#faq" class="hover:text-navy transition-colors">FAQ</a>
+        </div>
+
+        <!-- CTA + mobile toggle -->
+        <div class="flex items-center gap-2">
+          <a href="#register" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-terracotta px-4 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-terracotta-700 transition-colors cursor-pointer">
+            Save My Evening Seat
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <button id="navToggle" class="lg:hidden grid place-items-center h-10 w-10 rounded-lg text-navy hover:bg-amber-soft transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden lg:hidden pb-4">
+        <div class="flex flex-col gap-1 text-base font-medium text-navy">
+          <a href="#how-it-fits" class="rounded-lg px-3 py-2.5 hover:bg-amber-soft">How it fits a workday</a>
+          <a href="#system" class="rounded-lg px-3 py-2.5 hover:bg-amber-soft">The Evening-Trader System</a>
+          <a href="#curriculum" class="rounded-lg px-3 py-2.5 hover:bg-amber-soft">Curriculum</a>
+          <a href="#founder" class="rounded-lg px-3 py-2.5 hover:bg-amber-soft">Your instructor</a>
+          <a href="#faq" class="rounded-lg px-3 py-2.5 hover:bg-amber-soft">FAQ</a>
+          <a href="#register" class="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-terracotta px-4 py-3 font-semibold text-white">Save My Evening Seat</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+  <span id="top"></span>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="relative overflow-hidden">
+    <!-- soft warm background wash -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-amber-soft blur-3xl opacity-60"></div>
+      <div class="absolute top-40 -left-24 h-80 w-80 rounded-full bg-amber-tint blur-3xl opacity-80"></div>
+    </div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
+        <!-- Copy -->
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 rounded-full border border-line bg-cream px-3.5 py-1.5 text-xs font-semibold tracking-wide text-terracotta uppercase">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            For working professionals — evenings &amp; weekends
+          </p>
+
+          <h1 class="mt-5 font-display font-extrabold tracking-tight text-navy leading-[1.05] text-[2.6rem] sm:text-6xl">
+            Keep your job.<br class="hidden sm:block" /> Keep your sanity.
+            <span class="block mt-2 text-terracotta">Learn trading that fits around a 9-to-6.</span>
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+            You don't need to quit, you don't need to day-trade, and you don't need to stare at a screen all day.
+            <span class="text-navy font-medium">Swing trading is planned in the evening and managed in minutes.</span>
+            Join the free evening masterclass and see how it fits a real, busy life.
+          </p>
+          <p class="mt-3 text-sm font-medium text-muted">No tips. No signals. No income promises.</p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
+            <a href="#register" class="inline-flex items-center justify-center gap-2 rounded-xl bg-terracotta px-6 py-4 text-base font-semibold text-white shadow-lift hover:bg-terracotta-700 transition-colors cursor-pointer">
+              Save My Evening Seat
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#how-it-fits" class="inline-flex items-center justify-center gap-2 rounded-xl border border-navy/15 bg-white px-6 py-4 text-base font-semibold text-navy hover:bg-cream transition-colors cursor-pointer">
+              How it fits a workday
+            </a>
+          </div>
+
+          <!-- Trust line -->
+          <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+            <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Abul Kalam · NISM-Certified Research Analyst</span>
+            <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Evening / weekend friendly</span>
+            <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-navy-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg> 3,200+ working professionals trained</span>
+          </div>
+        </div>
+
+        <!-- Hero visual: evening at-home dashboard mock + 15 min badge -->
+        <div class="reveal" style="transition-delay:.12s">
+          <div class="relative">
+            <!-- device card -->
+            <div class="relative rounded-3xl bg-navy text-white p-5 sm:p-6 shadow-lift">
+              <div class="flex items-center justify-between text-white/60 text-xs">
+                <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg> Evening plan · 9:14 PM</span>
+                <span>Markets closed</span>
+              </div>
+
+              <div class="mt-4 rounded-2xl bg-navy-800 p-4">
+                <div class="flex items-end justify-between">
+                  <div>
+                    <p class="text-white/50 text-xs">This week's watchlist</p>
+                    <p class="font-display font-bold text-xl mt-0.5">6 setups reviewed</p>
+                  </div>
+                  <span class="rounded-full bg-amber/20 text-amber text-xs font-semibold px-2.5 py-1">~15 min</span>
+                </div>
+                <!-- simple calm chart -->
+                <svg class="mt-4 w-full h-28" viewBox="0 0 320 110" fill="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#E8A87C" stop-opacity="0.45"/>
+                      <stop offset="100%" stop-color="#E8A87C" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 80 L40 70 L80 78 L120 55 L160 60 L200 38 L240 44 L280 26 L320 30 L320 110 L0 110 Z" fill="url(#g1)"/>
+                  <path d="M0 80 L40 70 L80 78 L120 55 L160 60 L200 38 L240 44 L280 26 L320 30" stroke="#E8A87C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="280" cy="26" r="4" fill="#fff"/>
+                </svg>
+                <div class="mt-3 grid grid-cols-3 gap-2 text-center">
+                  <div class="rounded-lg bg-navy/40 py-2"><p class="text-white/50 text-[10px]">Alerts set</p><p class="font-semibold text-sm">4</p></div>
+                  <div class="rounded-lg bg-navy/40 py-2"><p class="text-white/50 text-[10px]">Orders pre-set</p><p class="font-semibold text-sm">2</p></div>
+                  <div class="rounded-lg bg-navy/40 py-2"><p class="text-white/50 text-[10px]">Screen time</p><p class="font-semibold text-sm">0 hrs</p></div>
+                </div>
+              </div>
+              <p class="mt-4 text-white/45 text-[11px] leading-snug">Illustrative interface for education. Not a live trade, recommendation, or performance claim.</p>
+            </div>
+
+            <!-- floating 15 min badge -->
+            <div class="absolute -bottom-5 -left-4 sm:-left-6 rounded-2xl bg-white shadow-lift border border-line px-4 py-3 flex items-center gap-3">
+              <span class="grid place-items-center h-10 w-10 rounded-xl bg-amber-soft text-terracotta">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <div>
+                <p class="font-display font-bold text-navy leading-none">≈ 15 min / day</p>
+                <p class="text-xs text-muted mt-1">outside market hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TRUST / STATS STRIP ============================ -->
+  <section aria-label="At a glance" class="border-y border-line bg-cream">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div class="reveal">
+          <p class="font-display font-extrabold text-3xl text-navy">3,200+</p>
+          <p class="mt-1 text-sm text-muted">Working professionals trained</p>
+        </div>
+        <div class="reveal" style="transition-delay:.06s">
+          <p class="font-display font-extrabold text-3xl text-navy">4.8<span class="text-xl text-muted">/5</span></p>
+          <p class="mt-1 text-sm text-muted">Average masterclass rating</p>
+        </div>
+        <div class="reveal" style="transition-delay:.12s">
+          <p class="font-display font-extrabold text-3xl text-navy">100%</p>
+          <p class="mt-1 text-sm text-muted">Sessions recorded — catch up anytime</p>
+        </div>
+        <div class="reveal" style="transition-delay:.18s">
+          <p class="font-display font-extrabold text-3xl text-navy">0 hrs</p>
+          <p class="mt-1 text-sm text-muted">Screen-watching during market hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROBLEM / AGITATION ============================ -->
+  <section id="how-it-fits" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <div class="reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">The honest problem</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">
+          Every trading ad assumes you're free from 9:15 to 3:30.
+        </h2>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-muted">
+          <p>Glued to a screen, ready to scalp. So you've quietly concluded trading isn't for you — because you have a <span class="text-navy font-medium">job</span>.</p>
+          <p>Or worse: someone convinced you to day-trade on your lunch break, you got chopped up by every small move, and you decided you "don't have the time or the temperament."</p>
+          <p class="text-navy font-medium">The truth is you were sold the wrong <em>style</em> of trading for your life. Intraday demands constant attention you don't have. There's another way that doesn't — and almost nobody teaches it to people like you.</p>
+        </div>
+      </div>
+
+      <!-- the two myths card -->
+      <div class="reveal" style="transition-delay:.1s">
+        <div class="rounded-3xl border border-line bg-white shadow-soft p-6 sm:p-8">
+          <h3 class="font-display font-bold text-navy text-lg">What you've been told vs. the truth</h3>
+          <ul class="mt-6 space-y-5">
+            <li class="flex gap-4">
+              <span class="mt-0.5 shrink-0 grid place-items-center h-8 w-8 rounded-full bg-red-50 text-red-600"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+              <p class="text-muted"><span class="text-navy font-semibold">"You must watch screens all day."</span><br/>Built for intraday scalpers — not someone in back-to-back meetings.</p>
+            </li>
+            <li class="flex gap-4">
+              <span class="mt-0.5 shrink-0 grid place-items-center h-8 w-8 rounded-full bg-red-50 text-red-600"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+              <p class="text-muted"><span class="text-navy font-semibold">"You must quit your job to be serious."</span><br/>Reckless advice that throws away your safety net.</p>
+            </li>
+            <li class="flex gap-4 border-t border-line pt-5">
+              <span class="mt-0.5 shrink-0 grid place-items-center h-8 w-8 rounded-full bg-emerald-50 text-emerald-600"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg></span>
+              <p class="text-navy font-medium">The truth: there's a calmer, slower style designed to be managed <span class="text-terracotta">outside market hours.</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ REFRAME / OPPORTUNITY ============================ -->
+  <section class="bg-navy text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="max-w-3xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider text-amber">Meet swing trading</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-5xl leading-tight">
+          Plan it in the evening. Manage it in minutes.
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-white/75">
+          Swing trading means holding positions for several days to a few weeks, based on a plan you build in the evening — when the market's closed and your head is clear. You do your analysis after dinner, set your rules and alerts, and check in for a few minutes a day.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-white/75">
+          It rewards <span class="text-white font-semibold">patience and process</span> over reflexes and screen-time — which is perfect for a working professional. You keep your salary, your safety net, while you build the skill, on your schedule.
+        </p>
+      </div>
+
+      <div class="mt-12 grid sm:grid-cols-3 gap-5">
+        <div class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6">
+          <span class="grid place-items-center h-11 w-11 rounded-xl bg-amber/15 text-amber"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><line x1="3" y1="3" x2="21" y2="21"/></svg></span>
+          <h3 class="mt-4 font-display font-bold text-lg">No live screen-watching</h3>
+          <p class="mt-2 text-white/65 text-sm leading-relaxed">Alerts do the watching. Pre-set orders do the executing while you're at work.</p>
+        </div>
+        <div class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6" style="transition-delay:.08s">
+          <span class="grid place-items-center h-11 w-11 rounded-xl bg-amber/15 text-amber"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7 9 18l-5-5"/></svg></span>
+          <h3 class="mt-4 font-display font-bold text-lg">No quitting your job</h3>
+          <p class="mt-2 text-white/65 text-sm leading-relaxed">Your salary stays your safety net. You build the skill alongside your career — never instead of it.</p>
+        </div>
+        <div class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6" style="transition-delay:.16s">
+          <span class="grid place-items-center h-11 w-11 rounded-xl bg-amber/15 text-amber"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></svg></span>
+          <h3 class="mt-4 font-display font-bold text-lg">No adrenaline scalping</h3>
+          <p class="mt-2 text-white/65 text-sm leading-relaxed">Fewer, higher-quality decisions on the daily chart. Calm process beats fast reflexes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ NAMED METHODOLOGY — WEEKLY RHYTHM TIMELINE ============================ -->
+  <section id="system" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">The Evening-Trader System</p>
+      <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">A weekly rhythm any employed person can actually keep</h2>
+      <p class="mt-5 text-lg text-muted leading-relaxed">A few focused hours a week — all outside market hours. No screen-staring, no boss noticing, no career risk.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="mt-14">
+      <div class="relative">
+        <!-- connector line (desktop) -->
+        <div class="hidden lg:block absolute top-7 left-[8%] right-[8%] h-0.5 tl-line" aria-hidden="true"></div>
+
+        <ol class="grid gap-8 lg:grid-cols-4">
+          <!-- Step 1 -->
+          <li class="reveal relative">
+            <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-4 lg:gap-0">
+              <span class="relative z-10 grid place-items-center h-14 w-14 shrink-0 rounded-2xl bg-navy text-amber shadow-soft">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+              </span>
+              <div class="lg:mt-5">
+                <span class="inline-block rounded-full bg-amber-soft text-terracotta text-xs font-semibold px-3 py-1">Weekend · 60–90 min</span>
+                <h3 class="mt-3 font-display font-bold text-navy text-lg">Scan &amp; shortlist</h3>
+                <p class="mt-2 text-muted text-sm leading-relaxed">Run your scans and build a clean watchlist for the week ahead.</p>
+              </div>
+            </div>
+          </li>
+          <!-- Step 2 -->
+          <li class="reveal relative" style="transition-delay:.1s">
+            <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-4 lg:gap-0">
+              <span class="relative z-10 grid place-items-center h-14 w-14 shrink-0 rounded-2xl bg-navy text-amber shadow-soft">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+              </span>
+              <div class="lg:mt-5">
+                <span class="inline-block rounded-full bg-amber-soft text-terracotta text-xs font-semibold px-3 py-1">Weekday evening · 15–20 min</span>
+                <h3 class="mt-3 font-display font-bold text-navy text-lg">Review &amp; set alerts</h3>
+                <p class="mt-2 text-muted text-sm leading-relaxed">Check the day's closes, set entries, exits and alerts for tomorrow.</p>
+              </div>
+            </div>
+          </li>
+          <!-- Step 3 -->
+          <li class="reveal relative" style="transition-delay:.2s">
+            <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-4 lg:gap-0">
+              <span class="relative z-10 grid place-items-center h-14 w-14 shrink-0 rounded-2xl bg-navy text-amber shadow-soft">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              </span>
+              <div class="lg:mt-5">
+                <span class="inline-block rounded-full bg-amber-soft text-terracotta text-xs font-semibold px-3 py-1">During the day · ≈ 0 min</span>
+                <h3 class="mt-3 font-display font-bold text-navy text-lg">Let the system work</h3>
+                <p class="mt-2 text-muted text-sm leading-relaxed">Alerts do the watching. Pre-set orders do the executing. You do your job.</p>
+              </div>
+            </div>
+          </li>
+          <!-- Step 4 -->
+          <li class="reveal relative" style="transition-delay:.3s">
+            <div class="flex lg:flex-col items-start lg:items-center text-left lg:text-center gap-4 lg:gap-0">
+              <span class="relative z-10 grid place-items-center h-14 w-14 shrink-0 rounded-2xl bg-navy text-amber shadow-soft">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+              </span>
+              <div class="lg:mt-5">
+                <span class="inline-block rounded-full bg-amber-soft text-terracotta text-xs font-semibold px-3 py-1">Weekly review · 30 min</span>
+                <h3 class="mt-3 font-display font-bold text-navy text-lg">Journal &amp; refine</h3>
+                <p class="mt-2 text-muted text-sm leading-relaxed">Review what worked, log lessons, and improve — without quitting your day job.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <p class="mt-10 text-center text-sm text-muted max-w-2xl mx-auto reveal">
+        <span class="font-semibold text-navy">Total time:</span> a few focused hours a week, all outside market hours. No screen-staring, no boss noticing, no career risk.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ TIME CALCULATOR ============================ -->
+  <section class="bg-cream border-y border-line">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div class="reveal">
+          <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">How little time it really takes</p>
+          <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">Do the maths on your own week</h2>
+          <p class="mt-5 text-muted text-lg leading-relaxed">Slide to how many weekday evenings you can realistically give. Everything below happens after market hours.</p>
+
+          <div class="mt-8">
+            <label for="eveSlider" class="flex items-center justify-between text-sm font-medium text-navy">
+              <span>Weekday evenings per week</span>
+              <span id="eveValue" class="font-display font-bold text-terracotta text-base">4 evenings</span>
+            </label>
+            <input id="eveSlider" type="range" min="2" max="5" step="1" value="4" class="mt-3 w-full" aria-describedby="calcHelp" />
+            <p id="calcHelp" class="mt-2 text-xs text-muted">Most students settle around 3–4 evenings. Sessions are recorded if you miss one.</p>
+          </div>
+        </div>
+
+        <!-- result card -->
+        <div class="reveal" style="transition-delay:.1s">
+          <div class="rounded-3xl bg-white border border-line shadow-soft p-7 sm:p-8">
+            <p class="text-sm text-muted">Your estimated weekly commitment</p>
+            <p class="mt-1 font-display font-extrabold text-navy text-5xl tabular-nums"><span id="totalTime">2 hr 57 min</span></p>
+            <p class="mt-1 text-sm font-medium text-emerald-700">All outside market hours</p>
+
+            <dl class="mt-6 space-y-3 text-sm">
+              <div class="flex items-center justify-between border-b border-line pb-3">
+                <dt class="text-muted">Weekend scan &amp; shortlist</dt>
+                <dd class="font-semibold text-navy tabular-nums">75 min</dd>
+              </div>
+              <div class="flex items-center justify-between border-b border-line pb-3">
+                <dt class="text-muted">Evening reviews <span id="eveCountLabel">(4 × 18 min)</span></dt>
+                <dd class="font-semibold text-navy tabular-nums"><span id="eveTotal">72</span> min</dd>
+              </div>
+              <div class="flex items-center justify-between border-b border-line pb-3">
+                <dt class="text-muted">Weekly review &amp; journal</dt>
+                <dd class="font-semibold text-navy tabular-nums">30 min</dd>
+              </div>
+              <div class="flex items-center justify-between">
+                <dt class="text-muted">During market hours</dt>
+                <dd class="font-semibold text-emerald-700 tabular-nums">≈ 0 min</dd>
+              </div>
+            </dl>
+          </div>
+          <p class="mt-3 text-xs text-muted text-center">Illustrative estimate of <em>time</em> only — not a measure of ease, outcome, or profit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOUNDER ============================ -->
+  <section id="founder" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 lg:gap-16 items-center">
+      <!-- photo -->
+      <div class="reveal">
+        <div class="relative max-w-sm mx-auto lg:mx-0">
+          <div class="absolute -inset-3 rounded-[2rem] bg-amber-soft -z-10" aria-hidden="true"></div>
+          <img src="images/instructor-abul-kalam.jpg" alt="Abul Kalam, NISM-Certified Research Analyst and founder of Evening Trader" class="rounded-[1.6rem] w-full object-cover shadow-lift" width="800" height="800" loading="lazy" />
+          <div class="absolute -bottom-4 left-4 rounded-2xl bg-white shadow-lift border border-line px-4 py-3">
+            <p class="font-display font-bold text-navy leading-none">Abul Kalam</p>
+            <p class="text-xs text-muted mt-1">NISM-Certified Research Analyst</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- bio -->
+      <div class="reveal" style="transition-delay:.1s">
+        <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">Your instructor</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">
+          "I built my trading skill while holding down a demanding corporate job. I know exactly how little time you have — because I had none either."
+        </h2>
+        <div class="mt-6 space-y-4 text-lg text-muted leading-relaxed">
+          <p>For 14 years I worked full-time in corporate IT and operations — long hours, constant travel, a family at home. The market was open exactly when I was least free. Day-trading was never an option, and every course I tried assumed it was.</p>
+          <p>So I built a process around my real life: analysis after dinner, alerts during the day, a review on the weekend. It's the same calm, repeatable rhythm I now teach as the <span class="text-navy font-medium">Evening-Trader System</span>.</p>
+        </div>
+
+        <ul class="mt-8 grid sm:grid-cols-3 gap-4">
+          <li class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+            <p class="font-display font-extrabold text-2xl text-navy">14 yrs</p>
+            <p class="text-sm text-muted mt-1">Corporate career before teaching</p>
+          </li>
+          <li class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+            <p class="font-display font-extrabold text-2xl text-navy">NISM</p>
+            <p class="text-sm text-muted mt-1">Certified Research Analyst</p>
+          </li>
+          <li class="rounded-2xl border border-line bg-white p-4 shadow-soft">
+            <p class="font-display font-extrabold text-2xl text-navy">3,200+</p>
+            <p class="text-sm text-muted mt-1">Professionals taught, evenings only</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ STUDENT RESULTS / TESTIMONIALS ============================ -->
+  <section class="bg-navy text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="max-w-2xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider text-amber">From people with jobs</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl leading-tight">It finally fit a busy life</h2>
+        <p class="mt-4 text-white/70 text-lg">Experiences shared by past students. Individual results vary and are not typical — trading carries real risk of loss.</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- 1 -->
+        <figure class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6 flex flex-col">
+          <div class="flex gap-1 text-amber" aria-label="5 out of 5 stars">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-white/85 leading-relaxed flex-1">"I'm in IT with zero free time during market hours. Swing trading was the first approach that actually fit my life. I do my planning at night and barely touch it during the day."</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="grid place-items-center h-10 w-10 rounded-full bg-amber/20 text-amber font-display font-bold">PK</span>
+            <span><span class="block font-semibold text-sm">Praveen K.</span><span class="block text-white/55 text-xs">Software Engineer · Bengaluru</span></span>
+          </figcaption>
+        </figure>
+        <!-- 2 -->
+        <figure class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6 flex flex-col" style="transition-delay:.08s">
+          <div class="flex gap-1 text-amber" aria-label="5 out of 5 stars">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-white/85 leading-relaxed flex-1">"I was about to quit my job to 'become a trader'. So glad I didn't. I kept my salary <em>and</em> learned a real skill, on weekends."</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="grid place-items-center h-10 w-10 rounded-full bg-amber/20 text-amber font-display font-bold">LN</span>
+            <span><span class="block font-semibold text-sm">Lakshmi N.</span><span class="block text-white/55 text-xs">Operations Manager · Hyderabad</span></span>
+          </figcaption>
+        </figure>
+        <!-- 3 -->
+        <figure class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6 flex flex-col" style="transition-delay:.16s">
+          <div class="flex gap-1 text-amber" aria-label="5 out of 5 stars">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-white/85 leading-relaxed flex-1">"As a doctor, my hours are unpredictable. The recorded sessions and evening rhythm meant I never felt behind. Calm and structured — not the chaos I expected."</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="grid place-items-center h-10 w-10 rounded-full bg-amber/20 text-amber font-display font-bold">AR</span>
+            <span><span class="block font-semibold text-sm">Dr. Anand R.</span><span class="block text-white/55 text-xs">Physician · Chennai</span></span>
+          </figcaption>
+        </figure>
+        <!-- 4 -->
+        <figure class="reveal rounded-2xl bg-navy-800 border border-white/5 p-6 flex flex-col" style="transition-delay:.24s">
+          <div class="flex gap-1 text-amber" aria-label="5 out of 5 stars">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 3 6.5 7 .9-5 4.8 1.3 7L12 18l-6.6 3.2L6.7 14l-5-4.8 7-.9Z"/></svg>
+          </div>
+          <blockquote class="mt-4 text-white/85 leading-relaxed flex-1">"Two kids, a startup to run. I needed a process, not adrenaline. The weekend scan plus 15 minutes an evening is honestly all I do now."</blockquote>
+          <figcaption class="mt-5 flex items-center gap-3">
+            <span class="grid place-items-center h-10 w-10 rounded-full bg-amber/20 text-amber font-display font-bold">MS</span>
+            <span><span class="block font-semibold text-sm">Meera S.</span><span class="block text-white/55 text-xs">Business Owner · Pune</span></span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="mt-8 text-center text-white/50 text-xs max-w-2xl mx-auto">Testimonials describe individual experiences and are not a guarantee of results. They do not represent income or performance and are not investment advice. Roughly 9 in 10 traders lose money.</p>
+    </div>
+  </section>
+
+  <!-- ============================ CURRICULUM ============================ -->
+  <section id="curriculum" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="max-w-3xl reveal">
+      <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">What you'll learn</p>
+      <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">A curriculum built around a working week</h2>
+      <p class="mt-5 text-lg text-muted leading-relaxed">Seven focused modules. Fewer, higher-quality decisions — taught for people who can't watch screens all day.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-5">
+      <!-- module -->
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">01</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">Why intraday fails busy people</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">And why swing trading fits a full-time job. Choosing the right style for your life.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft" style="transition-delay:.05s">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">02</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">Building a watchlist in 60 minutes a week</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">Efficient scanning so your weekend prep is fast and repeatable.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft" style="transition-delay:.1s">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">03</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">Swing setups on the daily chart</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">Fewer, higher-quality decisions, taught through historical examples.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft" style="transition-delay:.15s">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">04</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">Risk &amp; position sizing for part-timers</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">Protect the capital you worked hard for. Risk comes first, always.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft" style="transition-delay:.2s">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">05</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">Alerts &amp; pre-set orders</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">Let the system watch so you don't have to — while you're at work.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft" style="transition-delay:.25s">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">06</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">Trading around a job</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">Routines, time-boxing and avoiding burnout. Sustainable, not frantic.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-soft md:col-span-2 md:max-w-[calc(50%-0.625rem)]" style="transition-delay:.3s">
+        <span class="font-display font-extrabold text-2xl text-amber shrink-0 tabular-nums">07</span>
+        <div>
+          <h3 class="font-display font-bold text-navy text-lg">The weekend review habit</h3>
+          <p class="mt-1.5 text-muted text-sm leading-relaxed">Improving steadily without quitting your day job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ BONUS STACK ============================ -->
+  <section class="bg-cream border-y border-line">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="max-w-2xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">Included with the masterclass</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">Tools to make it stick</h2>
+      </div>
+
+      <ul class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <li class="reveal flex items-start gap-3 rounded-2xl bg-white border border-line p-5 shadow-soft">
+          <span class="mt-0.5 grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-amber-soft text-terracotta"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+          <p class="text-navy font-medium">The "Evening Trader" weekly routine template</p>
+        </li>
+        <li class="reveal flex items-start gap-3 rounded-2xl bg-white border border-line p-5 shadow-soft" style="transition-delay:.06s">
+          <span class="mt-0.5 grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-amber-soft text-terracotta"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.3-4.3"/><circle cx="11" cy="11" r="7"/></svg></span>
+          <p class="text-navy font-medium">The watchlist &amp; scan checklist</p>
+        </li>
+        <li class="reveal flex items-start gap-3 rounded-2xl bg-white border border-line p-5 shadow-soft" style="transition-delay:.12s">
+          <span class="mt-0.5 grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-amber-soft text-terracotta"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg></span>
+          <p class="text-navy font-medium">The Risk &amp; Position-Size calculator</p>
+        </li>
+        <li class="reveal flex items-start gap-3 rounded-2xl bg-white border border-line p-5 shadow-soft" style="transition-delay:.18s">
+          <span class="mt-0.5 grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-amber-soft text-terracotta"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+          <p class="text-navy font-medium">Lifetime recordings — catch up whenever you can</p>
+        </li>
+        <li class="reveal flex items-start gap-3 rounded-2xl bg-white border border-line p-5 shadow-soft" style="transition-delay:.24s">
+          <span class="mt-0.5 grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-amber-soft text-terracotta"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <p class="text-navy font-medium">A community of fellow working professionals</p>
+        </li>
+        <li class="reveal flex items-center justify-center gap-2 rounded-2xl bg-navy text-white p-5 shadow-soft text-center" style="transition-delay:.3s">
+          <p class="font-display font-bold">All free with your seat</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================ MASTERCLASS DETAILS + REGISTRATION ============================ -->
+  <section id="register" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+      <!-- details -->
+      <div class="reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">Free evening masterclass</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">Save your seat for the next session</h2>
+        <p class="mt-5 text-lg text-muted leading-relaxed">90 minutes, live, after work. See exactly how swing trading fits a real, busy life — then decide if it's for you. No pressure, no obligation.</p>
+
+        <dl class="mt-8 space-y-4">
+          <div class="flex items-center gap-4 rounded-2xl bg-white border border-line p-4 shadow-soft">
+            <span class="grid place-items-center h-11 w-11 rounded-xl bg-navy text-amber"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <div><dt class="text-xs uppercase tracking-wide text-muted">Date</dt><dd class="font-display font-bold text-navy">Thursday, 9 July 2026</dd></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl bg-white border border-line p-4 shadow-soft">
+            <span class="grid place-items-center h-11 w-11 rounded-xl bg-navy text-amber"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><dt class="text-xs uppercase tracking-wide text-muted">Time</dt><dd class="font-display font-bold text-navy">8:00 – 9:30 PM IST <span class="font-body font-normal text-sm text-muted">(after work)</span></dd></div>
+          </div>
+          <div class="flex items-center gap-4 rounded-2xl bg-white border border-line p-4 shadow-soft">
+            <span class="grid place-items-center h-11 w-11 rounded-xl bg-navy text-amber"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+            <div><dt class="text-xs uppercase tracking-wide text-muted">Where</dt><dd class="font-display font-bold text-navy">Live on Zoom · Recording sent to all registrants</dd></div>
+          </div>
+        </dl>
+
+        <div class="mt-6 flex items-center gap-3 rounded-2xl bg-amber-tint border border-amber-soft p-4">
+          <svg class="h-5 w-5 text-terracotta shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <p class="text-sm text-navy font-medium">Only 100 seats per cohort — kept small so questions get answered.</p>
+        </div>
+      </div>
+
+      <!-- form -->
+      <div class="reveal" style="transition-delay:.1s">
+        <div class="rounded-3xl bg-white border border-line shadow-lift p-6 sm:p-8">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-display font-extrabold text-2xl text-navy">Reserve your free seat</h3>
+            <span class="rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1">₹0 · Free</span>
+          </div>
+          <p class="mt-1 text-sm text-muted">Takes under a minute. No payment details required.</p>
+
+          <form id="seatForm" class="mt-6 space-y-4" novalidate>
+            <div>
+              <label for="fullName" class="block text-sm font-medium text-navy">Full name <span class="text-terracotta" aria-hidden="true">*</span></label>
+              <input id="fullName" name="fullName" type="text" autocomplete="name" required class="mt-1.5 w-full rounded-xl border border-line bg-paper px-4 py-3 text-navy placeholder:text-muted/60 focus:border-navy-700 focus:bg-white transition-colors" placeholder="e.g. Priya Sharma" />
+              <p class="error-msg hidden mt-1 text-sm text-red-600" role="alert">Please enter your name.</p>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-navy">Email <span class="text-terracotta" aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required class="mt-1.5 w-full rounded-xl border border-line bg-paper px-4 py-3 text-navy placeholder:text-muted/60 focus:border-navy-700 focus:bg-white transition-colors" placeholder="you@email.com" />
+              <p class="error-msg hidden mt-1 text-sm text-red-600" role="alert">Please enter a valid email address.</p>
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-navy">WhatsApp number <span class="text-terracotta" aria-hidden="true">*</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required class="mt-1.5 w-full rounded-xl border border-line bg-paper px-4 py-3 text-navy placeholder:text-muted/60 focus:border-navy-700 focus:bg-white transition-colors" placeholder="+91 90000 00000" />
+              <p class="mt-1 text-xs text-muted">We'll send your joining link and the recording here.</p>
+              <p class="error-msg hidden mt-1 text-sm text-red-600" role="alert">Please enter a valid phone number.</p>
+            </div>
+
+            <div>
+              <label for="work" class="block text-sm font-medium text-navy">What best describes you?</label>
+              <select id="work" name="work" class="mt-1.5 w-full rounded-xl border border-line bg-paper px-4 py-3 text-navy focus:border-navy-700 focus:bg-white transition-colors">
+                <option>Salaried — IT / Tech</option>
+                <option>Salaried — other industry</option>
+                <option>Doctor / healthcare professional</option>
+                <option>Business owner / self-employed</option>
+                <option>Homemaker / managing a family</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <label class="flex items-start gap-3 text-sm text-muted">
+              <input id="consent" name="consent" type="checkbox" required class="mt-0.5 h-5 w-5 rounded border-line text-terracotta focus:ring-navy-700" />
+              <span>I understand this is an <span class="text-navy font-medium">educational</span> masterclass — not investment advice, tips, or an income promise — and I agree to be contacted about it. <span class="text-terracotta" aria-hidden="true">*</span></span>
+            </label>
+            <p id="consentErr" class="error-msg hidden -mt-2 text-sm text-red-600" role="alert">Please confirm to continue.</p>
+
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-terracotta px-6 py-4 text-base font-semibold text-white shadow-lift hover:bg-terracotta-700 transition-colors cursor-pointer">
+              Save My Evening Seat
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+
+            <p class="text-center text-xs text-muted">By registering you agree to our <a href="#" class="underline hover:text-navy">Terms</a> &amp; <a href="#" class="underline hover:text-navy">Privacy Policy</a>. We never sell your data.</p>
+          </form>
+
+          <!-- success state -->
+          <div id="seatSuccess" class="hidden text-center py-6" role="status" aria-live="polite">
+            <span class="mx-auto grid place-items-center h-14 w-14 rounded-full bg-emerald-50 text-emerald-600"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg></span>
+            <h3 class="mt-4 font-display font-extrabold text-2xl text-navy">Your seat is saved!</h3>
+            <p class="mt-2 text-muted">Check your email and WhatsApp for the joining link for <span class="font-medium text-navy">9 July, 8:00 PM IST</span>. See you in the evening.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ GUARANTEE / RISK REVERSAL ============================ -->
+  <section class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+    <div class="reveal rounded-3xl bg-navy text-white p-8 sm:p-12 text-center relative overflow-hidden">
+      <div class="pointer-events-none absolute -top-16 -right-10 h-56 w-56 rounded-full bg-amber/10 blur-3xl"></div>
+      <span class="mx-auto grid place-items-center h-16 w-16 rounded-2xl bg-amber/15 text-amber">
+        <svg class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <h2 class="mt-5 font-display font-extrabold text-3xl sm:text-4xl">7-day, no-questions-asked refund</h2>
+      <p class="mt-4 max-w-2xl mx-auto text-white/75 text-lg leading-relaxed">If this doesn't genuinely fit a working professional's schedule and teach you a process you can keep alongside your job, get every rupee back. Simple as that.</p>
+      <a href="#register" class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-terracotta px-6 py-4 text-base font-semibold text-white hover:bg-terracotta-700 transition-colors cursor-pointer">Save My Evening Seat</a>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section id="faq" class="bg-cream border-y border-line">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div class="text-center reveal">
+        <p class="text-sm font-semibold uppercase tracking-wider text-terracotta">Honest answers</p>
+        <h2 class="mt-3 font-display font-extrabold text-3xl sm:text-4xl text-navy leading-tight">Frequently asked questions</h2>
+      </div>
+
+      <div class="mt-10 space-y-3">
+        <details class="reveal group rounded-2xl border border-line bg-white px-5 sm:px-6 shadow-soft" open>
+          <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-display font-semibold text-navy text-lg">
+            I genuinely have no time during the day. Can I still do this?
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="pb-5 text-muted leading-relaxed">Yes — that's the entire point. Swing trading is designed to be managed outside market hours. If you have a few focused hours a week in the evening, you can learn this.</p>
+        </details>
+
+        <details class="reveal group rounded-2xl border border-line bg-white px-5 sm:px-6 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-display font-semibold text-navy text-lg">
+            Should I quit my job to trade?
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="pb-5 text-muted leading-relaxed">No — and we'll actively talk you out of it. Your salary is your safety net while you build the skill. Anyone telling a beginner to quit is being reckless.</p>
+        </details>
+
+        <details class="reveal group rounded-2xl border border-line bg-white px-5 sm:px-6 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-display font-semibold text-navy text-lg">
+            Are the classes during office hours?
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="pb-5 text-muted leading-relaxed">No. The masterclass and core sessions are evening and weekend friendly — and everything is recorded, so you can catch up whenever your schedule allows.</p>
+        </details>
+
+        <details class="reveal group rounded-2xl border border-line bg-white px-5 sm:px-6 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-display font-semibold text-navy text-lg">
+            Will you give tips or signals?
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="pb-5 text-muted leading-relaxed">No. We teach you to build your own watchlist and plan. This is education in a skill — not a tips, signals, or advisory service.</p>
+        </details>
+
+        <details class="reveal group rounded-2xl border border-line bg-white px-5 sm:px-6 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-display font-semibold text-navy text-lg">
+            Do you guarantee income to replace my salary?
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="pb-5 text-muted leading-relaxed">Absolutely not. Roughly 9 in 10 traders lose money. Treat this as a skill you're building alongside your career — never a salary replacement or passive-income plan.</p>
+        </details>
+
+        <details class="reveal group rounded-2xl border border-line bg-white px-5 sm:px-6 shadow-soft">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 py-5 font-display font-semibold text-navy text-lg">
+            What if it's not for me?
+            <svg class="faq-chevron h-5 w-5 shrink-0 text-terracotta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <p class="pb-5 text-muted leading-relaxed">The masterclass is free, so there's no risk in attending. For paid programs, there's a 7-day, no-questions-asked refund — if it doesn't fit your schedule, get every rupee back.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FINAL CTA ============================ -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -bottom-24 left-1/2 -translate-x-1/2 h-96 w-[40rem] rounded-full bg-amber-soft blur-3xl opacity-50"></div>
+    </div>
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center reveal">
+      <h2 class="font-display font-extrabold text-navy text-4xl sm:text-6xl leading-[1.05] tracking-tight">
+        Don't quit your job.<br/>Don't watch screens all day.
+      </h2>
+      <p class="mt-6 text-xl text-muted max-w-2xl mx-auto">Just learn a skill that fits your life. The next free evening masterclass is <span class="text-navy font-semibold">Thursday, 9 July 2026, 8:00 PM IST.</span></p>
+      <a href="#register" class="mt-9 inline-flex items-center justify-center gap-2 rounded-xl bg-terracotta px-8 py-5 text-lg font-semibold text-white shadow-lift hover:bg-terracotta-700 transition-colors cursor-pointer">
+        Save My Evening Seat
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <p class="mt-4 text-sm text-muted">Free · 90 minutes · Recording sent to all registrants</p>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============================ FOOTER + DISCLAIMER ============================ -->
+  <footer class="bg-navy-900 text-white/70">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <div>
+          <a href="#top" class="flex items-center gap-2.5" aria-label="Evening Trader home">
+            <span class="grid place-items-center h-9 w-9 rounded-xl bg-white/10 text-amber">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+            </span>
+            <span class="font-display font-extrabold text-white tracking-tight text-lg">Evening<span class="text-amber">Trader</span></span>
+          </a>
+          <p class="mt-4 text-sm max-w-sm leading-relaxed">Trading education built for people with jobs. Plan in the evening, manage in minutes — and keep your salary as your safety net.</p>
+          <p class="mt-4 text-sm">Instructor: <span class="text-white/90 font-medium">Abul Kalam</span>, NISM-Certified Research Analyst.</p>
+        </div>
+
+        <nav aria-label="Footer">
+          <h3 class="font-display font-semibold text-white text-sm uppercase tracking-wider">Explore</h3>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li><a href="#how-it-fits" class="hover:text-white transition-colors">How it fits a workday</a></li>
+            <li><a href="#system" class="hover:text-white transition-colors">The Evening-Trader System</a></li>
+            <li><a href="#curriculum" class="hover:text-white transition-colors">Curriculum</a></li>
+            <li><a href="#founder" class="hover:text-white transition-colors">Your instructor</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h3 class="font-display font-semibold text-white text-sm uppercase tracking-wider">Contact &amp; legal</h3>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li><a href="mailto:hello@eveningtrader.example" class="hover:text-white transition-colors">hello@eveningtrader.example</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-white/55 space-y-3">
+        <p><span class="font-semibold text-white/80">Risk disclaimer.</span> Trading and investing in securities is subject to market risk. There is a substantial risk of loss, and roughly 9 in 10 traders lose money. Past performance is not indicative of future results.</p>
+        <p><span class="font-semibold text-white/80">Educational only.</span> Evening Trader provides education in trading skills. We do <span class="text-white/80">not</span> provide investment advice, stock tips, buy/sell signals, portfolio management, or an advisory service, and nothing here is a recommendation to buy or sell any security. This is <span class="text-white/80">not</span> a salary-replacement or passive-income plan. Do not treat any content as a guarantee of income or returns. Consult a SEBI-registered investment adviser before making financial decisions. All chart examples used in our material are historical (at least 3 months old) and shown purely for educational illustration.</p>
+        <p class="text-white/40">Registered name and address, GSTIN and NISM registration number to be displayed here. © <span id="year">2026</span> Evening Trader Academy. All rights reserved. (Placeholder business details — replace with your registered entity information before publishing.)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ MOBILE STICKY CTA ============================ -->
+  <div id="mobileCta" class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-paper/95 backdrop-blur border-t border-line p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] transition-transform duration-300 translate-y-full">
+    <a href="#register" class="flex items-center justify-center gap-2 rounded-xl bg-terracotta px-6 py-3.5 text-base font-semibold text-white shadow-lift cursor-pointer">
+      Save My Evening Seat
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <!-- ============================ SCRIPT ============================ -->
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Header shadow + mobile sticky CTA visibility on scroll
+    const header = document.getElementById('siteHeader');
+    const mobileCta = document.getElementById('mobileCta');
+    const onScroll = () => {
+      const y = window.scrollY;
+      header.classList.toggle('shadow-soft', y > 8);
+      mobileCta.classList.toggle('translate-y-full', y < 600);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Scroll reveal
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reveals = document.querySelectorAll('.reveal');
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      reveals.forEach(el => el.classList.add('in'));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(el => io.observe(el));
+    }
+
+    // Time calculator
+    const slider = document.getElementById('eveSlider');
+    const eveValue = document.getElementById('eveValue');
+    const eveCountLabel = document.getElementById('eveCountLabel');
+    const eveTotal = document.getElementById('eveTotal');
+    const totalTime = document.getElementById('totalTime');
+    const PER_EVENING = 18, WEEKEND = 75, REVIEW = 30;
+    function fmt(mins) {
+      const h = Math.floor(mins / 60), m = mins % 60;
+      if (h === 0) return m + ' min';
+      return h + ' hr' + (m ? ' ' + m + ' min' : '');
+    }
+    function updateCalc() {
+      const n = parseInt(slider.value, 10);
+      const eves = n * PER_EVENING;
+      const total = WEEKEND + eves + REVIEW;
+      eveValue.textContent = n + ' evening' + (n === 1 ? '' : 's');
+      eveCountLabel.textContent = '(' + n + ' × ' + PER_EVENING + ' min)';
+      eveTotal.textContent = eves;
+      totalTime.textContent = fmt(total);
+    }
+    slider.addEventListener('input', updateCalc);
+    updateCalc();
+
+    // Registration form validation (demo — no backend)
+    const form = document.getElementById('seatForm');
+    const success = document.getElementById('seatSuccess');
+    const showErr = (input, show) => {
+      const msg = input.closest('div')?.querySelector('.error-msg');
+      if (msg) msg.classList.toggle('hidden', !show);
+      input.setAttribute('aria-invalid', String(show));
+      input.classList.toggle('border-red-400', show);
+    };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let firstInvalid = null;
+      const name = form.fullName, email = form.email, phone = form.phone, consent = form.consent;
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      const phoneOk = phone.value.replace(/\D/g, '').length >= 8;
+
+      const nameBad = !name.value.trim();
+      const emailBad = !emailOk;
+      const phoneBad = !phoneOk;
+      showErr(name, nameBad); showErr(email, emailBad); showErr(phone, phoneBad);
+      document.getElementById('consentErr').classList.toggle('hidden', consent.checked);
+      if (nameBad) firstInvalid = name; else if (emailBad) firstInvalid = email; else if (phoneBad) firstInvalid = phone; else if (!consent.checked) firstInvalid = consent;
+
+      if (firstInvalid) { firstInvalid.focus(); return; }
+      form.classList.add('hidden');
+      success.classList.remove('hidden');
+      success.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+    });
+    // Clear error on input
+    ['fullName','email','phone'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', () => showErr(el, false));
+    });
+    form.consent.addEventListener('change', () => document.getElementById('consentErr').classList.toggle('hidden', form.consent.checked));
+  </script>
+</body>
+</html>

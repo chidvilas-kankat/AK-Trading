@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AK Trading Academy — Master Execution, Not Concepts</title>
+<meta name="description" content="You already know what a breakout is. So why are you still losing? The free masterclass that closes the gap between what you know and what you can actually do under live pressure." />
+
+<!-- Fonts: Sora (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+
+<!-- Tailwind (CDN, single-document build) -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Sora', 'ui-sans-serif', 'system-ui'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular'],
+        },
+        colors: {
+          ink:     { 950:'#050B1A', 900:'#0A1628', 800:'#0F1F3C', 700:'#16284D', 600:'#1F345F', 500:'#2C4476' },
+          paper:   { 50:'#FAFBFD', 100:'#F4F6FB', 200:'#E7ECF4' },
+          slate2:  { 700:'#334155', 600:'#475569', 500:'#64748B', 400:'#94A3B8', 300:'#CBD5E1' },
+          loop:    { 50:'#ECFDF5', 100:'#D1FAE5', 300:'#6EE7B7', 400:'#34D399', 500:'#10B981', 600:'#059669', 700:'#047857' },
+          gold:    { 400:'#FBBF24', 500:'#F59E0B' },
+          danger:  { 500:'#EF4444' },
+        },
+        boxShadow: {
+          'soft':   '0 1px 2px rgba(10,22,40,.06), 0 4px 16px rgba(10,22,40,.06)',
+          'liftxl': '0 10px 40px -10px rgba(10,22,40,.25), 0 4px 12px -4px rgba(10,22,40,.10)',
+          'ring-loop': '0 0 0 6px rgba(16,185,129,.12)',
+        },
+        backgroundImage: {
+          'dot-grid': 'radial-gradient(rgba(15,31,60,0.08) 1px, transparent 1px)',
+          'dot-grid-dark': 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)',
+        },
+        keyframes: {
+          'pulse-soft': { '0%,100%':{opacity:'.5'}, '50%':{opacity:'1'} },
+          'dash':       { 'to': { 'stroke-dashoffset': '0' } },
+          'orbit':      { '0%':{transform:'rotate(0deg)'}, '100%':{transform:'rotate(360deg)'} },
+          'tick-in':    { '0%':{transform:'scale(.6)', opacity:'0'}, '100%':{transform:'scale(1)', opacity:'1'} },
+          'rise':       { '0%':{transform:'translateY(8px)', opacity:'0'}, '100%':{transform:'translateY(0)', opacity:'1'} },
+        },
+        animation: {
+          'pulse-soft': 'pulse-soft 3.6s ease-in-out infinite',
+          'dash':       'dash 2.2s ease-out forwards',
+          'orbit':      'orbit 28s linear infinite',
+          'tick-in':    'tick-in 280ms ease-out both',
+          'rise':       'rise 420ms cubic-bezier(.2,.7,.2,1) both',
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .font-display { font-family: 'Sora', system-ui, sans-serif; letter-spacing:-0.02em; }
+  .dotted { background-image: radial-gradient(rgba(15,31,60,0.10) 1px, transparent 1px); background-size: 22px 22px; }
+  .dotted-dark { background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 22px 22px; }
+  .grid-lines {
+    background-image:
+      linear-gradient(rgba(15,31,60,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,31,60,.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .grid-lines-dark {
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .tick { position:relative; }
+  .tick::before {
+    content:''; width:18px; height:18px; border-radius:999px;
+    background: #ECFDF5; display:inline-flex; margin-right:.6rem; vertical-align:-3px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23059669' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+    background-repeat:no-repeat; background-position:center; background-size:12px 12px;
+    box-shadow: 0 0 0 2px #D1FAE5;
+  }
+  .cross { position:relative; }
+  .cross::before {
+    content:''; width:18px; height:18px; border-radius:999px;
+    background: #FEF2F2; display:inline-flex; margin-right:.6rem; vertical-align:-3px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23DC2626' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'/><line x1='6' y1='6' x2='18' y2='18'/></svg>");
+    background-repeat:no-repeat; background-position:center; background-size:11px 11px;
+    box-shadow: 0 0 0 2px #FEE2E2;
+  }
+  .ring-edge { box-shadow: inset 0 0 0 1px rgba(15,31,60,.08); }
+  .ring-edge-dark { box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); }
+  /* Loop dashed orbit animation */
+  .loop-path { stroke-dasharray: 4 8; stroke-dashoffset: 0; animation: dashmove 18s linear infinite; }
+  @keyframes dashmove { to { stroke-dashoffset: -120; } }
+  details[open] summary .chev { transform: rotate(180deg); }
+  .chev { transition: transform .2s ease; }
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .loop-path, .animate-pulse-soft, .animate-orbit, .animate-dash { animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+
+<body class="bg-paper-50 text-ink-900 antialiased">
+
+<!-- ===================== ANNOUNCE / DISCLAIMER STRIP ===================== -->
+<div class="bg-ink-900 text-paper-50 text-xs sm:text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center justify-between gap-4">
+    <p class="flex items-center gap-2">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-loop-400 animate-pulse-soft"></span>
+      <span class="hidden sm:inline">Educational programme. No buy/sell calls. No profit guarantees.</span>
+      <span class="sm:hidden">Educational. No buy/sell calls.</span>
+    </p>
+    <p class="text-paper-50/80">Next cohort starts <span class="font-semibold text-loop-300">Mon, 14 Jul 2026</span></p>
+  </div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<header class="sticky top-0 z-40 bg-paper-50/85 backdrop-blur border-b border-ink-900/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="AK Trading Academy home">
+      <span class="relative inline-flex items-center justify-center w-9 h-9 rounded-xl bg-ink-900 text-paper-50">
+        <!-- mini loop mark -->
+        <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M21 12a9 9 0 1 1-3.5-7.1" />
+          <polyline points="21 4 21 9 16 9" stroke="#34D399" />
+        </svg>
+      </span>
+      <span class="font-display font-800 text-ink-900 tracking-tight text-[1.05rem]">AK Trading Academy</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate2-600">
+      <a href="#problem" class="hover:text-ink-900">The Gap</a>
+      <a href="#loop" class="hover:text-ink-900">The Loop</a>
+      <a href="#curriculum" class="hover:text-ink-900">Curriculum</a>
+      <a href="#mentor" class="hover:text-ink-900">Mentor</a>
+      <a href="#students" class="hover:text-ink-900">Students</a>
+      <a href="#faq" class="hover:text-ink-900">FAQ</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="#register" class="hidden sm:inline-flex items-center h-10 px-4 rounded-lg bg-ink-900 text-paper-50 text-sm font-semibold hover:bg-ink-800 transition-colors">Register Free</a>
+      <a href="#register" class="sm:hidden inline-flex items-center h-10 px-3 rounded-lg bg-ink-900 text-paper-50 text-sm font-semibold">Register</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="top" class="relative overflow-hidden">
+  <!-- background -->
+  <div aria-hidden="true" class="absolute inset-0 dotted opacity-60"></div>
+  <div aria-hidden="true" class="absolute -top-32 -right-24 w-[480px] h-[480px] rounded-full bg-loop-100 blur-3xl opacity-60"></div>
+  <div aria-hidden="true" class="absolute -bottom-40 -left-32 w-[460px] h-[460px] rounded-full bg-ink-700/10 blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <!-- copy -->
+      <div class="lg:col-span-7">
+        <p class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-ink-900/5 text-ink-800 text-xs font-semibold uppercase tracking-wider">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-loop-500"></span>
+          For traders who know the theory and still lose
+        </p>
+
+        <h1 class="font-display font-800 text-ink-900 mt-5 text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.05] tracking-tight">
+          You already know what a <span class="relative inline-block">
+            <span class="relative z-10">breakout</span>
+            <span aria-hidden="true" class="absolute inset-x-0 -bottom-1 h-3 bg-loop-200 -z-0 rounded"></span>
+          </span> is.<br />
+          <span class="text-ink-700">So why are you still losing?</span>
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg text-slate2-600 leading-relaxed">
+          Because <strong class="text-ink-900">knowing a pattern</strong> and <strong class="text-ink-900">executing it under live pressure</strong> are two completely different skills — and nobody ever trained the second one. This free masterclass closes the gap between what you know and what you can actually do. <span class="text-ink-900 font-semibold">No tips. No signals. Just execution.</span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#register" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-ink-900 text-paper-50 font-semibold shadow-soft hover:bg-ink-800 hover:shadow-liftxl transition-all">
+            Register Free
+            <svg viewBox="0 0 24 24" class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#loop" class="inline-flex items-center justify-center h-12 px-6 rounded-xl bg-paper-50 text-ink-900 font-semibold ring-1 ring-ink-900/10 hover:ring-ink-900/30 transition-all">
+            See the 5-step method
+          </a>
+        </div>
+
+        <!-- Avatar stack social proof -->
+        <div class="mt-6 flex items-center gap-3">
+          <div class="flex -space-x-2">
+            <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="" class="w-9 h-9 rounded-full ring-2 ring-paper-50 object-cover" loading="lazy" width="36" height="36" />
+            <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="" class="w-9 h-9 rounded-full ring-2 ring-paper-50 object-cover" loading="lazy" width="36" height="36" />
+            <img src="https://randomuser.me/api/portraits/men/77.jpg" alt="" class="w-9 h-9 rounded-full ring-2 ring-paper-50 object-cover" loading="lazy" width="36" height="36" />
+            <img src="https://randomuser.me/api/portraits/women/58.jpg" alt="" class="w-9 h-9 rounded-full ring-2 ring-paper-50 object-cover" loading="lazy" width="36" height="36" />
+            <span class="w-9 h-9 rounded-full ring-2 ring-paper-50 bg-loop-500 text-paper-50 grid place-items-center text-[11px] font-display font-700">+187</span>
+          </div>
+          <div class="text-sm">
+            <div class="flex items-center gap-1 text-gold-500">
+              <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24" class="w-3.5 h-3.5" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <span class="ml-1 text-ink-900 font-semibold">4.8/5</span>
+            </div>
+            <p class="text-slate2-600 text-[13px]">191 traders joined cohort 10 this week</p>
+          </div>
+        </div>
+
+        <!-- Trust line -->
+        <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-slate2-600">
+          <div class="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-loop-600" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Taught by <strong class="text-ink-900">Abul Kalam</strong>, NISM-Certified RA</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-loop-600" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span><strong class="text-ink-900">3,400+</strong> traders trained</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" class="w-4 h-4 text-loop-600" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            <span>No buy/sell calls. Ever.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- visual: know-vs-do split + loop preview -->
+      <div class="lg:col-span-5">
+        <div class="relative">
+          <!-- card -->
+          <div class="relative rounded-3xl bg-paper-50 ring-1 ring-ink-900/10 shadow-liftxl p-5 sm:p-6">
+            <div class="flex items-center justify-between text-xs font-semibold text-slate2-500 uppercase tracking-wider">
+              <span>Know vs Do</span>
+              <span class="font-mono text-ink-700">02 / 05</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-4">
+              <!-- WHAT YOU KNOW -->
+              <div class="rounded-2xl bg-paper-100 p-4 ring-edge">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-ink-700">What you know</p>
+                <ul class="mt-3 space-y-2 text-sm text-ink-900">
+                  <li class="tick">Head &amp; Shoulders</li>
+                  <li class="tick">Support / Resistance</li>
+                  <li class="tick">RSI &amp; Divergence</li>
+                  <li class="tick">Order blocks</li>
+                  <li class="tick">Risk:Reward 1:2</li>
+                </ul>
+              </div>
+              <!-- WHAT HAPPENS LIVE -->
+              <div class="rounded-2xl bg-paper-100 p-4 ring-edge">
+                <p class="text-[11px] font-semibold uppercase tracking-wider text-danger-500">What happens live</p>
+                <ul class="mt-3 space-y-2 text-sm text-ink-900">
+                  <li class="cross">Entered 12 ticks late</li>
+                  <li class="cross">Moved your stop down</li>
+                  <li class="cross">Cut winner at 0.6R</li>
+                  <li class="cross">Held loser to -3R</li>
+                  <li class="cross">Revenge-traded after</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Connector + loop hint -->
+            <div class="mt-5 rounded-2xl bg-ink-900 text-paper-50 p-4 sm:p-5 relative overflow-hidden">
+              <div aria-hidden="true" class="absolute inset-0 dotted-dark opacity-50"></div>
+              <div class="relative flex items-center gap-4">
+                <!-- mini animated loop -->
+                <svg viewBox="0 0 80 80" class="w-16 h-16 shrink-0" aria-hidden="true">
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="2"/>
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="#34D399" stroke-width="2" class="loop-path"/>
+                  <circle cx="40" cy="10" r="3.5" fill="#34D399"/>
+                  <circle cx="68.28" cy="31.18" r="3.5" fill="#34D399"/>
+                  <circle cx="57.51" cy="64.36" r="3.5" fill="#34D399"/>
+                  <circle cx="22.49" cy="64.36" r="3.5" fill="#34D399"/>
+                  <circle cx="11.72" cy="31.18" r="3.5" fill="#34D399"/>
+                </svg>
+                <div>
+                  <p class="font-display font-700 text-[1.05rem] leading-tight">The bridge is a loop, not a lecture.</p>
+                  <p class="text-paper-50/70 text-sm mt-1">5 steps. Repeated. Until execution becomes automatic.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- floating chip -->
+          <div class="hidden sm:flex absolute -left-4 -top-4 items-center gap-2 px-3 py-1.5 rounded-xl bg-loop-500 text-white text-xs font-semibold shadow-liftxl">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse-soft"></span>
+            LIVE COHORT
+          </div>
+          <div class="hidden sm:flex absolute -right-4 bottom-10 items-center gap-2 px-3 py-1.5 rounded-xl bg-paper-50 text-ink-900 text-xs font-semibold shadow-liftxl ring-1 ring-ink-900/10">
+            <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 text-gold-500" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            4.8 / 5 · 612 reviews
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo strip -->
+    <div class="mt-14 lg:mt-20">
+      <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate2-500">As featured / discussed in</p>
+      <div class="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-x-8 gap-y-5 items-center opacity-80">
+        <p class="font-display font-700 text-slate2-500 text-lg text-center">MoneyControl</p>
+        <p class="font-display font-700 text-slate2-500 text-lg text-center italic">ET Markets</p>
+        <p class="font-display font-700 text-slate2-500 text-lg text-center">LIVEMINT</p>
+        <p class="font-display font-700 text-slate2-500 text-lg text-center tracking-widest">CNBC-TV18</p>
+        <p class="font-display font-700 text-slate2-500 text-lg text-center">YourStory</p>
+        <p class="font-display font-700 text-slate2-500 text-lg text-center">Inc<span class="text-loop-500">42</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROBLEM / AGITATION ===================== -->
+<section id="problem" class="relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">01 — The honest truth</p>
+        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+          This isn't a knowledge gap.<br />
+          <span class="text-loop-600">It's an execution gap.</span>
+        </h2>
+        <p class="mt-5 text-slate2-600 leading-relaxed text-lg">
+          Let's be honest about your situation. You've watched the videos. You can name the candlestick patterns. You know what support and resistance <em>are</em>. On a chart from last week, you can point to exactly where you "should" have entered and exited.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="rounded-3xl bg-ink-900 text-paper-50 p-6 sm:p-10 relative overflow-hidden">
+          <div aria-hidden="true" class="absolute inset-0 grid-lines-dark opacity-60"></div>
+          <div class="relative">
+            <p class="font-display text-xl sm:text-2xl leading-snug">
+              "And yet — in real time, with real money, your heart pounding — you enter <span class="text-loop-300">late</span>, you <span class="text-loop-300">move your stop</span>, you hold <span class="text-loop-300">losers</span> and cut <span class="text-loop-300">winners</span>, you <span class="text-loop-300">revenge-trade</span> after a red day."
+            </p>
+            <p class="mt-6 text-paper-50/80 text-base">
+              Free YouTube videos, by design, can never close that gap — because <span class="text-paper-50 font-semibold">watching is not the same as doing</span>, and information is not the same as skill.
+            </p>
+
+            <div class="mt-8 grid sm:grid-cols-3 gap-4">
+              <div class="rounded-2xl bg-paper-50/5 ring-edge-dark p-5">
+                <p class="font-display font-700 text-3xl text-loop-300">~90%</p>
+                <p class="text-paper-50/70 text-sm mt-1">of retail F&amp;O traders lose money — SEBI study, 2023</p>
+              </div>
+              <div class="rounded-2xl bg-paper-50/5 ring-edge-dark p-5">
+                <p class="font-display font-700 text-3xl text-loop-300">100+ hrs</p>
+                <p class="text-paper-50/70 text-sm mt-1">average YouTube watched by retail traders before their first trade</p>
+              </div>
+              <div class="rounded-2xl bg-paper-50/5 ring-edge-dark p-5">
+                <p class="font-display font-700 text-3xl text-loop-300">0</p>
+                <p class="text-paper-50/70 text-sm mt-1">structured, supervised repetition involved in any of it</p>
+              </div>
+            </div>
+            <p class="mt-3 text-[11px] text-paper-50/40 leading-relaxed">Source: SEBI consultation paper on Index Derivatives, 2023. Internal survey, AK Trading Academy, 2026 (n=412). For educational context only.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFRAME ===================== -->
+<section class="relative bg-paper-100/60">
+  <div aria-hidden="true" class="absolute inset-0 dotted opacity-40"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">02 — The reframe</p>
+        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+          Trading is a <span class="text-loop-600">performance skill</span> — not a knowledge subject.
+        </h2>
+        <p class="mt-5 text-slate2-600 leading-relaxed text-lg">
+          It's more like learning to drive than learning history. You didn't become a driver by watching driving videos — you became one through supervised, repeated practice until the right actions became <em>automatic</em>.
+        </p>
+        <p class="mt-4 text-slate2-600 leading-relaxed text-lg">
+          That's the whole problem with how trading is taught in India: it's all <em class="text-ink-900 not-italic font-semibold">what</em> and almost no <em class="text-ink-900 not-italic font-semibold">how</em>. We teach the opposite way — built entirely around execution, repetition, review and the psychology of doing the right thing when it's hard.
+        </p>
+      </div>
+
+      <div class="lg:col-span-6">
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Card: how it's taught -->
+          <div class="rounded-2xl bg-paper-50 p-5 ring-1 ring-ink-900/5 shadow-soft">
+            <div class="flex items-center justify-between">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-slate2-500">How it's taught</p>
+              <span class="text-[10px] font-mono text-slate2-400">99%</span>
+            </div>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink-900">
+              <li class="cross">Watch a 2-hour video</li>
+              <li class="cross">Memorise patterns</li>
+              <li class="cross">Take a quiz</li>
+              <li class="cross">Repeat, alone, on real money</li>
+            </ul>
+          </div>
+          <!-- Card: how skill is built -->
+          <div class="rounded-2xl bg-ink-900 text-paper-50 p-5 ring-edge-dark shadow-liftxl">
+            <div class="flex items-center justify-between">
+              <p class="text-[11px] font-semibold uppercase tracking-wider text-loop-300">How skill is built</p>
+              <span class="text-[10px] font-mono text-paper-50/50">us</span>
+            </div>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              <li class="tick">Concept introduced, then drilled</li>
+              <li class="tick">Rehearse in no-risk environment</li>
+              <li class="tick">Execute by a strict checklist</li>
+              <li class="tick">Review every decision in a journal</li>
+              <li class="tick">Loop — until it's automatic</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-slate2-500 text-center italic">The same comparison, in two cards. Pick a side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE AK EXECUTION LOOP ===================== -->
+<section id="loop" class="relative bg-ink-900 text-paper-50 overflow-hidden">
+  <div aria-hidden="true" class="absolute inset-0 dotted-dark opacity-40"></div>
+  <div aria-hidden="true" class="absolute -top-20 right-1/4 w-[420px] h-[420px] rounded-full bg-loop-500/10 blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-300">03 — The methodology</p>
+      <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+        The AK Execution Loop<span class="text-loop-400">.</span>
+      </h2>
+      <p class="mt-5 text-paper-50/75 text-lg leading-relaxed">
+        A continuous 5-stage cycle that compounds with every iteration. Concepts are step one of five. Most courses stop there. <span class="text-paper-50 font-semibold">The other four steps — where skill is actually built — are the whole point of this one.</span>
+      </p>
+    </div>
+
+    <!-- DIAGRAM + NODE LIST -->
+    <div class="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <!-- SVG Loop -->
+      <div class="lg:col-span-6 relative">
+        <div class="aspect-square max-w-[520px] mx-auto relative">
+          <svg viewBox="0 0 520 520" class="w-full h-full" aria-label="The AK Execution Loop diagram — five stages connected in a continuous cycle">
+            <!-- outer faint -->
+            <circle cx="260" cy="260" r="218" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+            <!-- moving arc -->
+            <circle cx="260" cy="260" r="200" fill="none" stroke="#34D399" stroke-width="2.5" class="loop-path" stroke-linecap="round"/>
+
+            <!-- arrows along loop -->
+            <g fill="#34D399">
+              <!-- arrow tip top-right -->
+              <polygon points="430,180 416,168 432,164" transform="rotate(36 260 260)"/>
+            </g>
+
+            <!-- Node groups (5 stages at 0°,72°,144°,216°,288°) -->
+            <!-- Stage 1 — Knowledge (top, 0°) -->
+            <g transform="translate(260 60)">
+              <circle r="44" fill="#0A1628" stroke="#34D399" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-family="Sora" font-weight="800" font-size="22" fill="#FAFBFD">01</text>
+              <text y="68" text-anchor="middle" font-family="Sora" font-weight="700" font-size="16" fill="#FAFBFD">Knowledge</text>
+            </g>
+
+            <!-- Stage 2 — Practice (right, 72°) -->
+            <g transform="translate(450.21 191.18)">
+              <circle r="44" fill="#0A1628" stroke="#34D399" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-family="Sora" font-weight="800" font-size="22" fill="#FAFBFD">02</text>
+              <text y="68" text-anchor="middle" font-family="Sora" font-weight="700" font-size="16" fill="#FAFBFD">Practice</text>
+            </g>
+
+            <!-- Stage 3 — Implementation (bottom-right, 144°) -->
+            <g transform="translate(377.51 414.36)">
+              <circle r="44" fill="#0A1628" stroke="#34D399" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-family="Sora" font-weight="800" font-size="22" fill="#FAFBFD">03</text>
+              <text y="68" text-anchor="middle" font-family="Sora" font-weight="700" font-size="16" fill="#FAFBFD">Implementation</text>
+            </g>
+
+            <!-- Stage 4 — Analyse &amp; Improve (bottom-left, 216°) -->
+            <g transform="translate(142.49 414.36)">
+              <circle r="44" fill="#0A1628" stroke="#34D399" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-family="Sora" font-weight="800" font-size="22" fill="#FAFBFD">04</text>
+              <text y="68" text-anchor="middle" font-family="Sora" font-weight="700" font-size="13" fill="#FAFBFD">Analyse &amp; Improve</text>
+            </g>
+
+            <!-- Stage 5 — Control (left, 288°) -->
+            <g transform="translate(69.79 191.18)">
+              <circle r="44" fill="#0A1628" stroke="#34D399" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-family="Sora" font-weight="800" font-size="22" fill="#FAFBFD">05</text>
+              <text y="68" text-anchor="middle" font-family="Sora" font-weight="700" font-size="16" fill="#FAFBFD">Control</text>
+            </g>
+
+            <!-- Centre logo -->
+            <g transform="translate(260 260)">
+              <circle r="72" fill="#0F1F3C" stroke="rgba(52,211,153,.3)" stroke-width="1"/>
+              <text y="-6" text-anchor="middle" font-family="Sora" font-weight="800" font-size="14" fill="#34D399" letter-spacing="2">AK</text>
+              <text y="14" text-anchor="middle" font-family="Sora" font-weight="700" font-size="11" fill="#FAFBFD" letter-spacing="1">EXECUTION</text>
+              <text y="30" text-anchor="middle" font-family="Sora" font-weight="700" font-size="11" fill="#FAFBFD" letter-spacing="3">LOOP</text>
+            </g>
+          </svg>
+
+          <!-- Caption -->
+          <p class="text-center text-xs text-paper-50/50 mt-3 font-mono tracking-widest uppercase">The loop repeats. Skill compounds.</p>
+        </div>
+      </div>
+
+      <!-- Node descriptions -->
+      <div class="lg:col-span-6 space-y-4">
+        <!-- Item template -->
+        <div class="group rounded-2xl bg-paper-50/5 ring-edge-dark p-5 hover:bg-paper-50/10 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-500/15 text-loop-300 grid place-items-center font-display font-800 text-lg">01</div>
+            <div>
+              <h3 class="font-display font-700 text-lg">Knowledge</h3>
+              <p class="text-paper-50/70 mt-1 text-[15px] leading-relaxed">The concept, taught properly — using historical examples, not last-night's hot-take. You learn <em>why</em> a pattern works, not just what to call it.</p>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-2xl bg-paper-50/5 ring-edge-dark p-5 hover:bg-paper-50/10 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-500/15 text-loop-300 grid place-items-center font-display font-800 text-lg">02</div>
+            <div>
+              <h3 class="font-display font-700 text-lg">Practice</h3>
+              <p class="text-paper-50/70 mt-1 text-[15px] leading-relaxed">Rehearse the setup in a no-risk environment — replay tools, paper trades, screenshare drills — until the action becomes familiar before money is ever on the line.</p>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-2xl bg-paper-50/5 ring-edge-dark p-5 hover:bg-paper-50/10 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-500/15 text-loop-300 grid place-items-center font-display font-800 text-lg">03</div>
+            <div>
+              <h3 class="font-display font-700 text-lg">Implementation</h3>
+              <p class="text-paper-50/70 mt-1 text-[15px] leading-relaxed">Execute the process by a strict, written checklist. No improvising. The pre-trade checklist removes the spaces where hesitation and FOMO live.</p>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-2xl bg-paper-50/5 ring-edge-dark p-5 hover:bg-paper-50/10 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-500/15 text-loop-300 grid place-items-center font-display font-800 text-lg">04</div>
+            <div>
+              <h3 class="font-display font-700 text-lg">Analyse &amp; Improve</h3>
+              <p class="text-paper-50/70 mt-1 text-[15px] leading-relaxed">Journal every decision — not the P&amp;L. We hunt the leak: a checklist item you skipped, a stop you nudged, an emotion you didn't name. Then you patch it.</p>
+            </div>
+          </div>
+        </div>
+        <div class="group rounded-2xl bg-paper-50/5 ring-edge-dark p-5 hover:bg-paper-50/10 transition-colors">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-500/15 text-loop-300 grid place-items-center font-display font-800 text-lg">05</div>
+            <div>
+              <h3 class="font-display font-700 text-lg">Control</h3>
+              <p class="text-paper-50/70 mt-1 text-[15px] leading-relaxed">The discipline systems — pre-market routines, breathing protocols, position-size guards — that make you follow your own rules when the market is screaming at you not to.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-paper-50/60 text-sm italic pl-1 pt-2">Then back to Knowledge — sharper, with a new lesson banked. That's the loop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOUNDER ===================== -->
+<section id="mentor" class="relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <!-- Portrait card -->
+      <div class="lg:col-span-5">
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-3xl ring-1 ring-ink-900/10 shadow-liftxl overflow-hidden relative bg-ink-800">
+            <!-- Portrait -->
+            <img
+              src="instructor.jpg"
+              alt="Portrait of Abul Kalam, NISM-certified Research Analyst and founder of AK Trading Academy"
+              class="absolute inset-0 w-full h-full object-cover object-top"
+              loading="lazy" />
+            <!-- gradient overlay for legibility -->
+            <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-ink-950/95 via-ink-900/30 to-transparent"></div>
+            <!-- name plate -->
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <p class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-loop-500/20 backdrop-blur text-loop-300 text-[11px] font-semibold ring-1 ring-loop-300/30">
+                <span class="w-1.5 h-1.5 rounded-full bg-loop-400"></span>
+                NISM-XV · Research Analyst
+              </p>
+              <p class="mt-3 font-display font-800 text-paper-50 text-2xl leading-tight">Abul Kalam</p>
+              <p class="text-paper-50/70 text-sm">Founder · Lead Mentor</p>
+            </div>
+          </div>
+
+          <!-- Stat chips -->
+          <div class="absolute -right-4 -bottom-4 grid grid-cols-2 gap-3 max-w-[260px]">
+            <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/10 shadow-soft p-3">
+              <p class="font-display font-800 text-ink-900 text-xl">14 yrs</p>
+              <p class="text-[11px] text-slate2-500">on Indian markets</p>
+            </div>
+            <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/10 shadow-soft p-3">
+              <p class="font-display font-800 text-ink-900 text-xl">3,400+</p>
+              <p class="text-[11px] text-slate2-500">traders trained</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Story -->
+      <div class="lg:col-span-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">04 — Why this exists</p>
+        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-[2.6rem] mt-3 leading-tight">
+          "I understood the market for years before I could actually trade it. That gap is exactly why I built this."
+        </h2>
+
+        <div class="mt-6 space-y-4 text-slate2-700 leading-relaxed text-[1.05rem]">
+          <p>I'm Abul. I spent six years reading every book on technical analysis I could find, watched thousands of hours of content, and could explain Wyckoff and Elliott to anyone who asked. I still blew up two accounts in 2014–15. Not because I didn't know what to do — but because in the moment, I couldn't <em class="text-ink-900 not-italic font-semibold">do</em> it.</p>
+          <p>What finally changed things wasn't another book. It was a discipline system from sport — daily reps, video review, journaling, accountability — applied to trading. Within 18 months, my behaviour metrics (entry timing, stop integrity, plan adherence) shifted before my P&amp;L did. The P&amp;L followed because the behaviour did.</p>
+          <p class="text-ink-900 font-semibold">I built AK Trading Academy so the next person didn't have to lose two accounts to figure that out alone.</p>
+        </div>
+
+        <!-- Compliance / credibility row -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="rounded-xl bg-paper-100 ring-edge p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate2-500">Certification</p>
+            <p class="mt-1 font-display font-700 text-ink-900">NISM-XV (RA)</p>
+          </div>
+          <div class="rounded-xl bg-paper-100 ring-edge p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate2-500">Experience</p>
+            <p class="mt-1 font-display font-700 text-ink-900">14 yrs · Indian equities &amp; F&amp;O</p>
+          </div>
+          <div class="rounded-xl bg-paper-100 ring-edge p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-slate2-500">Earlier at</p>
+            <p class="mt-1 font-display font-700 text-ink-900">Edelweiss · Motilal Oswal</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STUDENT RESULTS ===================== -->
+<section id="students" class="relative bg-paper-100/70">
+  <div aria-hidden="true" class="absolute inset-0 dotted opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">05 — Student results</p>
+      <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+        What changed wasn't the chart.<br />
+        <span class="text-loop-600">It was the trader.</span>
+      </h2>
+      <p class="mt-5 text-slate2-600 text-lg leading-relaxed">
+        Below are learning-outcome statements from students who completed the programme. We don't promise returns — and we don't show any. We show behavioural change, which is what we actually train.
+      </p>
+    </div>
+
+    <!-- Testimonial grid -->
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Card 1 -->
+      <figure class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 shadow-soft p-6 flex flex-col">
+        <div class="flex items-center gap-1 text-gold-500" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote class="mt-4 text-ink-900 leading-relaxed">
+          "I knew all the theory for two years. What I didn't have was the discipline to follow it. This is the first time someone trained the <em>doing</em>, not just the knowing. I finally execute my plan instead of freezing."
+        </blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Sandeep K." width="40" height="40" loading="lazy" class="w-10 h-10 rounded-full object-cover ring-2 ring-ink-900/5" />
+          <div>
+            <p class="font-semibold text-ink-900 text-sm">Sandeep K.</p>
+            <p class="text-xs text-slate2-500">Software engineer · Bengaluru · Cohort 07</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Card 2 -->
+      <figure class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 shadow-soft p-6 flex flex-col">
+        <div class="flex items-center gap-1 text-gold-500" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote class="mt-4 text-ink-900 leading-relaxed">
+          "I stopped moving my stop-loss. Sounds small. It changed my entire month. The journal made the pattern impossible to ignore."
+        </blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anita R." width="40" height="40" loading="lazy" class="w-10 h-10 rounded-full object-cover ring-2 ring-ink-900/5" />
+          <div>
+            <p class="font-semibold text-ink-900 text-sm">Anita R.</p>
+            <p class="text-xs text-slate2-500">CA · Pune · Cohort 06</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Card 3 -->
+      <figure class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 shadow-soft p-6 flex flex-col">
+        <div class="flex items-center gap-1 text-gold-500" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote class="mt-4 text-ink-900 leading-relaxed">
+          "Other programmes feel like watching cricket highlights. This felt like net practice. Boring on purpose, and that's exactly why my execution improved."
+        </blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Vikram M." width="40" height="40" loading="lazy" class="w-10 h-10 rounded-full object-cover ring-2 ring-ink-900/5" />
+          <div>
+            <p class="font-semibold text-ink-900 text-sm">Vikram M.</p>
+            <p class="text-xs text-slate2-500">Doctor · Hyderabad · Cohort 08</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Card 4 -->
+      <figure class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 shadow-soft p-6 flex flex-col">
+        <div class="flex items-center gap-1 text-gold-500" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote class="mt-4 text-ink-900 leading-relaxed">
+          "The pre-trade checklist is the single most useful artefact I've taken from any course. Five questions. If I can't answer all five, I don't enter. Simple."
+        </blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya J." width="40" height="40" loading="lazy" class="w-10 h-10 rounded-full object-cover ring-2 ring-ink-900/5" />
+          <div>
+            <p class="font-semibold text-ink-900 text-sm">Priya J.</p>
+            <p class="text-xs text-slate2-500">Product Manager · Mumbai · Cohort 09</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Card 5 -->
+      <figure class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 shadow-soft p-6 flex flex-col">
+        <div class="flex items-center gap-1 text-gold-500" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24" class="w-4 h-4 opacity-30" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <blockquote class="mt-4 text-ink-900 leading-relaxed">
+          "Honest review: weeks 1–3 felt slow. By week 6 I noticed I was hesitating less and trusting my checklist more. That's the result I came for — not a magic indicator."
+        </blockquote>
+        <figcaption class="mt-5 flex items-center gap-3">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Rohan S." width="40" height="40" loading="lazy" class="w-10 h-10 rounded-full object-cover ring-2 ring-ink-900/5" />
+          <div>
+            <p class="font-semibold text-ink-900 text-sm">Rohan S.</p>
+            <p class="text-xs text-slate2-500">Salesperson · Delhi NCR · Cohort 08</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <!-- Card 6 -->
+      <figure class="rounded-2xl bg-ink-900 text-paper-50 ring-edge-dark shadow-liftxl p-6 flex flex-col">
+        <p class="text-[11px] font-semibold uppercase tracking-wider text-loop-300">Cohort 09 · Aggregate</p>
+        <p class="mt-4 font-display font-800 text-3xl leading-tight">94% of students said they "execute their plan more consistently."</p>
+        <p class="mt-3 text-paper-50/70 text-sm leading-relaxed">Self-reported behaviour metric from the post-cohort exit survey, Cohort 09 (n=146). This is not a return claim. Outcomes vary individually.</p>
+        <div class="mt-auto pt-6 flex items-center justify-between">
+          <p class="text-paper-50/60 text-xs">— AK Academy internal survey, May 2026</p>
+          <a href="#register" class="text-loop-300 text-sm font-semibold hover:underline">Read full report →</a>
+        </div>
+      </figure>
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="mt-8 text-xs text-slate2-500 leading-relaxed max-w-3xl">
+      <strong class="text-ink-900">Disclaimer:</strong> Testimonials describe learning outcomes, not financial returns. Past learning experiences do not guarantee future trading performance. Trading in equities and derivatives involves significant risk and is not suitable for everyone. Approximately 9 in 10 retail derivatives traders incur losses (SEBI study, 2023). We do not offer investment advice, signals, or buy/sell recommendations.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== CURRICULUM ===================== -->
+<section id="curriculum" class="relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-4 lg:sticky lg:top-24">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">06 — Curriculum</p>
+        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+          7 modules. <br/>One purpose: <span class="text-loop-600">execution</span>.
+        </h2>
+        <p class="mt-5 text-slate2-600 leading-relaxed">
+          Every module ends in a graded behaviour drill, not a quiz. You move on when your <em>doing</em> meets the bar — not when you've finished the videos.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-900/5 text-ink-800 font-semibold">6 weeks</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-900/5 text-ink-800 font-semibold">~4 hrs / week</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-loop-100 text-loop-700 font-semibold">Live + recorded</span>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-ink-900/5 text-ink-800 font-semibold">EN · HI</span>
+        </div>
+      </div>
+
+      <ol class="lg:col-span-8 space-y-3">
+        <!-- module -->
+        <li class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 hover:shadow-liftxl transition-all">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-100 text-loop-700 grid place-items-center font-display font-800">01</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-ink-900 text-lg">Why knowledge isn't enough</h3>
+                <span class="text-xs font-mono text-slate2-500">Week 1 · 4 lessons</span>
+              </div>
+              <p class="text-slate2-600 mt-2 leading-relaxed">The execution gap explained — why your YouTube education has produced a confident loser. Diagnostic exercise: identify your three biggest leaks.</p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Diagnostic</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Mindset reset</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Baseline metrics</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 hover:shadow-liftxl transition-all">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-100 text-loop-700 grid place-items-center font-display font-800">02</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-ink-900 text-lg">The pre-trade checklist</h3>
+                <span class="text-xs font-mono text-slate2-500">Week 2 · 5 lessons</span>
+              </div>
+              <p class="text-slate2-600 mt-2 leading-relaxed">Turn "knowing" into a repeatable action. We build <em>your</em> five-question checklist and rehearse it on 30+ historical setups until the answers come without hesitation.</p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Process design</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Drill: 30 setups</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Decision speed</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 hover:shadow-liftxl transition-all">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-100 text-loop-700 grid place-items-center font-display font-800">03</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-ink-900 text-lg">Executing your entries &amp; exits</h3>
+                <span class="text-xs font-mono text-slate2-500">Week 3 · 6 lessons</span>
+              </div>
+              <p class="text-slate2-600 mt-2 leading-relaxed">Rules that remove hesitation. Defined entry triggers, stop placement protocols, partials, trailing — written so clearly there's nothing left to decide in the moment.</p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Entry triggers</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Stop rules</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Exit protocols</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 hover:shadow-liftxl transition-all">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-100 text-loop-700 grid place-items-center font-display font-800">04</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-ink-900 text-lg">Risk &amp; position sizing in real time</h3>
+                <span class="text-xs font-mono text-slate2-500">Week 4 · 4 lessons</span>
+              </div>
+              <p class="text-slate2-600 mt-2 leading-relaxed">Sizing as an <em>action</em>, not a theory. Automated sizing rules, account-risk caps, and the "kill-switch" — when to walk away from the screen no matter what.</p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">R-based sizing</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Daily caps</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Kill-switch rules</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 hover:shadow-liftxl transition-all">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-100 text-loop-700 grid place-items-center font-display font-800">05</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-ink-900 text-lg">The discipline systems</h3>
+                <span class="text-xs font-mono text-slate2-500">Week 5 · 5 lessons</span>
+              </div>
+              <p class="text-slate2-600 mt-2 leading-relaxed">How pros do the right thing under pressure. Pre-market routines, breath protocols for the moment of entry, screen-time hygiene, and recovery rituals after red days.</p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Routines</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Emotion labelling</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Tilt protocol</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 hover:shadow-liftxl transition-all">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-100 text-loop-700 grid place-items-center font-display font-800">06</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-ink-900 text-lg">Journaling for skill</h3>
+                <span class="text-xs font-mono text-slate2-500">Week 6 · 4 lessons</span>
+              </div>
+              <p class="text-slate2-600 mt-2 leading-relaxed">Analyse → improve → repeat — the Loop in practice. The journal template that surfaces the one leak you'd otherwise miss, plus the weekly review ritual.</p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Decision journal</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Weekly review</li>
+                <li class="px-2 py-1 rounded-md bg-ink-900/5 text-ink-700">Leak hunt</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li class="group rounded-2xl bg-ink-900 text-paper-50 ring-edge-dark shadow-liftxl">
+          <div class="p-5 sm:p-6 flex items-start gap-5">
+            <div class="shrink-0 w-12 h-12 rounded-xl bg-loop-500/15 text-loop-300 grid place-items-center font-display font-800">07</div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 justify-between">
+                <h3 class="font-display font-700 text-lg">Supervised, observed practice</h3>
+                <span class="text-xs font-mono text-paper-50/60">Ongoing · Live labs</span>
+              </div>
+              <p class="text-paper-50/75 mt-2 leading-relaxed">Closing the loop. Weekly live screen-shared drills where you execute on historical (≥3-month) charts under observation. <strong class="text-paper-50">Educational — no live recommendations, no signals, no buy/sell calls.</strong></p>
+              <ul class="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold">
+                <li class="px-2 py-1 rounded-md bg-paper-50/10 text-paper-50">Replay-based</li>
+                <li class="px-2 py-1 rounded-md bg-paper-50/10 text-paper-50">Mentor review</li>
+                <li class="px-2 py-1 rounded-md bg-paper-50/10 text-paper-50">Accountability pair</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BONUS STACK ===================== -->
+<section class="relative bg-paper-100/70">
+  <div aria-hidden="true" class="absolute inset-0 dotted opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+    <div class="grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">07 — Included</p>
+        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+          Everything you need to <span class="text-loop-600">run the Loop</span>.
+        </h2>
+        <p class="mt-5 text-slate2-600 leading-relaxed">
+          You don't get a hundred "bonus" PDFs you'll never open. You get five tools, built to be used every trading day — and the community to use them with.
+        </p>
+      </div>
+      <div class="lg:col-span-6 flex justify-start lg:justify-end">
+        <a href="#register" class="inline-flex items-center h-12 px-6 rounded-xl bg-ink-900 text-paper-50 font-semibold hover:bg-ink-800 transition-colors">
+          Claim the bonus stack →
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <!-- bonus card -->
+      <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 p-5 hover:shadow-liftxl transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-loop-100 text-loop-700 grid place-items-center">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        </div>
+        <p class="mt-4 font-display font-700 text-ink-900">Pre-Trade Checklist</p>
+        <p class="mt-1 text-sm text-slate2-600 leading-relaxed">Printable A4. The five questions you must answer before any entry. Used by every cohort.</p>
+        <p class="mt-3 text-[11px] font-mono uppercase tracking-wider text-loop-700">PDF · 1 page</p>
+      </div>
+
+      <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 p-5 hover:shadow-liftxl transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-loop-100 text-loop-700 grid place-items-center">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <p class="mt-4 font-display font-700 text-ink-900">Trading Journal (Loop edition)</p>
+        <p class="mt-1 text-sm text-slate2-600 leading-relaxed">Notion + Google Sheets templates. Tracks decisions and emotion, not just P&amp;L.</p>
+        <p class="mt-3 text-[11px] font-mono uppercase tracking-wider text-loop-700">Notion · Sheets</p>
+      </div>
+
+      <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 p-5 hover:shadow-liftxl transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-loop-100 text-loop-700 grid place-items-center">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+        </div>
+        <p class="mt-4 font-display font-700 text-ink-900">1-Page Plan template</p>
+        <p class="mt-1 text-sm text-slate2-600 leading-relaxed">Your strategy distilled to one page — rules, risk, routines. Pinned above your trading screen.</p>
+        <p class="mt-3 text-[11px] font-mono uppercase tracking-wider text-loop-700">PDF · Editable</p>
+      </div>
+
+      <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 p-5 hover:shadow-liftxl transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-loop-100 text-loop-700 grid place-items-center">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <p class="mt-4 font-display font-700 text-ink-900">Lifetime recordings</p>
+        <p class="mt-1 text-sm text-slate2-600 leading-relaxed">Every session, every drill — yours forever. Re-watch when you spot a leak returning.</p>
+        <p class="mt-3 text-[11px] font-mono uppercase tracking-wider text-loop-700">HD · Captions</p>
+      </div>
+
+      <div class="rounded-2xl bg-ink-900 text-paper-50 p-5 ring-edge-dark hover:shadow-liftxl transition-shadow">
+        <div class="w-10 h-10 rounded-lg bg-loop-500/15 text-loop-300 grid place-items-center">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="mt-4 font-display font-700">Practice &amp; Accountability community</p>
+        <p class="mt-1 text-sm text-paper-50/70 leading-relaxed">Private group of current and past students. Daily check-ins. Drill partners assigned weekly.</p>
+        <p class="mt-3 text-[11px] font-mono uppercase tracking-wider text-loop-300">Discord · Private</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="relative">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">08 — Frequently asked</p>
+      <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">Straight answers.<br/>No softening.</h2>
+      <p class="mt-5 text-slate2-600">The four questions we get most often, answered plainly. If yours isn't here, write to us — we answer every email.</p>
+    </div>
+
+    <div class="mt-12 space-y-3">
+      <details class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 transition-all" open>
+        <summary class="cursor-pointer list-none flex items-center justify-between p-6">
+          <h3 class="font-display font-700 text-ink-900 text-base sm:text-lg">"I already know a lot of theory — is this too basic for me?"</h3>
+          <svg viewBox="0 0 24 24" class="chev w-5 h-5 text-slate2-500" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate2-600 leading-relaxed">
+          <p>If you know the theory but still lose, this is built for exactly you. We start where the videos stop: execution. Week one will feel almost insultingly simple. By week three, you'll see why we started there.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 transition-all">
+        <summary class="cursor-pointer list-none flex items-center justify-between p-6">
+          <h3 class="font-display font-700 text-ink-900 text-base sm:text-lg">"Will you give signals or buy/sell calls?"</h3>
+          <svg viewBox="0 0 24 24" class="chev w-5 h-5 text-slate2-500" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate2-600 leading-relaxed">
+          <p>No. The entire point is to make you execute <em>your own</em> decisions, not depend on ours. Signal services breed dependency; we breed independence. We also operate as a registered Research Analyst — we follow SEBI guidelines and do not provide buy/sell recommendations as part of this course.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 transition-all">
+        <summary class="cursor-pointer list-none flex items-center justify-between p-6">
+          <h3 class="font-display font-700 text-ink-900 text-base sm:text-lg">"How is this different from a free YouTube channel?"</h3>
+          <svg viewBox="0 0 24 24" class="chev w-5 h-5 text-slate2-500" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate2-600 leading-relaxed">
+          <p>YouTube delivers <strong class="text-ink-900">knowledge</strong>. Skill is built through <strong class="text-ink-900">structured practice, review, and accountability</strong> — which is everything this programme is and nothing YouTube can be. If watching could make you a trader, the comments section would be a hall of fame instead of a graveyard.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 transition-all">
+        <summary class="cursor-pointer list-none flex items-center justify-between p-6">
+          <h3 class="font-display font-700 text-ink-900 text-base sm:text-lg">"Do you guarantee profits?"</h3>
+          <svg viewBox="0 0 24 24" class="chev w-5 h-5 text-slate2-500" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate2-600 leading-relaxed">
+          <p>No. We train the <em>process</em>. Outcomes depend on you, market conditions, and many factors outside our control. About 9 in 10 retail derivatives traders lose money. Our job is to make you one of the disciplined few — not to promise anything beyond that. Anyone who guarantees you trading profits is either lying or hasn't been trading long enough.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 transition-all">
+        <summary class="cursor-pointer list-none flex items-center justify-between p-6">
+          <h3 class="font-display font-700 text-ink-900 text-base sm:text-lg">"How much time per week does this require?"</h3>
+          <svg viewBox="0 0 24 24" class="chev w-5 h-5 text-slate2-500" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate2-600 leading-relaxed">
+          <p>Plan for ~4 hours: one 90-minute live session, two 60-minute self-practice drills, and 30 minutes of journaling spread across the week. Recordings cover you if you miss a live session — but the live drills are where the real work happens.</p>
+        </div>
+      </details>
+
+      <details class="group rounded-2xl bg-paper-50 ring-1 ring-ink-900/5 hover:ring-ink-900/20 transition-all">
+        <summary class="cursor-pointer list-none flex items-center justify-between p-6">
+          <h3 class="font-display font-700 text-ink-900 text-base sm:text-lg">"Is this only for F&amp;O traders?"</h3>
+          <svg viewBox="0 0 24 24" class="chev w-5 h-5 text-slate2-500" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="px-6 pb-6 text-slate2-600 leading-relaxed">
+          <p>No. The Execution Loop is instrument-agnostic — equity intraday, swing, options, even crypto if that's your thing. We use Nifty/Bank Nifty for most demonstrations because that's what most Indian retail traders are in, but the framework transfers.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GUARANTEE ===================== -->
+<section class="relative">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28">
+    <div class="rounded-3xl bg-ink-900 text-paper-50 overflow-hidden relative">
+      <div aria-hidden="true" class="absolute inset-0 dotted-dark opacity-40"></div>
+      <div aria-hidden="true" class="absolute -right-20 -bottom-20 w-[360px] h-[360px] rounded-full bg-loop-500/15 blur-3xl"></div>
+      <div class="relative p-8 sm:p-12 lg:p-14 grid lg:grid-cols-12 gap-8 items-center">
+        <!-- shield -->
+        <div class="lg:col-span-3 flex justify-center lg:justify-start">
+          <div class="relative w-32 h-32">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+              <defs>
+                <linearGradient id="shieldg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#10B981"/>
+                  <stop offset="100%" stop-color="#047857"/>
+                </linearGradient>
+              </defs>
+              <path d="M50 6 L86 18 V46 C86 70 64 87 50 92 C36 87 14 70 14 46 V18 Z" fill="url(#shieldg)" stroke="#34D399" stroke-width="1"/>
+              <text x="50" y="48" text-anchor="middle" font-family="Sora" font-weight="800" font-size="22" fill="#0A1628">7</text>
+              <text x="50" y="65" text-anchor="middle" font-family="Sora" font-weight="700" font-size="9" fill="#0A1628" letter-spacing="2">DAYS</text>
+              <text x="50" y="78" text-anchor="middle" font-family="Sora" font-weight="700" font-size="8" fill="#0A1628" letter-spacing="1">REFUND</text>
+            </svg>
+          </div>
+        </div>
+        <div class="lg:col-span-9">
+          <p class="text-loop-300 text-xs font-semibold uppercase tracking-[0.2em]">Our guarantee</p>
+          <h2 class="font-display font-800 text-2xl sm:text-3xl lg:text-4xl mt-3 leading-tight">
+            7-day, no-questions-asked refund.
+          </h2>
+          <p class="mt-4 text-paper-50/80 leading-relaxed">
+            If this isn't the <strong class="text-paper-50">most execution-focused, least theory-padded</strong> trading education you've ever taken — write us, get every rupee back. No forms. No "convince us." No survey. Just a refund, processed in 5 working days.
+          </p>
+          <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-paper-50/70">
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-loop-400"></span> Full course access during refund window</span>
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-loop-400"></span> Keep all downloads</span>
+            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-loop-400"></span> No "exit interview"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA / REGISTER ===================== -->
+<section id="register" class="relative bg-paper-100/60">
+  <div aria-hidden="true" class="absolute inset-0 dotted opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <div class="lg:col-span-6">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">09 — Register</p>
+        <h2 class="font-display font-800 text-3xl sm:text-4xl lg:text-5xl mt-3 leading-tight">
+          You don't need more information.<br />
+          <span class="text-loop-600">You need to close the gap.</span>
+        </h2>
+        <p class="mt-5 text-slate2-600 leading-relaxed text-lg">
+          The next free masterclass starts <strong class="text-ink-900">Monday, 14 July 2026</strong>. Seats are limited so we can actually observe and review your drills — not because of a fake countdown timer.
+        </p>
+
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/10 p-4 text-center">
+            <p class="font-display font-800 text-ink-900 text-2xl">240</p>
+            <p class="text-[11px] text-slate2-500 uppercase tracking-wider mt-1">Cohort cap</p>
+          </div>
+          <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/10 p-4 text-center">
+            <p class="font-display font-800 text-loop-600 text-2xl">187</p>
+            <p class="text-[11px] text-slate2-500 uppercase tracking-wider mt-1">Already in</p>
+          </div>
+          <div class="rounded-2xl bg-paper-50 ring-1 ring-ink-900/10 p-4 text-center">
+            <p class="font-display font-800 text-ink-900 text-2xl">53</p>
+            <p class="text-[11px] text-slate2-500 uppercase tracking-wider mt-1">Seats left</p>
+          </div>
+        </div>
+
+        <ul class="mt-8 space-y-3 text-ink-900">
+          <li class="tick">Free. No upsell to a "secret advanced" course.</li>
+          <li class="tick">90-minute live session + Q&amp;A on Day 1.</li>
+          <li class="tick">The Pre-Trade Checklist sent on registration.</li>
+          <li class="tick">Recording emailed if you can't make it live.</li>
+        </ul>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-6">
+        <form onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.reset();" class="rounded-3xl bg-paper-50 ring-1 ring-ink-900/10 shadow-liftxl p-6 sm:p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-700">Reserve your seat</p>
+          <h3 class="mt-2 font-display font-800 text-ink-900 text-2xl">Register Free for the Masterclass</h3>
+          <p class="text-slate2-600 text-sm mt-1.5">Takes 30 seconds. We never sell your data.</p>
+
+          <div class="mt-6 space-y-4">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-ink-900 mb-1.5">Full name <span class="text-danger-500">*</span></label>
+              <input id="name" name="name" type="text" required minlength="2" autocomplete="name" placeholder="Rahul Sharma" class="block w-full h-12 px-4 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 placeholder:text-slate2-400 focus:bg-paper-50 focus:ring-2 focus:ring-loop-500 focus:outline-none transition-all" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="email" class="block text-sm font-semibold text-ink-900 mb-1.5">Email <span class="text-danger-500">*</span></label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@email.com" class="block w-full h-12 px-4 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 placeholder:text-slate2-400 focus:bg-paper-50 focus:ring-2 focus:ring-loop-500 focus:outline-none transition-all" />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-ink-900 mb-1.5">Phone (WhatsApp) <span class="text-danger-500">*</span></label>
+                <input id="phone" name="phone" type="tel" required autocomplete="tel" pattern="[0-9 +\-]{7,}" placeholder="+91 9XXXX XXXXX" class="block w-full h-12 px-4 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 placeholder:text-slate2-400 focus:bg-paper-50 focus:ring-2 focus:ring-loop-500 focus:outline-none transition-all" />
+              </div>
+            </div>
+            <div>
+              <label for="exp" class="block text-sm font-semibold text-ink-900 mb-1.5">Trading experience</label>
+              <select id="exp" name="exp" class="block w-full h-12 px-4 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 focus:bg-paper-50 focus:ring-2 focus:ring-loop-500 focus:outline-none transition-all appearance-none bg-no-repeat bg-right pr-10" style="background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%23475569' stroke-width='2'><polyline points='1,1 6,7 11,1'/></svg>&quot;); background-position: right 1rem center;">
+                <option value="">Choose one…</option>
+                <option>0–6 months · still figuring it out</option>
+                <option>6–18 months · know theory, lose money</option>
+                <option>1.5–3 years · inconsistent</option>
+                <option>3+ years · plateauing</option>
+              </select>
+            </div>
+            <div>
+              <p class="block text-sm font-semibold text-ink-900 mb-2">My biggest leak right now (pick one)</p>
+              <div class="grid sm:grid-cols-2 gap-2 text-sm">
+                <label class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 hover:ring-loop-500/40 cursor-pointer transition-all">
+                  <input type="radio" name="leak" value="hesitation" class="text-loop-600 focus:ring-loop-500" /> Hesitating on entries
+                </label>
+                <label class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 hover:ring-loop-500/40 cursor-pointer transition-all">
+                  <input type="radio" name="leak" value="stop" class="text-loop-600 focus:ring-loop-500" /> Moving my stop-loss
+                </label>
+                <label class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 hover:ring-loop-500/40 cursor-pointer transition-all">
+                  <input type="radio" name="leak" value="revenge" class="text-loop-600 focus:ring-loop-500" /> Revenge-trading
+                </label>
+                <label class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-paper-100 ring-1 ring-ink-900/10 hover:ring-loop-500/40 cursor-pointer transition-all">
+                  <input type="radio" name="leak" value="sizing" class="text-loop-600 focus:ring-loop-500" /> Over-sizing
+                </label>
+              </div>
+            </div>
+            <label class="flex items-start gap-2 text-sm text-slate2-600">
+              <input type="checkbox" required class="mt-1 rounded text-loop-600 focus:ring-loop-500" />
+              <span>I understand this is an educational programme. No buy/sell calls or return guarantees are made. <a href="#footer-legal" class="underline hover:text-ink-900">Read disclaimer</a>.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="mt-6 w-full inline-flex items-center justify-center h-12 px-6 rounded-xl bg-ink-900 text-paper-50 font-semibold hover:bg-ink-800 active:scale-[.99] shadow-soft hover:shadow-liftxl transition-all">
+            Reserve my free seat
+            <svg viewBox="0 0 24 24" class="w-5 h-5 ml-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+
+          <p id="form-success" class="hidden mt-4 p-3 rounded-xl bg-loop-100 text-loop-700 text-sm font-semibold ring-1 ring-loop-300" role="status" aria-live="polite">
+            ✓ You're in. We've sent your confirmation, Pre-Trade Checklist, and Zoom link to your email.
+          </p>
+
+          <p class="mt-4 text-[11px] text-slate2-500 leading-relaxed">
+            By registering you agree to our <a href="#footer-legal" class="underline">Terms</a> and <a href="#footer-legal" class="underline">Privacy Policy</a>. We send 2–3 emails a week leading up to the masterclass. Unsubscribe any time.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="footer-legal" class="bg-ink-950 text-paper-50/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <a href="#top" class="flex items-center gap-2.5">
+          <span class="relative inline-flex items-center justify-center w-9 h-9 rounded-xl bg-paper-50/10">
+            <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="#FAFBFD" stroke-width="2" stroke-linecap="round">
+              <path d="M21 12a9 9 0 1 1-3.5-7.1"/><polyline points="21 4 21 9 16 9" stroke="#34D399" />
+            </svg>
+          </span>
+          <span class="font-display font-800 text-paper-50 tracking-tight">AK Trading Academy</span>
+        </a>
+        <p class="mt-4 text-sm leading-relaxed">Closing the gap between what traders know and what they can do. Process-first trading education.</p>
+
+        <div class="mt-5 flex items-center gap-3">
+          <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-paper-50/5 hover:bg-paper-50/10 grid place-items-center transition-colors">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter X" class="w-9 h-9 rounded-lg bg-paper-50/5 hover:bg-paper-50/10 grid place-items-center transition-colors">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26L23 21.75h-6.586l-5.157-6.74L5.36 21.75H2.05l7.73-8.835L1.4 2.25h6.756l4.66 6.16zM17.083 19.77h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-lg bg-paper-50/5 hover:bg-paper-50/10 grid place-items-center transition-colors">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.4v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.37 4.25 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-paper-50/5 hover:bg-paper-50/10 grid place-items-center transition-colors">
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38a3.7 3.7 0 0 1-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.32 4.14.6a5.86 5.86 0 0 0-2.13 1.39A5.86 5.86 0 0 0 .6 4.14c-.28.76-.47 1.64-.53 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.25 2.15.53 2.91a5.86 5.86 0 0 0 1.39 2.13 5.86 5.86 0 0 0 2.13 1.39c.76.28 1.64.47 2.91.53 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c1.27-.06 2.15-.25 2.91-.53a5.86 5.86 0 0 0 2.13-1.39 5.86 5.86 0 0 0 1.39-2.13c.28-.76.47-1.64.53-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.25-2.15-.53-2.91a5.86 5.86 0 0 0-1.39-2.13A5.86 5.86 0 0 0 19.86.6C19.1.32 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.4a1.44 1.44 0 1 0 0-2.88 1.44 1.44 0 0 0 0 2.88z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-display font-700 text-paper-50">Programme</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="#loop" class="hover:text-paper-50">The AK Execution Loop</a></li>
+          <li><a href="#curriculum" class="hover:text-paper-50">Curriculum</a></li>
+          <li><a href="#students" class="hover:text-paper-50">Student stories</a></li>
+          <li><a href="#mentor" class="hover:text-paper-50">Mentor</a></li>
+          <li><a href="#faq" class="hover:text-paper-50">FAQ</a></li>
+          <li><a href="#register" class="hover:text-paper-50">Register Free</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-display font-700 text-paper-50">Resources</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="#" class="hover:text-paper-50">Pre-trade checklist (PDF)</a></li>
+          <li><a href="#" class="hover:text-paper-50">Journal template</a></li>
+          <li><a href="#" class="hover:text-paper-50">Reading list</a></li>
+          <li><a href="#" class="hover:text-paper-50">Blog</a></li>
+          <li><a href="#" class="hover:text-paper-50">Free YouTube channel</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-display font-700 text-paper-50">Contact &amp; Legal</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li>support@aktradingacademy.in</li>
+          <li>+91 80 4567 8910 · Mon–Fri 10am–6pm IST</li>
+          <li>Indiranagar, Bengaluru 560038</li>
+          <li class="pt-2"><a href="#" class="hover:text-paper-50">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-paper-50">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-paper-50">Refund Policy</a></li>
+          <li><a href="#" class="hover:text-paper-50">SEBI Disclosures</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Compliance disclaimer -->
+    <div class="mt-12 pt-8 border-t border-paper-50/10 grid lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-9">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-loop-300">Statutory disclaimer</p>
+        <p class="mt-3 text-xs leading-relaxed text-paper-50/60">
+          AK Trading Academy is an educational platform operated by AK Markets Education Pvt. Ltd. Mr. Abul Kalam is a SEBI-registered Research Analyst (Reg. No. INH000000000 — placeholder). <strong class="text-paper-50/90">No buy, sell, or hold recommendations</strong> are made as part of this programme. Investment in securities market is subject to market risks. Read all the related documents carefully before investing. Past performance of any examples shown is not indicative of future results. Registration granted by SEBI, membership of BASL and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Approximately 9 out of 10 individual traders in the equity F&amp;O segment incurred net losses (SEBI study, 2023). Trading derivatives involves substantial risk of loss and is not suitable for all investors. Please consult a qualified financial advisor before making any investment decision.
+        </p>
+      </div>
+      <div class="lg:col-span-3 flex flex-col gap-3 text-xs">
+        <div class="rounded-xl bg-paper-50/5 ring-edge-dark p-4">
+          <p class="text-paper-50/60">NISM Certified</p>
+          <p class="text-paper-50 font-semibold mt-1">Series-XV · Research Analyst</p>
+        </div>
+        <div class="rounded-xl bg-paper-50/5 ring-edge-dark p-4">
+          <p class="text-paper-50/60">CIN</p>
+          <p class="text-paper-50 font-semibold mt-1">U80904KA2022PTC000000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-paper-50/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-paper-50/50">
+      <p>© 2026 AK Markets Education Pvt. Ltd. All rights reserved.</p>
+      <p>Built with intention. Hosted in India. <span class="text-loop-300">Loop &amp; repeat.</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== STICKY MOBILE CTA ===================== -->
+<div class="lg:hidden fixed bottom-3 inset-x-3 z-40">
+  <a href="#register" class="flex items-center justify-between gap-3 h-14 px-5 rounded-2xl bg-ink-900 text-paper-50 shadow-liftxl ring-1 ring-paper-50/10">
+    <div class="flex items-center gap-3">
+      <span class="inline-block w-2 h-2 rounded-full bg-loop-400 animate-pulse-soft"></span>
+      <div class="text-left leading-tight">
+        <p class="font-display font-700 text-sm">Register Free</p>
+        <p class="text-[10px] text-paper-50/60">Next cohort · 14 Jul 2026</p>
+      </div>
+    </div>
+    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<script>
+  // Smooth-scroll progress bar bonus: tick checklist items as they enter view
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('animate-tick-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('li.tick, li.cross').forEach(el => io.observe(el));
+  }
+</script>
+
+</body>
+</html>
